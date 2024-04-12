@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw6fsf6vdmyf2"]
+
+[ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
+[ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
+[ext_resource type="Script" path="res://main/menu/Play.gd" id="2_urv4f"]
+[ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_qm4hq")
+
+[node name="MenuItems" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="CenterContainer" parent="MenuItems"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuTitle" type="RichTextLabel" parent="MenuItems/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 64
+text = "The Name Of The Game"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ItemsContainer" type="CenterContainer" parent="MenuItems"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuItems/ItemsContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MenuItems/ItemsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+script = ExtResource("2_urv4f")
+
+[node name="SoundToggle" type="CheckButton" parent="MenuItems/ItemsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Sounds"
+script = ExtResource("2_6bova")
+
+[node name="Quit" type="Button" parent="MenuItems/ItemsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+script = ExtResource("3_jlbm4")
