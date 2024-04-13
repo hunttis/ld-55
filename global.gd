@@ -23,6 +23,7 @@ enum STRAWS {
 	THREE = 3,
 	FOUR = 4
 }
+var hits = []
 
 var mana = {
 	ELEMENT.AIR: 0,
@@ -55,6 +56,7 @@ func _on_reset_summoner_pressed():
 		ELEMENT.FIRE: 0,
 		ELEMENT.WATER: 0
 	}
+	hits = []
 	print("reset summoner global")	
 	
 

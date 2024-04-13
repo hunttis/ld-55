@@ -56,6 +56,7 @@ func _on_button_released(button_type):
 			print("MEDIOCRE HIT")
 		else:
 			print("MISS")
+		Global.hits.append(result)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
