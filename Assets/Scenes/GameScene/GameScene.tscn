@@ -15,4 +15,4 @@ text = "GAMESCENE"
 [node name="ButtonManager" parent="." instance=ExtResource("1_t2fp3")]
 
 [node name="MeterManager" parent="." instance=ExtResource("2_c880x")]
-position = Vector2(-124, 220)
+position = Vector2(-123, 220)

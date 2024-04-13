@@ -17,7 +17,7 @@ const METER_WIDTH = 300
 func _ready():
 	meter.max_value = max_mana
 	meter.value = 0
-	meter.step = 0.0167
+	meter.step = 0.01
 	Signals.button_released.connect(_on_button_released)
 	sweetspot.position.x = METER_WIDTH * (target/100);
 
