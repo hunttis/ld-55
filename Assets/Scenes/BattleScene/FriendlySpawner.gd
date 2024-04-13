@@ -19,5 +19,5 @@ func _on_summon(summon: Global.SUMMON):
 	var friendly = friendly_scene.instantiate()
 	rally_point.add_child(friendly)
 	friendly_count += 1
-	friendly.set_type(summon_type[summon])
+	#friendly.set_type(summon_type[summon])
 	friendly.position.x = friendly.position.x + friendly_count * (16 + 32)
