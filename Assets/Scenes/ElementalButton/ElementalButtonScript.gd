@@ -4,15 +4,20 @@ extends Node2D
 @onready var debug_label = $DebugLabel
 @export var button_type: Global.ELEMENT 
 
+var enabled = false
 var is_pressed = false
 var released = false
 
 func _ready():
+	enabled = Global.enabled_buttons > button_type
 	sprite.play("default")
 	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if !enabled:
+		return
+
 	debug_label.text = str(is_pressed)+" " + str(released)
 	if Input.is_action_just_pressed(Global.ElementActions[button_type]):
 		is_pressed = true
@@ -31,3 +36,5 @@ func _process(delta):
 		
 func _on_reset_all_taps():
 	released = false
+	enabled = Global.enabled_buttons > button_type
+	sprite.play("default")

@@ -17,6 +17,12 @@ enum SUMMON {
 	FRIENDLY4,
 }
 
+enum STRAWS {
+	ONE = 1,
+	TWO = 2,
+	THREE = 3,
+	FOUR = 4
+}
 
 var mana = {
 	ELEMENT.AIR: 0,
@@ -35,7 +41,7 @@ var ElementActions = {
 var quit_game_action = "quit_game_action"
 
 var max_difficulty = 4
-var enabled_buttons = 1;
+var enabled_buttons = STRAWS.ONE;
 var life_points = 10
 var score = 0
 var hi_score = 0
@@ -45,6 +51,7 @@ func _ready():
 	Signals.reset_all_taps.connect(_on_reset_summoner_pressed)
 	Signals.get_hurt.connect(_get_hurt)
 	Signals.add_score.connect(_add_score)
+	Signals.enable_straws.connect(_set_straw_count)
 
 func _on_reset_summoner_pressed():
 	mana = {
@@ -65,3 +72,7 @@ func _get_hurt():
 func _add_score(amount):
 	score += amount
 
+func _set_straw_count(STRAWS):
+	print("Enabling buttons: ", STRAWS)
+	enabled_buttons = STRAWS
+	Signals.reset_all_taps.emit()

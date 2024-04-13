@@ -14,6 +14,8 @@ extends Node2D
 
 const METER_WIDTH = 300
 
+var enabled = false
+
 var perfect_margin_px: float
 var good_margin_px: float
 var mediocre_margin_px: float
@@ -28,6 +30,7 @@ enum {
 }
 
 func _ready():
+	enabled = Global.enabled_buttons > meter_type
 	meter.max_value = 100
 	meter.value = 0
 	meter.step = 0.01
@@ -56,12 +59,17 @@ func _on_button_released(button_type):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if !enabled:
+		return
+
 	debug_label.text = str(can_be_used)
 	if can_be_used:
 		meter.value = Global.mana[meter_type]*10*speed
 	
 func reset_meter():
 	print("resetted "+name)
+	enabled = Global.enabled_buttons > meter_type
+
 	can_be_used = true
 	meter.value = 0
 	target = randf_range(30,70)
@@ -74,4 +82,4 @@ func reset_meter():
 	mediocre_margin_px = METER_WIDTH * (mediocre_margin/100) + good_margin_px
 	sweetspot.position.x = METER_WIDTH * (target/100);
 	sweetspot.set_margin_indicators(perfect_margin_px, good_margin_px, mediocre_margin_px)
-
+	sweetspot.visible = enabled
