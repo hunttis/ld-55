@@ -16,9 +16,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -158.5
-offset_top = -85.0
+offset_top = -155.0
 offset_right = 158.5
-offset_bottom = 85.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -26,6 +26,7 @@ alignment = 1
 [node name="FeelsText" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 60
 text = "Oh noes!"
 fit_content = true
@@ -35,14 +36,18 @@ autowrap_mode = 0
 [node name="GameOverText" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 2
 theme_override_font_sizes/normal_font_size = 60
-text = "Game over"
+text = "Game over
+
+"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="StartOverButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 text = "Start over"
 script = ExtResource("1_bgjl2")
