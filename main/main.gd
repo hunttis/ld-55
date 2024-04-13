@@ -28,3 +28,5 @@ func _on_play_pressed():
 	current_scene.remove_child(main_menu)
 	current_scene.add_child(game)
 	print("play")	
+	
+

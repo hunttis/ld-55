@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://kr3rsjk1y0nj" path="res://Assets/Scenes/ButtonManager/ButtonManager.tscn" id="1_t2fp3"]
 [ext_resource type="PackedScene" uid="uid://cowyyuu3qo7kw" path="res://Assets/Scenes/MeterManager/meter_manager.tscn" id="2_c880x"]
 [ext_resource type="PackedScene" uid="uid://dq5ywqsn8cjrh" path="res://Assets/Scenes/BattleScene/BattleScene.tscn" id="3_ti6fx"]
-[ext_resource type="PackedScene" uid="uid://cjngnuntq4518" path="res://Assets/Scenes/DebugScene/DebugScene.tscn" id="3_16u4j"]
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -28,6 +27,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="BattleScene" parent="VBoxContainer/BattleFieldContainer" instance=ExtResource("3_ti6fx")]
+layout_mode = 2
 
 [node name="SummoningAreaContainer" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2

@@ -21,31 +21,37 @@ func _ready():
 	meter.max_value = 100
 	meter.value = 0
 	meter.step = 0.01
-	perfect_margin_px = METER_WIDTH * (perfect_margin/100)
-	good_margin_px = METER_WIDTH * (good_margin/100) + perfect_margin_px
-	mediocre_margin_px = METER_WIDTH * (mediocre_margin/100) + good_margin_px
 	Signals.button_released.connect(_on_button_released)
 
-	sweetspot.position.x = METER_WIDTH * (target/100);
-	sweetspot.set_margin_indicators(perfect_margin_px, good_margin_px, mediocre_margin_px)
-
+	Signals.reset_summoner.connect(_on_reset_summoner)
 
 
 func _on_button_released(button_type):
 	if button_type == meter_type:
 		var difference = abs(target - meter.value)
-		print(difference, " ", perfect_margin)
+		print(target, " ",difference, " ", perfect_margin)
 		if difference < perfect_margin:
 			print("PERFECT HIT")
-		elif difference < good_margin:
+		elif difference < perfect_margin+good_margin:
 			print("GOOD HIT")
-		elif difference < mediocre_margin:
+		elif difference < perfect_margin+good_margin+mediocre_margin:
 			print("MEDIOCRE HIT")
 		else:
 			print("MISS")
-		Global.mana[meter_type] = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	meter.value = Global.mana[meter_type]*10*speed
 	
+func _on_reset_summoner():
+	target = randf_range(30,70)
+	perfect_margin = randf_range(2,5)
+	good_margin = randf_range(5,15)
+	mediocre_margin  = min(randf_range(10,100),100)
+	print(meter_type, " ", target, " ",perfect_margin, " ", good_margin, " ", mediocre_margin)
+	perfect_margin_px = METER_WIDTH * (perfect_margin/100)
+	good_margin_px = METER_WIDTH * (good_margin/100) + perfect_margin_px
+	mediocre_margin_px = METER_WIDTH * (mediocre_margin/100) + good_margin_px
+	sweetspot.position.x = METER_WIDTH * (target/100);
+	sweetspot.set_margin_indicators(perfect_margin_px, good_margin_px, mediocre_margin_px)
+
