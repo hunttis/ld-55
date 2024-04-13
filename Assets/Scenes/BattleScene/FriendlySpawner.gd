@@ -13,6 +13,7 @@ var friendly_count = 0
 
 func _ready():
 	Signals.send_to_battlefield.connect(_on_summon)
+	Signals.battle_resolved.connect(_on_battle_end)
 
 
 func _on_summon(summon: Global.SUMMON):
@@ -22,3 +23,6 @@ func _on_summon(summon: Global.SUMMON):
 	friendly.set_type(summon_type[summon])
 	friendly.position.x = friendly.position.x + friendly_count * (16 + 32)
 	Signals.arrived_to_battlefield.emit()
+
+func _on_battle_end():
+	friendly_count = 0

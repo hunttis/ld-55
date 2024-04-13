@@ -38,4 +38,5 @@ func _on_timer_timeout():
 
 func _on_wave_reset(amount: int):
 	wave_size = amount
+	enemy_count = 0
 	timer.start()
