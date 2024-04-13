@@ -1,5 +1,5 @@
 class_name Enemy
-extends CharacterBody2D
+extends Area2D
 
 
 const SPEED = 300.0
@@ -8,13 +8,11 @@ const SPEED = 300.0
 var allow_move = false
 
 func _ready():
-	Signals.battle_start.connect(_on_battle_start)
+	Signals.battle_process.connect(_on_battle_process)
 
 func _physics_process(_delta):
 	if allow_move:
-		velocity.x = direction * SPEED
+		position.x += direction * SPEED * _delta
 
-	move_and_slide()
-
-func _on_battle_start():
+func _on_battle_process():
 	allow_move = true

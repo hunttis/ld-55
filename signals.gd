@@ -21,3 +21,8 @@ signal battle_resolved
 signal spawn_start
 
 signal summon(summon: Global.SUMMON)
+
+signal battle_init(wave_size: int)
+signal battle_process
+signal enemy_spawned
+signal enemy_destroyed

@@ -6,11 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy6eh"]
 size = Vector2(32, 32)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_d63us")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.298039, 0.298039, 0.298039, 1)
 texture = ExtResource("1_84qks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
