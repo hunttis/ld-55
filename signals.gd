@@ -21,7 +21,8 @@ signal battle_resolved
 signal spawn_start
 
 signal summoning_complete(summon: Global.SUMMON)
-signal summon(summon: Global.SUMMON)
+signal send_to_battlefield(summon: Global.SUMMON)
+signal arrived_to_battlefield()
 
 signal battle_init(wave_size: int)
 signal battle_process

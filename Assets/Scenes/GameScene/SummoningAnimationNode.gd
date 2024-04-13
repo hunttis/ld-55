@@ -2,8 +2,6 @@ extends Node2D
 
 @onready var animation: AnimatedSprite2D = $SummonAnimation
 
-const MAX_MOB_SIZE = 5
-var mob_size = 0
 var summoned_unit = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -24,11 +22,6 @@ func _on_summoning_complete(summoned):
 	animation.play("default")
 
 func _on_animation_finished():
-	mob_size +=1
 	Signals.reset_all_taps.emit()
-	Signals.summon.emit(summoned_unit)
+	Signals.send_to_battlefield.emit(summoned_unit)
 	animation.hide()
-	if mob_size>=MAX_MOB_SIZE:
-		print("send mob")
-		mob_size=0
-		Signals.battle_start.emit()

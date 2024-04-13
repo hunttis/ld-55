@@ -12,7 +12,7 @@ var friendly_scene: PackedScene = preload("res://Assets/Scenes/Friendly/Friendly
 var friendly_count = 0
 
 func _ready():
-	Signals.summon.connect(_on_summon)
+	Signals.send_to_battlefield.connect(_on_summon)
 
 
 func _on_summon(summon: Global.SUMMON):
@@ -21,3 +21,4 @@ func _on_summon(summon: Global.SUMMON):
 	friendly_count += 1
 	friendly.set_type(summon_type[summon])
 	friendly.position.x = friendly.position.x + friendly_count * (16 + 32)
+	Signals.arrived_to_battlefield.emit()

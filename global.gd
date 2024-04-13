@@ -42,15 +42,10 @@ var quit_game_action = "quit_game_action"
 
 var max_difficulty = 4
 var enabled_buttons = STRAWS.ONE;
-var life_points = 10
-var score = 0
-var hi_score = 0
 
 
 func _ready():
 	Signals.reset_all_taps.connect(_on_reset_summoner_pressed)
-	Signals.get_hurt.connect(_get_hurt)
-	Signals.add_score.connect(_add_score)
 	Signals.enable_straws.connect(_set_straw_count)
 
 func _on_reset_summoner_pressed():
@@ -62,15 +57,6 @@ func _on_reset_summoner_pressed():
 	}
 	print("reset summoner global")	
 	
-	
-func _get_hurt():
-	life_points -= 1
-	if life_points <= 0:
-		life_points = 10
-		Signals.game_over.emit()
-
-func _add_score(amount):
-	score += amount
 
 func _set_straw_count(STRAWS):
 	print("Enabling buttons: ", STRAWS)
