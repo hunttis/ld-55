@@ -55,10 +55,6 @@ func _on_reset_summoner_pressed():
 	}
 	print("reset summoner global")	
 	
-func _process(_delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		Signals.reset_all_taps.emit()
-
 	
 func _get_hurt():
 	life_points -= 1

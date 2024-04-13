@@ -1,9 +1,110 @@
-[gd_scene load_steps=5 format=3 uid="uid://drtxpjqy55l5k"]
+[gd_scene load_steps=21 format=3 uid="uid://drtxpjqy55l5k"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/GameScene/GameScene.gd" id="1_1jr0o"]
 [ext_resource type="PackedScene" uid="uid://kr3rsjk1y0nj" path="res://Assets/Scenes/ButtonManager/ButtonManager.tscn" id="1_t2fp3"]
 [ext_resource type="PackedScene" uid="uid://cowyyuu3qo7kw" path="res://Assets/Scenes/MeterManager/meter_manager.tscn" id="2_c880x"]
 [ext_resource type="PackedScene" uid="uid://dq5ywqsn8cjrh" path="res://Assets/Scenes/BattleScene/BattleScene.tscn" id="3_ti6fx"]
+[ext_resource type="Script" path="res://Assets/Scenes/GameScene/SummoningAnimationNode.gd" id="5_24p2s"]
+[ext_resource type="Texture2D" uid="uid://clm855tpit24e" path="res://Assets/Images/Necromancer_creativekind-Sheet.png" id="5_yybis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlegq"]
+atlas = ExtResource("5_yybis")
+region = Rect2(10, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj3n2"]
+atlas = ExtResource("5_yybis")
+region = Rect2(170, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgw3s"]
+atlas = ExtResource("5_yybis")
+region = Rect2(330, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gejdb"]
+atlas = ExtResource("5_yybis")
+region = Rect2(490, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uac5i"]
+atlas = ExtResource("5_yybis")
+region = Rect2(650, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udbku"]
+atlas = ExtResource("5_yybis")
+region = Rect2(810, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w51ss"]
+atlas = ExtResource("5_yybis")
+region = Rect2(970, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm6ot"]
+atlas = ExtResource("5_yybis")
+region = Rect2(1130, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mijvu"]
+atlas = ExtResource("5_yybis")
+region = Rect2(1290, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttuak"]
+atlas = ExtResource("5_yybis")
+region = Rect2(1450, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqf0s"]
+atlas = ExtResource("5_yybis")
+region = Rect2(1610, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jbr5"]
+atlas = ExtResource("5_yybis")
+region = Rect2(1770, 256, 150, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rthh8"]
+atlas = ExtResource("5_yybis")
+region = Rect2(1930, 256, 150, 127)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ld7et"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlegq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj3n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgw3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gejdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uac5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udbku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w51ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm6ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mijvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttuak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqf0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jbr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rthh8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -43,3 +144,15 @@ position = Vector2(1, -182)
 
 [node name="MeterManager" parent="VBoxContainer/SummoningAreaContainer" instance=ExtResource("2_c880x")]
 position = Vector2(1, -181)
+
+[node name="SummoningAnimationNode" type="Node2D" parent="."]
+position = Vector2(641, 381)
+script = ExtResource("5_24p2s")
+
+[node name="SummonAnimation" type="AnimatedSprite2D" parent="SummoningAnimationNode"]
+sprite_frames = SubResource("SpriteFrames_ld7et")
+frame = 12
+frame_progress = 1.0
+metadata/_edit_lock_ = true
+
+[connection signal="animation_finished" from="SummoningAnimationNode/SummonAnimation" to="SummoningAnimationNode" method="_on_animation_finished"]

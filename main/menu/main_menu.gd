@@ -6,4 +6,5 @@ func _ready():
 	$MenuItems/TitleContainer/MenuTitle.text = Global.NAME_OF_THE_GAME
 
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("ui_accept"):
+		Signals.play_button_pressed.emit()
