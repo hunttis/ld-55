@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvbbemiqssea1"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/ElementMeter/ElementalMeter.gd" id="1_v7ok1"]
-[ext_resource type="Texture2D" uid="uid://b3bv5pj7edeby" path="res://Assets/Images/straw-background 3.png" id="2_ad7mw"]
-[ext_resource type="Texture2D" uid="uid://c21wl7l1pe2l8" path="res://Assets/Images/straw-background-toxic.png" id="3_unpaw"]
+[ext_resource type="Texture2D" uid="uid://bdjmqc83bgbi5" path="res://Assets/Images/emptyprogressbar.png" id="2_08r71"]
+[ext_resource type="Texture2D" uid="uid://cpj5gk7i638b" path="res://Assets/Images/progressbar.png" id="3_jqydy"]
 [ext_resource type="Texture2D" uid="uid://c71pbq7bqkrx3" path="res://Assets/Images/margin_indicator.png" id="4_vcn4k"]
 [ext_resource type="Script" path="res://Assets/Scenes/ElementMeter/HitAreaIndicator.gd" id="5_xci0i"]
 
@@ -10,16 +10,16 @@
 script = ExtResource("1_v7ok1")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
-offset_top = 1.0
 offset_right = 300.0
-offset_bottom = 25.0
+offset_bottom = 32.0
 nine_patch_stretch = true
 stretch_margin_left = 8
 stretch_margin_top = 8
 stretch_margin_right = 8
 stretch_margin_bottom = 8
-texture_under = ExtResource("2_ad7mw")
-texture_progress = ExtResource("3_unpaw")
+texture_under = ExtResource("2_08r71")
+texture_progress = ExtResource("3_jqydy")
+metadata/_edit_lock_ = true
 
 [node name="HitAreaIndicator" type="Node2D" parent="."]
 self_modulate = Color(0.156863, 0.529412, 0, 1)
@@ -29,47 +29,38 @@ metadata/_edit_lock_ = true
 
 [node name="PerfectStart" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.0156863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="PerfectEnd" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.0156863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="GoodStart" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.956863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="GoodEnd" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.956863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="MediocreStart" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.917647, 0, 0.211765, 1)
-position = Vector2(0, -3)
-scale = Vector2(0.5, 0.35)
+scale = Vector2(0.5, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="MediocreEnd" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.917647, 0, 0.211765, 1)
-position = Vector2(0, -3)
-scale = Vector2(0.5, 0.35)
+scale = Vector2(0.5, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="DebugLabel" type="Label" parent="."]
+visible = false
 offset_left = 70.0
 offset_top = 35.0
 offset_right = 110.0
