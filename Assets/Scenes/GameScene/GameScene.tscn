@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://drtxpjqy55l5k"]
+[gd_scene load_steps=5 format=3 uid="uid://drtxpjqy55l5k"]
 
+[ext_resource type="Script" path="res://Assets/Scenes/GameScene/GameScene.gd" id="1_1jr0o"]
 [ext_resource type="PackedScene" uid="uid://kr3rsjk1y0nj" path="res://Assets/Scenes/ButtonManager/ButtonManager.tscn" id="1_t2fp3"]
 [ext_resource type="PackedScene" uid="uid://cowyyuu3qo7kw" path="res://Assets/Scenes/MeterManager/meter_manager.tscn" id="2_c880x"]
 [ext_resource type="PackedScene" uid="uid://dq5ywqsn8cjrh" path="res://Assets/Scenes/BattleScene/BattleScene.tscn" id="3_ti6fx"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1jr0o")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
