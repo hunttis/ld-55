@@ -2,7 +2,7 @@ extends Node2D
 
 
 @export var target: float = 50
-@export var speed: float = 1
+@export var speed: float = 3
 @export var perfect_margin: float = 5
 @export var good_margin: float = 10
 @export var mediocre_margin: float = 10
