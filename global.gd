@@ -25,3 +25,4 @@ var ElementActions = {
 }
 
 var max_difficulty = 4
+var enabled_buttons = 1;
