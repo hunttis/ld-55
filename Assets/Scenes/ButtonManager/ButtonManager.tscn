@@ -5,16 +5,16 @@
 [node name="ButtonManager" type="Node2D"]
 
 [node name="AirButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(50, 50)
+position = Vector2(1220, 531)
 
 [node name="EarthButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(120, 50)
+position = Vector2(1058, 609)
 button_type = 1
 
 [node name="FireButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(190, 50)
+position = Vector2(81, 493)
 button_type = 2
 
 [node name="WaterButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(260, 50)
+position = Vector2(238, 592)
 button_type = 3
