@@ -16,19 +16,20 @@ const METER_WIDTH = 300
 var perfect_margin_px: float
 var good_margin_px: float
 var mediocre_margin_px: float
+var can_be_used: bool = true
 
 func _ready():
 	meter.max_value = 100
 	meter.value = 0
 	meter.step = 0.01
 	Signals.button_released.connect(_on_button_released)
-
 	Signals.reset_summoner.connect(_on_reset_summoner)
 
 
 func _on_button_released(button_type):
 	if button_type == meter_type:
 		var difference = abs(target - meter.value)
+		can_be_used = false
 		print(target, " ",difference, " ", perfect_margin)
 		if difference < perfect_margin:
 			print("PERFECT HIT")
@@ -41,7 +42,8 @@ func _on_button_released(button_type):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	meter.value = Global.mana[meter_type]*10*speed
+	if can_be_used:
+		meter.value = Global.mana[meter_type]*10*speed
 	
 func _on_reset_summoner():
 	target = randf_range(30,70)
