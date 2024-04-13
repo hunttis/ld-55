@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cowyyuu3qo7kw"]
+
+[ext_resource type="PackedScene" uid="uid://dvbbemiqssea1" path="res://Assets/Scenes/ElementMeter/ElementalMeter.tscn" id="1_sno7e"]
+
+[node name="MeterManager" type="Node2D"]
+position = Vector2(0, 1)
+
+[node name="FireMeter" parent="." instance=ExtResource("1_sno7e")]
+position = Vector2(192, 129)
+meter_type = 2
+
+[node name="AirMeter" parent="." instance=ExtResource("1_sno7e")]
+position = Vector2(190, 239)
+
+[node name="EarthMeter" parent="." instance=ExtResource("1_sno7e")]
+position = Vector2(191, 187)
+meter_type = 1
+
+[node name="WaterMeter" parent="." instance=ExtResource("1_sno7e")]
+meter_type = 3
