@@ -8,7 +8,6 @@
 [node name="ElementalMeter" type="Node2D"]
 position = Vector2(191, 79)
 script = ExtResource("1_v7ok1")
-target = 25.0
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 offset_top = -1.0

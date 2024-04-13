@@ -7,15 +7,15 @@ position = Vector2(0, 1)
 
 [node name="FireMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(171, 391)
-max_mana = 10.0
 meter_type = 2
 
 [node name="AirMeter" parent="." instance=ExtResource("1_sno7e")]
-position = Vector2(871, 397)
-max_mana = 0.1
+position = Vector2(1117, 405)
+scale = Vector2(-1, 1)
 
 [node name="EarthMeter" parent="." instance=ExtResource("1_sno7e")]
-position = Vector2(738, 510)
+position = Vector2(1040, 503)
+scale = Vector2(-1, 1)
 meter_type = 1
 
 [node name="WaterMeter" parent="." instance=ExtResource("1_sno7e")]
