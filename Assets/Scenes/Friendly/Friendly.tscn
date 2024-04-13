@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://clldhxmxmv2l4"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Friendly/Friendly.gd" id="1_fo0kx"]
+[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="2_xkjsi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy6eh"]
+size = Vector2(32, 32)
+
+[node name="Friendly" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_fo0kx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xkjsi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yy6eh")

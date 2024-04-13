@@ -14,3 +14,9 @@ signal get_hurt
 signal add_score(amount)
 
 signal game_over
+
+signal battle_start
+signal battle_resolved
+signal spawn_start
+
+signal summon(summon: Global.SUMMON)

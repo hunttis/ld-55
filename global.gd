@@ -10,6 +10,14 @@ enum ELEMENT {
 	WATER
 }
 
+enum SUMMON {
+	FRIENDLY1,
+	FRIENDLY2,
+	FRIENDLY3,
+	FRIENDLY4,
+}
+
+
 var mana = {
 	ELEMENT.AIR: 0,
 	ELEMENT.EARTH: 0,
@@ -60,3 +68,4 @@ func _get_hurt():
 
 func _add_score(amount):
 	score += amount
+
