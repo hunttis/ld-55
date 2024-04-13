@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://kr3rsjk1y0nj"]
+
+[ext_resource type="PackedScene" uid="uid://cdhw5isk3fc1j" path="res://Assets/Scenes/ElementalButton/ElementalButtonScene.tscn" id="1_vibg4"]
+
+[node name="ButtonManager" type="Node2D"]
+
+[node name="AirButton" parent="." instance=ExtResource("1_vibg4")]
+position = Vector2(50, 50)
+
+[node name="EarthButton" parent="." instance=ExtResource("1_vibg4")]
+position = Vector2(120, 50)
+button_type = 1
+
+[node name="FireButton" parent="." instance=ExtResource("1_vibg4")]
+position = Vector2(190, 50)
+button_type = 2
+
+[node name="WaterButton" parent="." instance=ExtResource("1_vibg4")]
+position = Vector2(260, 50)
+button_type = 3
