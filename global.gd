@@ -26,9 +26,15 @@ var ElementActions = {
 
 var max_difficulty = 4
 var enabled_buttons = 1;
+var life_points = 10
+var score = 0
+var hi_score = 0
+
 
 func _ready():
 	Signals.reset_summoner.connect(_on_reset_summoner_pressed)
+	Signals.get_hurt.connect(_get_hurt)
+	Signals.add_score.connect(_add_score)
 
 func _on_reset_summoner_pressed():
 	mana = {
@@ -42,3 +48,13 @@ func _on_reset_summoner_pressed():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		Signals.reset_summoner.emit()
+
+	
+func _get_hurt():
+	life_points -= 1
+	if life_points <= 0:
+		life_points = 10
+		Signals.game_over.emit()
+
+func _add_score(amount):
+	score += amount
