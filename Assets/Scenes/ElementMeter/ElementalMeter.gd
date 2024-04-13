@@ -23,7 +23,7 @@ func _ready():
 	meter.value = 0
 	meter.step = 0.01
 	Signals.button_released.connect(_on_button_released)
-	Signals.reset_summoner.connect(_on_reset_summoner)
+	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
 
 func _on_button_released(button_type):
@@ -45,7 +45,7 @@ func _process(_delta):
 	if can_be_used:
 		meter.value = Global.mana[meter_type]*10*speed
 	
-func _on_reset_summoner():
+func _on_reset_all_taps():
 	can_be_used = true
 	meter.value = 0
 	target = randf_range(30,70)

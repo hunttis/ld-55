@@ -34,7 +34,7 @@ var hi_score = 0
 
 
 func _ready():
-	Signals.reset_summoner.connect(_on_reset_summoner_pressed)
+	Signals.reset_all_taps.connect(_on_reset_summoner_pressed)
 	Signals.get_hurt.connect(_get_hurt)
 	Signals.add_score.connect(_add_score)
 
@@ -49,7 +49,7 @@ func _on_reset_summoner_pressed():
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		Signals.reset_summoner.emit()
+		Signals.reset_all_taps.emit()
 
 	
 func _get_hurt():
