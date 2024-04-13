@@ -71,9 +71,4 @@ script = ExtResource("4_8lr4h")
 [node name="RallyPoint" type="Node2D" parent="FriendlySpawner"]
 position = Vector2(78, 85)
 
-[node name="FriendlyTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
 [connection signal="body_entered" from="Home" to="." method="_on_home_body_entered"]
-[connection signal="timeout" from="FriendlyTimer" to="." method="_on_friendly_timer_timeout"]
