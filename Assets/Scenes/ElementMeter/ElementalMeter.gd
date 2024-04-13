@@ -24,6 +24,9 @@ func _ready():
 	meter.step = 0.01
 	Signals.button_released.connect(_on_button_released)
 	Signals.reset_all_taps.connect(_on_reset_all_taps)
+	var sb = StyleBoxFlat.new()
+	meter.add_theme_stylebox_override("fill", sb)
+	sb.bg_color = Color("ff0000")
 
 
 func _on_button_released(button_type):

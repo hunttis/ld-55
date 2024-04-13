@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cowyyuu3qo7kw"]
+[gd_scene load_steps=3 format=3 uid="uid://cowyyuu3qo7kw"]
 
 [ext_resource type="PackedScene" uid="uid://dvbbemiqssea1" path="res://Assets/Scenes/ElementMeter/ElementalMeter.tscn" id="1_sno7e"]
+[ext_resource type="PackedScene" uid="uid://ysxfxlp48t71" path="res://Assets/Scenes/SummoningCan.tscn" id="2_p7bah"]
 
 [node name="MeterManager" type="Node2D"]
 position = Vector2(0, 1)
 
 [node name="FireMeter" parent="." instance=ExtResource("1_sno7e")]
-position = Vector2(171, 391)
+position = Vector2(173, 412)
 meter_type = 2
 
 [node name="AirMeter" parent="." instance=ExtResource("1_sno7e")]
@@ -21,3 +22,6 @@ meter_type = 1
 [node name="WaterMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(284, 515)
 meter_type = 3
+
+[node name="SummoningCan" parent="." instance=ExtResource("2_p7bah")]
+scale = Vector2(0.38, 0.38)

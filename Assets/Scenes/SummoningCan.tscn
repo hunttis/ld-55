@@ -6,7 +6,6 @@
 
 [node name="SummoningCan" type="Node2D"]
 position = Vector2(400, 277)
-scale = Vector2(0.38, 0.38)
 
 [node name="Can" type="Sprite2D" parent="."]
 position = Vector2(650, 457)
@@ -18,12 +17,12 @@ scale = Vector2(1.23917, 1.23917)
 texture = ExtResource("2_dsiu1")
 
 [node name="Straw" type="Sprite2D" parent="."]
-position = Vector2(534.21, 671.053)
+position = Vector2(539.474, 676.316)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_smgfp")
 
 [node name="Straw2" type="Sprite2D" parent="."]
-position = Vector2(481.579, 763.158)
+position = Vector2(481.579, 747.369)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_smgfp")
 
