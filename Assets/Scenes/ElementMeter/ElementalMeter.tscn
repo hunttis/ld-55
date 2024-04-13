@@ -14,6 +14,7 @@ target = 25.0
 offset_top = -1.0
 offset_right = 300.0
 offset_bottom = 31.0
+step = 5.0
 value = 30.0
 nine_patch_stretch = true
 stretch_margin_left = 8
