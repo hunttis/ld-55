@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cowyyuu3qo7kw"]
 
 [ext_resource type="PackedScene" uid="uid://dvbbemiqssea1" path="res://Assets/Scenes/ElementMeter/ElementalMeter.tscn" id="1_sno7e"]
-[ext_resource type="PackedScene" uid="uid://ysxfxlp48t71" path="res://Assets/Scenes/SummoningCan.tscn" id="2_p7bah"]
+[ext_resource type="PackedScene" path="res://Assets/Scenes/SummoningCan.tscn" id="2_p7bah"]
 
 [node name="MeterManager" type="Node2D"]
 position = Vector2(0, 1)

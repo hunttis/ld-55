@@ -4,7 +4,6 @@ signal play_button_pressed
 signal sounds_toggled
 
 signal reset_all_taps
-signal friendly_summon
 
 signal button_released(button_type)
 signal button_pressed(button_type)

@@ -17,6 +17,14 @@ var perfect_margin_px: float
 var good_margin_px: float
 var mediocre_margin_px: float
 var can_be_used: bool = true
+var result = MISS
+
+enum {
+	PERFECT,
+	GOOD,
+	MEDIOCRE,
+	MISS
+}
 
 func _ready():
 	meter.max_value = 100
@@ -35,10 +43,13 @@ func _on_button_released(button_type):
 		can_be_used = false
 		print(target, " ",difference, " ", perfect_margin)
 		if difference < perfect_margin:
+			result = PERFECT
 			print("PERFECT HIT")
 		elif difference < perfect_margin+good_margin:
+			result = GOOD
 			print("GOOD HIT")
 		elif difference < perfect_margin+good_margin+mediocre_margin:
+			result = MEDIOCRE
 			print("MEDIOCRE HIT")
 		else:
 			print("MISS")

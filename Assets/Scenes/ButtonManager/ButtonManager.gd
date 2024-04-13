@@ -15,5 +15,7 @@ func _process(delta):
 
 func _on_button_released(button_type):
 	print( air.released, earth.released,fire.released, water.released)
+	var summoned = 0
 	if(air.released&& earth.released&&fire.released&& water.released):
-		Signals.friendly_summon.emit()
+		Signals.summon.emit(summoned)
+		Signals.reset_all_taps.emit()
