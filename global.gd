@@ -53,7 +53,7 @@ func _on_reset_summoner_pressed():
 		ELEMENT.FIRE: 0,
 		ELEMENT.WATER: 0
 	}
-	print("reset sumoner global")	
+	print("reset summoner global")	
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):

@@ -10,6 +10,7 @@ extends Node2D
 
 @onready var meter: TextureProgressBar = $ProgressBar
 @onready var sweetspot: Node2D = $HitAreaIndicator
+@onready var debug_label = $DebugLabel
 
 const METER_WIDTH = 300
 
@@ -31,7 +32,6 @@ func _ready():
 	meter.value = 0
 	meter.step = 0.01
 	Signals.button_released.connect(_on_button_released)
-	Signals.reset_all_taps.connect(_on_reset_all_taps)
 	var sb = StyleBoxFlat.new()
 	meter.add_theme_stylebox_override("fill", sb)
 	sb.bg_color = Color("ff0000")
@@ -41,7 +41,7 @@ func _on_button_released(button_type):
 	if button_type == meter_type:
 		var difference = abs(target - meter.value)
 		can_be_used = false
-		print(target, " ",difference, " ", perfect_margin)
+		print(name, " ", target, " ",difference, " ", perfect_margin)
 		if difference < perfect_margin:
 			result = PERFECT
 			print("PERFECT HIT")
@@ -56,10 +56,12 @@ func _on_button_released(button_type):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	debug_label.text = str(can_be_used)
 	if can_be_used:
 		meter.value = Global.mana[meter_type]*10*speed
 	
-func _on_reset_all_taps():
+func reset_meter():
+	print("resetted "+name)
 	can_be_used = true
 	meter.value = 0
 	target = randf_range(30,70)

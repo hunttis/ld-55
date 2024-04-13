@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var sprite: AnimatedSprite2D= $ASprite
-
+@onready var debug_label = $DebugLabel
 @export var button_type: Global.ELEMENT 
 
 var is_pressed = false
@@ -13,6 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	debug_label.text = str(is_pressed)+" " + str(released)
 	if Input.is_action_just_pressed(Global.ElementActions[button_type]):
 		is_pressed = true
 		sprite.play("pressed")
@@ -23,6 +24,7 @@ func _process(delta):
 		released = true
 		sprite.play("default")
 		Signals.button_released.emit(button_type)
+		Signals.button_released.emit()
 
 	if is_pressed:
 		Global.mana[button_type] += delta

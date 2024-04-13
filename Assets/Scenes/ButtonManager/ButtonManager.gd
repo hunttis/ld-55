@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_button_released(button_type):
+func _on_button_released():
 	print( air.released, earth.released,fire.released, water.released)
 	var summoned = 0
 	if(air.released&& earth.released&&fire.released&& water.released):
