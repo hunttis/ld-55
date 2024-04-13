@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://kr3rsjk1y0nj"]
+[gd_scene load_steps=3 format=3 uid="uid://kr3rsjk1y0nj"]
 
+[ext_resource type="Script" path="res://Assets/Scenes/ButtonManager/ButtonManager.gd" id="1_p43tg"]
 [ext_resource type="PackedScene" uid="uid://cdhw5isk3fc1j" path="res://Assets/Scenes/ElementalButton/ElementalButtonScene.tscn" id="1_vibg4"]
 
 [node name="ButtonManager" type="Node2D"]
+script = ExtResource("1_p43tg")
 
 [node name="AirButton" parent="." instance=ExtResource("1_vibg4")]
 position = Vector2(1220, 531)
