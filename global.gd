@@ -5,19 +5,23 @@ signal sounds_toggled
 
 const NAME_OF_THE_GAME = "The Name of The Game"
 
-enum {
-	AIR_MANA,
-	EARTH_MANA,
-	FIRE_MANA,
-	WATER_MANA
+enum ELEMENT {
+	AIR,
+	EARTH,
+	FIRE,
+	WATER
 }
 
 var mana = {
-	AIR_MANA: 0,
-	EARTH_MANA: 0,
-	FIRE_MANA: 0,
-	WATER_MANA: 0
+	ELEMENT.AIR: 0,
+	ELEMENT.EARTH: 0,
+	ELEMENT.FIRE: 0,
+	ELEMENT.WATER: 0
 }
 
-
-
+var ElementActions = {
+	ELEMENT.AIR: "air_action",
+	ELEMENT.EARTH: "earth_action",
+	ELEMENT.FIRE: "fire_action",
+	ELEMENT.WATER: "water_action"
+}
