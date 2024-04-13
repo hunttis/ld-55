@@ -47,6 +47,7 @@ func _process(_delta):
 	
 func _on_reset_summoner():
 	can_be_used = true
+	meter.value = 0
 	target = randf_range(30,70)
 	perfect_margin = randf_range(1,3)
 	good_margin = randf_range(2,10)
