@@ -4,7 +4,7 @@ var main_menu_scene: PackedScene = load("res://main/menu/main_menu.tscn")
 
 var main_menu
 
-@onready var current_scene = $CurrentScene
+@onready var current_scene: Node2D  = $CurrentScene
 
 func _init():
 	main_menu = main_menu_scene.instantiate()
@@ -22,4 +22,5 @@ func _on_sounds_toggled(toggled_on):
 	AudioServer.set_bus_mute(bus_idx, !toggled_on)
 	
 func _on_play_pressed():
+	current_scene.remove_child(main_menu)
 	print("play")	

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://drtxpjqy55l5k"]
+
+[ext_resource type="PackedScene" uid="uid://kr3rsjk1y0nj" path="res://Assets/Scenes/ButtonManager/ButtonManager.tscn" id="1_t2fp3"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 255.0
+offset_top = 247.0
+offset_right = 552.0
+offset_bottom = 334.0
+text = "GAMESCENE"
+
+[node name="ButtonManager" parent="." instance=ExtResource("1_t2fp3")]
