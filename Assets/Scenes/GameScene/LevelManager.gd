@@ -13,6 +13,8 @@ func _ready():
 	Signals.total_fup.connect(_on_arrived_to_battlefield)
 	Signals.get_hurt.connect(_get_hurt)
 	Signals.add_score.connect(_add_score)
+	Signals.battle_resolved.connect(_on_battle_resolved)
+	
 	Signals.battle_init.emit(5)
 
 func _get_hurt():
@@ -31,10 +33,13 @@ func _process(delta):
 
 func _on_arrived_to_battlefield():
 	mob_size +=1
-	print("ADDING MOB SIZE")
+	print("ADDING MOB SIZE ", mob_size)
 	if mob_size>=MAX_MOB_SIZE:
 		print("send mob")
 		mob_size=0
 		Signals.battle_start.emit()
+		
+func _on_battle_resolved():
+	Signals.battle_init.emit(5)
 
 	

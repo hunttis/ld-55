@@ -42,6 +42,7 @@ func _ready():
 
 func _on_button_released(button_type):
 	if button_type == meter_type:
+		print("FOO ",name," ",  result)
 		var difference = abs(target - meter.value)
 		can_be_used = false
 		print(name, " ", target, " ",difference, " ", perfect_margin)
@@ -56,7 +57,9 @@ func _on_button_released(button_type):
 			print("MEDIOCRE HIT")
 		else:
 			print("MISS")
+			result = MISS
 		Global.hits.append(result)
+		print(Global.hits)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -69,6 +72,7 @@ func _process(_delta):
 	
 func reset_meter():
 	print("resetted "+name)
+	result = MISS
 	enabled = Global.enabled_buttons > meter_type
 
 	can_be_used = true
