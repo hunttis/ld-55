@@ -23,3 +23,5 @@ var ElementActions = {
 	ELEMENT.FIRE: "fire_action",
 	ELEMENT.WATER: "water_action"
 }
+
+var max_difficulty = 4
