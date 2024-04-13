@@ -15,6 +15,7 @@ signal get_hurt
 signal add_score(amount)
 
 signal game_over
+signal to_main_menu
 
 signal battle_start
 signal battle_resolved

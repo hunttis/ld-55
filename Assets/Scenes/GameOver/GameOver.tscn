@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://qviibiybwawx"]
+[gd_scene load_steps=2 format=3 uid="uid://qviibiybwawx"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/GameOver/StartOver.gd" id="1_bgjl2"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -38,3 +40,9 @@ text = "Game over"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="StartOverButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Start over"
+script = ExtResource("1_bgjl2")
