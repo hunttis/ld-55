@@ -46,6 +46,7 @@ func _process(_delta):
 		meter.value = Global.mana[meter_type]*10*speed
 	
 func _on_reset_summoner():
+	can_be_used = true
 	target = randf_range(30,70)
 	perfect_margin = randf_range(1,3)
 	good_margin = randf_range(2,10)
