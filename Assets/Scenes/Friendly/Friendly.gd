@@ -23,7 +23,7 @@ func _on_battle_process():
 	allow_move = true
 
 func set_type(color: Color):
-	sprite.self_modulate(color)
+	sprite.self_modulate = color
 
 func _on_area_entered(area:Area2D):
 	if area is Enemy:
