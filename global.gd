@@ -24,6 +24,8 @@ var ElementActions = {
 	ELEMENT.WATER: "water_action"
 }
 
+var quit_game_action = "quit_game_action"
+
 var max_difficulty = 4
 var enabled_buttons = 1;
 var life_points = 10
