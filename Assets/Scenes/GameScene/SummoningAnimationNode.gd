@@ -15,6 +15,7 @@ func _process(delta):
 	pass
 	
 func _on_summoning_complete(summoned):
+	Signals.create_vfx.emit(Global.VFX.SMOKE, Vector2(1280.0/2, 720.0/2 + 32))
 	print("hits ",Global.hits)
 	if(sum_array(Global.hits) / Global.hits.size() == 3):
 		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_FAIL)
