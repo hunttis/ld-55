@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://gckare1ldgff" path="res://Assets/Images/enemy-blorb.png" id="2_yymsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy6eh"]
-size = Vector2(32, 32)
+size = Vector2(119, 122)
 
 [node name="Enemy3" type="Area2D"]
+scale = Vector2(0.5, 0.5)
 collision_mask = 2
 script = ExtResource("1_03xxq")
 health = 3
 damage = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_yymsf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_yy6eh")
