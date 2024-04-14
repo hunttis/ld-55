@@ -92,12 +92,12 @@ stream = SubResource("AudioStreamRandomizer_18v2b")
 
 [node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_u1pdi")
-volume_db = -5.0
+volume_db = -15.0
 autoplay = true
 
 [node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_fm7rv")
-volume_db = -10.0
+volume_db = -14.0
 script = ExtResource("15_p073c")
 
 [node name="SlapEffect" type="AudioStreamPlayer2D" parent="."]
