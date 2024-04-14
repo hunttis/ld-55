@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cae1coo6uaetq" path="res://Assets/Sounds/hut02.wav" id="7_gjysl"]
 [ext_resource type="AudioStream" uid="uid://1rnuidnkicem" path="res://Assets/Sounds/hurt04.ogg" id="8_h34yv"]
 [ext_resource type="AudioStream" uid="uid://jwbo5s4nm5uk" path="res://Assets/Sounds/hurt5.wav" id="9_orjai"]
-[ext_resource type="AudioStream" uid="uid://drxwkswpihk0w" path="res://Assets/Sounds/dead01.wav" id="10_x2880"]
+[ext_resource type="AudioStream" uid="uid://colmoxyu3doww" path="res://Assets/Sounds/dead01.wav" id="10_x2880"]
 [ext_resource type="AudioStream" uid="uid://ccraepums5s66" path="res://Assets/Sounds/dead02.wav" id="11_0ad7m"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sfcsd"]
