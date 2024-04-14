@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://k36u4hk6xb1w" path="res://Assets/Sounds/converted/wav/dead01.wav" id="10_p3dcu"]
 [ext_resource type="AudioStream" uid="uid://mtvbxe5f7b2r" path="res://Assets/Sounds/converted/trimmed/pop01.wav" id="11_8iv4h"]
 [ext_resource type="AudioStream" uid="uid://b2ptextxtn7tj" path="res://Assets/Sounds/converted/trimmed/pop02.wav" id="12_eemf7"]
-[ext_resource type="AudioStream" uid="uid://dt3wj2e0ucwn8" path="res://Assets/Sounds/menu_music.mp3" id="13_u1pdi"]
+[ext_resource type="AudioStream" uid="uid://uk4082r5xulm" path="res://Assets/Sounds/menu_music.mp3" id="13_u1pdi"]
 [ext_resource type="AudioStream" uid="uid://blxh2h24h0rrq" path="res://Assets/Sounds/game_music.mp3" id="14_fm7rv"]
 [ext_resource type="Script" path="res://Assets/Scenes/SoundManager/GameMusic.gd" id="15_p073c"]
 
