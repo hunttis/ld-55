@@ -31,3 +31,5 @@ signal enemy_spawned
 signal enemy_destroyed
 
 signal enable_straws(count: Global.STRAWS)
+
+signal play_sound(sound: Global.SOUNDS)

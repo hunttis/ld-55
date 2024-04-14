@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://br2b108g1juek"]
+[gd_scene load_steps=3 format=3 uid="uid://br2b108g1juek"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_upcml"]
+[ext_resource type="Script" path="res://main/SoundManager.gd" id="2_21f0x"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_upcml")
 
 [node name="CurrentScene" type="Node2D" parent="."]
+
+[node name="SoundManager" type="Node" parent="."]
+script = ExtResource("2_21f0x")

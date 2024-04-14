@@ -17,6 +17,10 @@ enum SUMMON {
 	FRIENDLY4,
 }
 
+enum SOUNDS {
+	SUMMON_SUCCESS
+}
+
 enum STRAWS {
 	ONE = 1,
 	TWO = 2,

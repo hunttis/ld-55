@@ -42,10 +42,8 @@ func _ready():
 
 func _on_button_released(button_type):
 	if button_type == meter_type:
-		print("FOO ",name," ",  result)
 		var difference = abs(target - meter.value)
 		can_be_used = false
-		print(name, " ", target, " ",difference, " ", perfect_margin)
 		if difference < perfect_margin:
 			result = PERFECT
 			print("PERFECT HIT")
@@ -59,29 +57,24 @@ func _on_button_released(button_type):
 			print("MISS")
 			result = MISS
 		Global.hits.append(result)
-		print(Global.hits)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if !enabled:
 		return
-
 	debug_label.text = str(can_be_used)
 	if can_be_used:
 		meter.value = Global.mana[meter_type]*10*speed
 	
 func reset_meter():
-	print("resetted "+name)
 	result = MISS
 	enabled = Global.enabled_buttons > meter_type
-
 	can_be_used = true
 	meter.value = 0
 	target = randf_range(30,70)
 	perfect_margin = randf_range(1,3)
 	good_margin = randf_range(2,10)
 	mediocre_margin  = randf_range(10,50-target/2-perfect_margin-good_margin)
-	print(meter_type, " ", target, " ",perfect_margin, " ", good_margin, " ", mediocre_margin)
 	perfect_margin_px = METER_WIDTH * (perfect_margin/100)
 	good_margin_px = METER_WIDTH * (good_margin/100) + perfect_margin_px
 	mediocre_margin_px = METER_WIDTH * (mediocre_margin/100) + good_margin_px
