@@ -9,21 +9,21 @@
 position = Vector2(0, 1)
 script = ExtResource("1_jiqvc")
 
-[node name="FireMeter" parent="." instance=ExtResource("1_sno7e")]
+[node name="OnionMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(243, 487)
 scale = Vector2(0.9, 0.9)
 meter_type = 2
 
-[node name="AirMeter" parent="." instance=ExtResource("1_sno7e")]
+[node name="PearMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(1050, 484)
 scale = Vector2(-0.9, 0.9)
 
-[node name="EarthMeter" parent="." instance=ExtResource("1_sno7e")]
+[node name="AppleMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(1073, 518)
 scale = Vector2(-1, 1)
 meter_type = 1
 
-[node name="WaterMeter" parent="." instance=ExtResource("1_sno7e")]
+[node name="OrangeMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(218, 518)
 meter_type = 3
 
