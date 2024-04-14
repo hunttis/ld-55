@@ -8,9 +8,9 @@ func _ready():
 	Signals.after_sounds_toggled.connect(_on_toggle_sounds)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		Signals.play_button_pressed.emit()
-		
+	if !get_viewport().gui_get_focus_owner():
+		$MenuItems/ItemsContainer/VBoxContainer/Play.grab_focus()
+
 func _on_toggle_sounds():
 	var bus_idx = AudioServer.get_bus_index("Master")
 	var mute = AudioServer.is_bus_mute(bus_idx)
