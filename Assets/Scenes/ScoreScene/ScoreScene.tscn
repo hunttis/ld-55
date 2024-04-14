@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcm2jnlyxogql"]
+[gd_scene load_steps=3 format=3 uid="uid://dcm2jnlyxogql"]
 
+[ext_resource type="Theme" uid="uid://bih60kwqdhvap" path="res://Assets/theme.tres" id="1_j58ht"]
 [ext_resource type="Script" path="res://Assets/Scenes/ScoreScene/ScoreScene.gd" id="1_pfky8"]
 
 [node name="Node2D" type="Node2D"]
@@ -9,6 +10,7 @@ offset_left = 11.0
 offset_top = 667.0
 offset_right = 2011.0
 offset_bottom = 805.0
+theme = ExtResource("1_j58ht")
 text = "HIGH SCORE: 0
 SCORE: 0"
 fit_content = true

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw6fsf6vdmyf2"]
+[gd_scene load_steps=8 format=3 uid="uid://bw6fsf6vdmyf2"]
 
 [ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
 [ext_resource type="Script" path="res://main/menu/Play.gd" id="2_urv4f"]
+[ext_resource type="Theme" uid="uid://bih60kwqdhvap" path="res://Assets/theme.tres" id="2_we3cq"]
+[ext_resource type="FontFile" uid="uid://15spnl5ahuij" path="res://Assets/Fonts/IrishGrover-Regular.ttf" id="3_8o5xo"]
 [ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="5_cv0il"]
 
@@ -11,6 +13,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+theme = ExtResource("2_we3cq")
 script = ExtResource("1_qm4hq")
 
 [node name="MenuItems" type="VBoxContainer" parent="."]
@@ -27,8 +30,10 @@ size_flags_vertical = 3
 
 [node name="MenuTitle" type="RichTextLabel" parent="MenuItems/TitleContainer"]
 layout_mode = 2
+theme = ExtResource("2_we3cq")
+theme_override_fonts/normal_font = ExtResource("3_8o5xo")
 theme_override_font_sizes/normal_font_size = 64
-text = "The Name Of The Game"
+text = "FRUIT PUNCH"
 fit_content = true
 autowrap_mode = 0
 

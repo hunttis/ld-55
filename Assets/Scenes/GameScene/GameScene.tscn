@@ -1,7 +1,8 @@
-[gd_scene load_steps=315 format=3 uid="uid://drtxpjqy55l5k"]
+[gd_scene load_steps=316 format=3 uid="uid://drtxpjqy55l5k"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/GameScene/GameScene.gd" id="1_1jr0o"]
 [ext_resource type="PackedScene" uid="uid://kr3rsjk1y0nj" path="res://Assets/Scenes/ButtonManager/ButtonManager.tscn" id="1_t2fp3"]
+[ext_resource type="Theme" uid="uid://bih60kwqdhvap" path="res://Assets/theme.tres" id="1_vbl1w"]
 [ext_resource type="PackedScene" uid="uid://cowyyuu3qo7kw" path="res://Assets/Scenes/MeterManager/meter_manager.tscn" id="2_c880x"]
 [ext_resource type="Texture2D" uid="uid://c3icomyp8bbf0" path="res://Assets/Images/summoning-bg.jpg" id="2_ikdjk"]
 [ext_resource type="PackedScene" uid="uid://dq5ywqsn8cjrh" path="res://Assets/Scenes/BattleScene/BattleScene.tscn" id="3_ti6fx"]
@@ -2149,6 +2150,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_vbl1w")
 script = ExtResource("1_1jr0o")
 
 [node name="Background" type="Sprite2D" parent="."]
