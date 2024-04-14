@@ -1,7 +1,7 @@
 extends Control
 
 var tutorial_texts = {
-	0: "Welcome to [GAME NAME]!\n\n(press space to continue)",
+	0: "Welcome to FRUIT PUNCH!\n\n(press space to continue)",
 	1: "Help the tiny druids to defend their sanctuary from attacking monsters!\nUse E/F/J/I to control the druids and pour juice to summon allies.\n\n(press space to continue)",
 	2: "Hold E/F/J/I down to start pouring juice to the summoning cap.\nTry to hit the target area!\nYour accuracy determines how strong of an ally you call forth.\n\n(press space to continue)",
 	3: "Hitting closer to the target area also gives you more points\n\n(press space to continue)",
