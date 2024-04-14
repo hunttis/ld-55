@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbsxkj5b2vt6q"
-path="res://.godot/imported/straw-background 2.png-9f0219aa454b79dceb500edab25e08d8.ctex"
+uid="uid://bgrkk3on11uwk"
+path="res://.godot/imported/straw-progress-orange.png-53bf88fcb8df074e6237edac3c6b6c8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/straw-background 2.png"
-dest_files=["res://.godot/imported/straw-background 2.png-9f0219aa454b79dceb500edab25e08d8.ctex"]
+source_file="res://Assets/Images/straw-progress-orange.png"
+dest_files=["res://.godot/imported/straw-progress-orange.png-53bf88fcb8df074e6237edac3c6b6c8b.ctex"]
 
 [params]
 

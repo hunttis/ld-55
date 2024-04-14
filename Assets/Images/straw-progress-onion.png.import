@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c21wl7l1pe2l8"
-path="res://.godot/imported/straw-background-toxic.png-fc61c064b8494d372b52850437369808.ctex"
+uid="uid://dtn0jrylq4pih"
+path="res://.godot/imported/straw-progress-onion.png-674dffdb5ac2a58f562d3c25f3a10f35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/straw-background-toxic.png"
-dest_files=["res://.godot/imported/straw-background-toxic.png-fc61c064b8494d372b52850437369808.ctex"]
+source_file="res://Assets/Images/straw-progress-onion.png"
+dest_files=["res://.godot/imported/straw-progress-onion.png-674dffdb5ac2a58f562d3c25f3a10f35.ctex"]
 
 [params]
 

@@ -14,6 +14,11 @@ extends Node2D
 
 const METER_WIDTH = 300
 
+const TEXTURE_PROGRESS_APPLE = preload("res://Assets/Images/straw-progress-apple.png")
+const TEXTURE_PROGRESS_ONION = preload("res://Assets/Images/straw-progress-onion.png")
+const TEXTURE_PROGRESS_ORANGE = preload("res://Assets/Images/straw-progress-orange.png")
+const TEXTURE_PROGRESS_PEAR = preload("res://Assets/Images/straw-progress-pear.png")
+
 var enabled = false
 
 var perfect_margin_px: float
@@ -30,6 +35,16 @@ enum {
 }
 
 func _ready():
+	match meter_type:
+		Global.ELEMENT.EARTH:
+			meter.texture_progress = TEXTURE_PROGRESS_APPLE
+		Global.ELEMENT.FIRE:
+			meter.texture_progress = TEXTURE_PROGRESS_ONION
+		Global.ELEMENT.WATER:
+			meter.texture_progress = TEXTURE_PROGRESS_ORANGE
+		Global.ELEMENT.AIR:
+			meter.texture_progress = TEXTURE_PROGRESS_PEAR
+
 	enabled = Global.enabled_buttons.has(meter_type)
 	meter.max_value = 100
 	meter.value = 0

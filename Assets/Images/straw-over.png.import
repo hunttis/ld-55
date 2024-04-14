@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpj5gk7i638b"
-path="res://.godot/imported/progressbar.png-62fba9a79e8e12068140b5f30ff9b945.ctex"
+uid="uid://ed8qtf6l4wt8"
+path="res://.godot/imported/straw-over.png-c9db30e44ea0f1da267292db901313b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/progressbar.png"
-dest_files=["res://.godot/imported/progressbar.png-62fba9a79e8e12068140b5f30ff9b945.ctex"]
+source_file="res://Assets/Images/straw-over.png"
+dest_files=["res://.godot/imported/straw-over.png-c9db30e44ea0f1da267292db901313b7.ctex"]
 
 [params]
 
