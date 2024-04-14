@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scenes/ButtonManager/ButtonManager.gd" id="1_p43tg"]
 [ext_resource type="PackedScene" uid="uid://cdhw5isk3fc1j" path="res://Assets/Scenes/ElementalButton/ElementalButtonScene.tscn" id="1_vibg4"]
-[ext_resource type="Texture2D" uid="uid://cmtk88rmvtt2h" path="res://Assets/Images/pile.png" id="3_kbbnd"]
+[ext_resource type="Texture2D" uid="uid://di3bhydxur203" path="res://Assets/Images/pile.png" id="3_kbbnd"]
 [ext_resource type="Texture2D" uid="uid://dojfutl0nlt1v" path="res://Assets/Images/keybind-e.png" id="4_4060m"]
 [ext_resource type="Texture2D" uid="uid://dxptq7qeqyof3" path="res://Assets/Images/keybind-f.png" id="5_8uq6j"]
 [ext_resource type="Texture2D" uid="uid://blcwtw0aam8um" path="res://Assets/Images/keybind-i.png" id="6_7dg2x"]
@@ -39,14 +39,13 @@ texture = ExtResource("4_4060m")
 
 [node name="FarPile" type="Sprite2D" parent="Left"]
 z_index = -1
-position = Vector2(172.222, 593.333)
-rotation = 3.31613
-scale = Vector2(0.72, 0.72)
+position = Vector2(133.333, 617.778)
+rotation = 3.14159
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_kbbnd")
 
 [node name="NearPile" type="Sprite2D" parent="Left"]
-position = Vector2(146.667, 613.333)
-scale = Vector2(0.8, 0.8)
+position = Vector2(126.667, 620)
 texture = ExtResource("3_kbbnd")
 
 [node name="Right" type="Node2D" parent="."]
@@ -68,19 +67,17 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_7dg2x")
 
 [node name="PearHint" type="Sprite2D" parent="Right"]
-position = Vector2(1168, 512)
+position = Vector2(1167.78, 512.222)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_2qlog")
 
 [node name="FarPile" type="Sprite2D" parent="Right"]
 z_index = -1
-position = Vector2(1078.89, 650)
-rotation = -3.31613
-scale = Vector2(0.72, 0.72)
+position = Vector2(1091.11, 676.667)
+rotation = 3.14159
+scale = Vector2(-0.9, 0.9)
 texture = ExtResource("3_kbbnd")
 
 [node name="NearPile" type="Sprite2D" parent="Right"]
-position = Vector2(1113.33, 671.111)
-rotation = 3.14159
-scale = Vector2(0.8, -0.8)
+position = Vector2(1094.44, 678.889)
 texture = ExtResource("3_kbbnd")
