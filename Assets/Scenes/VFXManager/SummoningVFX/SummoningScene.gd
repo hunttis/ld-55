@@ -7,7 +7,6 @@ var animation_phase = 0
 @onready var pillar_particles = $PillarTarget/PillarParticles
 @onready var cloud_particles = $CloudParticles
 @onready var smoke_particles = $SmokeParticles
-@onready var timer = $Timer
 
 func _ready():
 	pillar_particles.emitting = true
