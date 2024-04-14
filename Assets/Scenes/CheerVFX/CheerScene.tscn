@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvw875o6lbooe"]
 
-[ext_resource type="Script" path="res://Assets/Scenes/CheerScene/CheerScene.gd" id="1_tggnc"]
+[ext_resource type="Script" path="res://Assets/Scenes/CheerVFX/CheerScene.gd" id="1_hb14r"]
 
 [node name="CheerScene" type="Node2D"]
 position = Vector2(249, 172)
-script = ExtResource("1_tggnc")
+script = ExtResource("1_hb14r")
 
 [node name="CheerLabel" type="RichTextLabel" parent="."]
 anchors_preset = 8
