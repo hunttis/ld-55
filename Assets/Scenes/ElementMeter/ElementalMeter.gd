@@ -30,7 +30,7 @@ enum {
 }
 
 func _ready():
-	enabled = Global.enabled_buttons > meter_type
+	enabled = Global.enabled_buttons.has(meter_type)
 	meter.max_value = 100
 	meter.value = 0
 	meter.step = 0.01
@@ -68,7 +68,8 @@ func _process(_delta):
 	
 func reset_meter():
 	result = MISS
-	enabled = Global.enabled_buttons > meter_type
+	enabled = Global.enabled_buttons.has(meter_type)
+
 	can_be_used = true
 	meter.value = 0
 	target = randf_range(30,70)

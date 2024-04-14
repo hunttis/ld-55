@@ -31,6 +31,7 @@ signal battle_process
 signal enemy_spawned
 signal enemy_destroyed
 
-signal enable_straws(count: Global.STRAWS)
+signal disable_all_straws()
+signal pick_new_straws()
 
 signal create_vfx(vfx: Global.VFX, position: Vector2)

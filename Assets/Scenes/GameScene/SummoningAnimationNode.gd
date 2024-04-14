@@ -16,24 +16,24 @@ func _process(delta):
 	
 func _on_summoning_complete(summoned):
 	print("hits ",Global.hits)
-	if(sum_array(Global.hits)/Global.hits.size()==3):
+	if(sum_array(Global.hits) / Global.hits.size() == 3):
 		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_FAIL)
+		# Signal for fup animation
+		# disable inputs for the animation duration
 		Signals.total_fup.emit()
-		Signals.reset_all_taps.emit()
 	else:
 		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_START)
 		animation.show()
 		summoned_unit = summoned
-		#Signals.disable_input.emit()
+		Signals.disable_all_straws.emit()
 		animation.play("default")
 
 func _on_animation_finished():
 	Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_END)
-	Signals.reset_all_taps.emit()
 	Signals.send_to_battlefield.emit(summoned_unit)
 	animation.hide()
 	
-static func sum_array(array):
+func sum_array(array):
 	var sum = 0.0
 	for element in array:
 		sum += element

@@ -38,8 +38,11 @@ func _on_arrived_to_battlefield():
 		print("send mob")
 		mob_size=0
 		Signals.battle_start.emit()
+	else:
+		Signals.pick_new_straws.emit()
 		
 func _on_battle_resolved():
 	Signals.battle_init.emit(5)
+	Signals.pick_new_straws.emit()
 
 	

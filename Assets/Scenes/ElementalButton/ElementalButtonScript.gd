@@ -9,7 +9,7 @@ var is_pressed = false
 var released = false
 
 func _ready():
-	enabled = Global.enabled_buttons > button_type
+	enabled = Global.enabled_buttons.has(button_type)
 	sprite.play("default")
 	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
@@ -36,5 +36,5 @@ func _process(delta):
 		
 func _on_reset_all_taps():
 	released = false
-	enabled = Global.enabled_buttons > button_type
+	enabled = Global.enabled_buttons.has(button_type)
 	sprite.play("default")
