@@ -1,8 +1,9 @@
-[gd_scene load_steps=314 format=3 uid="uid://drtxpjqy55l5k"]
+[gd_scene load_steps=315 format=3 uid="uid://drtxpjqy55l5k"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/GameScene/GameScene.gd" id="1_1jr0o"]
 [ext_resource type="PackedScene" uid="uid://kr3rsjk1y0nj" path="res://Assets/Scenes/ButtonManager/ButtonManager.tscn" id="1_t2fp3"]
 [ext_resource type="PackedScene" uid="uid://cowyyuu3qo7kw" path="res://Assets/Scenes/MeterManager/meter_manager.tscn" id="2_c880x"]
+[ext_resource type="Texture2D" uid="uid://c3icomyp8bbf0" path="res://Assets/Images/summoning-bg.jpg" id="2_ikdjk"]
 [ext_resource type="PackedScene" uid="uid://dq5ywqsn8cjrh" path="res://Assets/Scenes/BattleScene/BattleScene.tscn" id="3_ti6fx"]
 [ext_resource type="Script" path="res://Assets/Scenes/GameScene/SummoningAnimationNode.gd" id="5_24p2s"]
 [ext_resource type="Texture2D" uid="uid://b1jo5snur3dhn" path="res://Assets/Images/SpriteSheets/blackberry_idle.png" id="6_h3f6a"]
@@ -2149,6 +2150,11 @@ offset_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_1jr0o")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -5
+texture = ExtResource("2_ikdjk")
+centered = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

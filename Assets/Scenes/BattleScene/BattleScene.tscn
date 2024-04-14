@@ -58,9 +58,9 @@ collision_layer = 2
 monitorable = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Home"]
-scale = Vector2(0.113757, 0.1)
+position = Vector2(12, 19)
+scale = Vector2(0.145, 0.128)
 texture = ExtResource("3_mwtv6")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
 position = Vector2(25, 8)
