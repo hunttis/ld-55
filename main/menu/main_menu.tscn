@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
 [ext_resource type="Script" path="res://main/menu/Play.gd" id="2_urv4f"]
-[ext_resource type="Theme" uid="uid://bih60kwqdhvap" path="res://Assets/theme.tres" id="2_we3cq"]
+[ext_resource type="Theme" path="res://Assets/theme.tres" id="2_we3cq"]
 [ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
 [ext_resource type="Texture2D" uid="uid://c3icomyp8bbf0" path="res://Assets/Images/summoning-bg.jpg" id="3_mg8n3"]
 [ext_resource type="Script" path="res://main/menu/MenuTitle.gd" id="4_8twmg"]
@@ -41,7 +41,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/normal_font_size = 192
 bbcode_enabled = true
-text = "[color=cyan]F[/color][color=white]R[/color][color=yellow]U[/color][color=pink]I[/color][color=red]T[/color] [color=red]P[/color][color=pink]U[/color][color=yellow]N[/color][color=cyan]C[/color][color=white]H[/color]"
+text = "[color=white]F[/color][color=cyan]R[/color][color=yellow]U[/color][color=pink]I[/color][color=red]T[/color] [color=red]P[/color][color=pink]U[/color][color=yellow]N[/color][color=cyan]C[/color][color=white]H[/color]"
 fit_content = true
 autowrap_mode = 0
 visible_characters_behavior = 2

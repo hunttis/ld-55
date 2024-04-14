@@ -12,10 +12,6 @@ func _ready():
 	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_button_released_manager():
 	var summoned = 0
 	var summoned_score = Global.sum_array(Global.hits)
