@@ -1,7 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdhw5isk3fc1j"]
+[gd_scene load_steps=11 format=3 uid="uid://cdhw5isk3fc1j"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/ElementalButton/ElementalButtonScript.gd" id="1_pi640"]
 [ext_resource type="Texture2D" uid="uid://igs7ugap77pe" path="res://Assets/Images/button.png" id="2_w42yj"]
+[ext_resource type="Texture2D" uid="uid://c32yggonwna1y" path="res://Assets/Images/box-apple.png" id="2_xyqej"]
+[ext_resource type="Texture2D" uid="uid://cfrrb3b4oa2m0" path="res://Assets/Images/box-onion.png" id="3_m4shb"]
+[ext_resource type="Texture2D" uid="uid://b3xl7djhc7puw" path="res://Assets/Images/box-orange.png" id="4_wnhkf"]
+[ext_resource type="Texture2D" uid="uid://c8pyxrupifiak" path="res://Assets/Images/box-pear.png" id="5_28xal"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgqlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_28xal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xyqej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m4shb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wnhkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b0kox"]
 atlas = ExtResource("2_w42yj")
@@ -32,6 +56,9 @@ animations = [{
 
 [node name="ElementalButton" type="Node2D"]
 script = ExtResource("1_pi640")
+
+[node name="JuiceBox" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kgqlr")
 
 [node name="ASprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8s32u")

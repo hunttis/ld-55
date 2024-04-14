@@ -6,17 +6,17 @@
 [node name="ButtonManager" type="Node2D"]
 script = ExtResource("1_p43tg")
 
-[node name="AirButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(1220, 531)
+[node name="PearButton" parent="." instance=ExtResource("1_vibg4")]
+position = Vector2(1099, 342)
 
 [node name="EarthButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(1058, 609)
+position = Vector2(1101, 556)
 button_type = 1
 
 [node name="FireButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(81, 493)
+position = Vector2(192, 329)
 button_type = 2
 
 [node name="WaterButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(238, 592)
+position = Vector2(191, 564)
 button_type = 3
