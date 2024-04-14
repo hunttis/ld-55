@@ -63,18 +63,22 @@ func _on_button_released(button_type):
 			result = Global.STRAW_SCORE.PERFECT
 			Signals.add_score.emit(100000)
 			Signals.create_vfx.emit(Global.VFX.CHEER_PERFECT, cheer_position)
+			Sounds.play_sound.emit(Sounds.EFFECT.PERFECT)
 			print("PERFECT HIT")
 		elif difference < perfect_margin+good_margin:
 			result = Global.STRAW_SCORE.GOOD
 			Signals.add_score.emit(50000)
+			Sounds.play_sound.emit(Sounds.EFFECT.GOOD)
 			Signals.create_vfx.emit(Global.VFX.CHEER_GOOD, cheer_position)
 			print("GOOD HIT")
 		elif difference < perfect_margin+good_margin+mediocre_margin:
 			result = Global.STRAW_SCORE.MEDIOCRE
 			Signals.add_score.emit(10000)
+			Sounds.play_sound.emit(Sounds.EFFECT.MEDIOCRE)
 			Signals.create_vfx.emit(Global.VFX.CHEER_BAD, cheer_position)
 			print("MEDIOCRE HIT")
 		else:
+			Sounds.play_sound.emit(Sounds.EFFECT.MISS)
 			Signals.create_vfx.emit(Global.VFX.CHEER_MISS, cheer_position)
 			print("MISS")
 			result = Global.STRAW_SCORE.MISS

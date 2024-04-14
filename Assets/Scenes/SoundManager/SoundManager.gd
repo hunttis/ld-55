@@ -7,6 +7,10 @@ extends Node
 @onready var hurt_effect = $HurtEffect
 @onready var fight_effect = $FightEffect
 @onready var slap_effect = $SlapEffect
+@onready var perfect_effect =$Perfect
+@onready var good_effect =$Good
+@onready var mediocre_effect =$Mediocre
+@onready var miss_effect =$Miss
 
 func _ready():
 	Sounds.play_sound.connect(_on_play_sound)
@@ -28,3 +32,11 @@ func _on_play_sound(effect: Sounds.EFFECT):
 			fight_effect.play()
 		Sounds.EFFECT.SLAP:
 			slap_effect.play()
+		Sounds.EFFECT.PERFECT:
+			perfect_effect.play()
+		Sounds.EFFECT.GOOD:
+			good_effect.play()
+		Sounds.EFFECT.MEDIOCRE:
+			mediocre_effect.play()
+		Sounds.EFFECT.MISS:
+			miss_effect.play()
