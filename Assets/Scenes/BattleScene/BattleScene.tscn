@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/BattleScene.gd" id="1_11j5c"]
 [ext_resource type="PackedScene" uid="uid://ch0rbsmjcmm0q" path="res://Assets/Scenes/EnemySpawner/EnemySpawner.tscn" id="1_jjxwl"]
 [ext_resource type="Texture2D" uid="uid://5auvuwdgi7op" path="res://Assets/Images/small-bg.png" id="2_44joo"]
-[ext_resource type="Texture2D" uid="uid://b27lc4iwp5jr1" path="res://Assets/Images/can.png" id="3_mwtv6"]
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/FriendlySpawner.gd" id="4_8lr4h"]
+[ext_resource type="Texture2D" uid="uid://t3lil0a0vr6r" path="res://Assets/Images/can-small.png" id="4_we7cd"]
 [ext_resource type="FontFile" uid="uid://15spnl5ahuij" path="res://Assets/Fonts/IrishGrover-Regular.ttf" id="5_xb2yg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j88u"]
@@ -31,13 +31,14 @@ delay = 1.0
 position = Vector2(1040, 120)
 
 [node name="Home" type="Area2D" parent="."]
-position = Vector2(47, 87)
+position = Vector2(50, 87)
 collision_layer = 2
 monitorable = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Home"]
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("3_mwtv6")
+position = Vector2(3, 0)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("4_we7cd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
 position = Vector2(25.375, 10)
