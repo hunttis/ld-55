@@ -16,6 +16,8 @@ func _init():
 	game_over = game_over_scene.instantiate()
 
 func _ready():
+	var bus_idx = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(bus_idx, true)
 	print("main ready")
 	_show_main_menu()
 	Signals.sounds_toggled.connect(_on_sounds_toggled)

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://global.gd"
 Signals="*res://signals.gd"
+Sounds="*res://Assets/Scenes/SoundManager/Sounds.gd"
 
 [display]
 

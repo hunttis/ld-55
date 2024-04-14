@@ -17,9 +17,7 @@ enum SUMMON {
 	FRIENDLY4,
 }
 
-enum SOUNDS {
-	SUMMON_SUCCESS
-}
+
 
 enum VFX {
 	CHEER_PERFECT,

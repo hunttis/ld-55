@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://di3ojqn7etpre"]
+[gd_scene load_steps=4 format=3 uid="uid://di3ojqn7etpre"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/SoundManager/SoundManager.gd" id="1_6tuf1"]
+[ext_resource type="AudioStream" uid="uid://bxo6u7o84t075" path="res://Assets/Sounds/audio.wav" id="2_paslu"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_drrb0"]
+streams_count = 1
+stream_0/stream = ExtResource("2_paslu")
+stream_0/weight = 1.0
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_6tuf1")
+
+[node name="SummonEffect" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_drrb0")

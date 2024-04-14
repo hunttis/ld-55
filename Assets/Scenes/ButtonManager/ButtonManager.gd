@@ -21,5 +21,5 @@ func _on_button_released():
 	var released_buttons = [air.released, earth.released, fire.released, water.released].count(true)
 	if (released_buttons >= Global.enabled_buttons):
 		print("all buttons released")
-		Signals.play_sound.emit(Global.SOUNDS.SUMMON_SUCCESS)
+		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_SUCCESS)
 		Signals.summoning_complete.emit(summoned)
