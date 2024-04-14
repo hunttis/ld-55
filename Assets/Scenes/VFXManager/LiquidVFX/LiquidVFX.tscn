@@ -12,7 +12,7 @@ script = ExtResource("1_2enfr")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 40
-lifetime = 0.5
+lifetime = 0.4
 emission_shape = 1
 emission_sphere_radius = 2.0
 gravity = Vector2(2.08165e-12, 400)

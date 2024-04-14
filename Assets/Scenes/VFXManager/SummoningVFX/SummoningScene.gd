@@ -26,6 +26,7 @@ func _process(delta):
 			animation_phase = 1
 			animation_timer = 1
 			Signals.summoning_animation_complete.emit()
+			
 	elif animation_phase == 1:
 		if animation_timer <= 0:
 			print("Animation phase 1 done")

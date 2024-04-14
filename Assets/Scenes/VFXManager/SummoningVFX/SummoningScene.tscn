@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dft2yuppu4lfk"]
+[gd_scene load_steps=12 format=3 uid="uid://dft2yuppu4lfk"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/VFXManager/SummoningVFX/SummoningScene.gd" id="1_ftpgb"]
 [ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="1_ucaub"]
+[ext_resource type="PackedScene" uid="uid://cowyyuu3qo7kw" path="res://Assets/Scenes/MeterManager/meter_manager.tscn" id="3_3ya1c"]
+[ext_resource type="PackedScene" uid="uid://bi4eqwywe0n0s" path="res://Assets/Scenes/VFXManager/LiquidVFX/LiquidVFX.tscn" id="4_fh1dr"]
 
 [sub_resource type="Curve" id="Curve_hxrrw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.816964, 0.901681), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -34,6 +36,9 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [node name="SummoningVfxScene" type="Node2D"]
 position = Vector2(651, 541)
 script = ExtResource("1_ftpgb")
+
+[node name="MeterManager" parent="." instance=ExtResource("3_3ya1c")]
+position = Vector2(-647, -599)
 
 [node name="PillarTarget" type="Node2D" parent="."]
 
@@ -71,7 +76,9 @@ color_initial_ramp = SubResource("Gradient_4oocb")
 
 [node name="SmokeParticles" type="CPUParticles2D" parent="."]
 position = Vector2(-1, -243)
+emitting = false
 amount = 30
+one_shot = true
 explosiveness = 0.9
 texture = ExtResource("1_ucaub")
 emission_shape = 1
@@ -91,3 +98,15 @@ scale_amount_min = 3.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_mlkwj")
 color_ramp = SubResource("Gradient_m6k7k")
+
+[node name="LiquidVfx" parent="." instance=ExtResource("4_fh1dr")]
+position = Vector2(35, 4)
+
+[node name="LiquidVfx2" parent="." instance=ExtResource("4_fh1dr")]
+position = Vector2(-33, 5)
+
+[node name="LiquidVfx3" parent="." instance=ExtResource("4_fh1dr")]
+position = Vector2(16, -32)
+
+[node name="LiquidVfx4" parent="." instance=ExtResource("4_fh1dr")]
+position = Vector2(-12, -32)
