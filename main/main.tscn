@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://br2b108g1juek"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_upcml"]
-[ext_resource type="Script" path="res://main/SoundManager.gd" id="2_21f0x"]
+[ext_resource type="PackedScene" uid="uid://di3ojqn7etpre" path="res://Assets/Scenes/SoundManager/sound_manager.tscn" id="2_la6c4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_upcml")
 
 [node name="CurrentScene" type="Node2D" parent="."]
 
-[node name="SoundManager" type="Node" parent="."]
-script = ExtResource("2_21f0x")
+[node name="SoundManager" parent="." instance=ExtResource("2_la6c4")]
