@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://38vblnba45dv"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/VFXManager/DestroyWhenDone.gd" id="1_1vmcq"]
+[ext_resource type="Texture2D" uid="uid://c8t7lqvbikulp" path="res://Assets/Images/straw-under.png" id="1_780ix"]
+
+[sub_resource type="Curve" id="Curve_15pyo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_6grpg"]
+colors = PackedColorArray(1, 1, 1, 0.603922, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_243ri"]
+colors = PackedColorArray(0.920005, 0.530853, 0.635683, 1, 1, 1, 1, 1)
+
+[node name="HighlightScene" type="Node2D"]
+position = Vector2(875, 601)
+script = ExtResource("1_1vmcq")
+
+[node name="HighlightFX" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource("1_780ix")
+emission_shape = 2
+emission_sphere_radius = 32.0
+direction = Vector2(2.08165e-12, 2.08165e-12)
+spread = 0.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+angular_velocity_min = 486.1
+angular_velocity_max = 486.1
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.5
+scale_amount_curve = SubResource("Curve_15pyo")
+color_ramp = SubResource("Gradient_6grpg")
+color_initial_ramp = SubResource("Gradient_243ri")

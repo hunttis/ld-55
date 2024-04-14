@@ -7,6 +7,7 @@ const MuteScene = preload("res://Assets/Scenes/VFXManager/SoundVFX/MuteScene.tsc
 const SummonScene = preload("res://Assets/Scenes/VFXManager/SummoningVFX/SummoningScene.tscn")
 const LiquidScene = preload("res://Assets/Scenes/VFXManager/LiquidVFX/LiquidVFX.tscn")
 const BattleFxScene = preload("res://Assets/Scenes/VFXManager/BattleVFX/BattleScene.tscn")
+const HighlightScene = preload("res://Assets/Scenes/VFXManager/HighlightVFX/HighlightScene.tscn")
 
 func _ready():
 	Signals.create_vfx.connect(_on_create_vfx)
@@ -57,8 +58,12 @@ func _on_create_vfx(vfx: Global.VFX, position: Vector2):
 			var battle_fx = BattleFxScene.instantiate()
 			get_parent().add_child(battle_fx)
 			battle_fx.position = position
+		Global.VFX.HIGHLIGHT:
+			print("Highlight VFX")
+			var highlight_fx = HighlightScene.instantiate()
+			get_parent().add_child(highlight_fx)
+			highlight_fx.position = position
 			
-		
 		
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):

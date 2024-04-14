@@ -56,6 +56,6 @@ position = Vector2(640, 61)
 texture = ExtResource("7_uspbf")
 
 [node name="LifeCounter" parent="." instance=ExtResource("7_3xfhi")]
-position = Vector2(523, 93)
+position = Vector2(527, 93)
 
 [connection signal="area_entered" from="Home" to="." method="_on_home_area_entered"]
