@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://rm6x62o4bs81"]
 
-[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="1_84qks"]
 [ext_resource type="Script" path="res://Assets/Scenes/Enemy/Enemy.gd" id="1_d63us"]
+[ext_resource type="Texture2D" uid="uid://cfi1856sujpey" path="res://Assets/Images/enemy-wormy.png" id="2_d2k3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy6eh"]
 size = Vector2(32, 32)
@@ -11,8 +11,8 @@ collision_mask = 2
 script = ExtResource("1_d63us")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.933438, 0.727504, 0.63651, 1)
-texture = ExtResource("1_84qks")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_d2k3e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yy6eh")
