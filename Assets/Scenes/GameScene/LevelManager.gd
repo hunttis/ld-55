@@ -1,11 +1,12 @@
 extends Node
 
 const MAX_MOB_SIZE = 5
-
 var mob_size = 0
 var life_points = 10
 
 var wave_count = 0
+# 2 first difficulty waves, 2 second difficulty waves, 3 third difficulty waves
+var progression = [1,2,3]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,11 +49,15 @@ func _on_arrived_to_battlefield():
 		Signals.battle_start.emit()
 	else:
 		Signals.pick_new_straws.emit()
-	if wave_count >=4:
-		wave_count=0
-		Global.current_difficulty = min(Global.current_difficulty+1,Global.MAX_DIFFICULTY)
 		
 func _on_battle_resolved():
+	if Global.current_difficulty > 3:
+		Signals.speed_up.emit()
+
+	if wave_count >= progression[Global.current_difficulty-1]:
+		wave_count = 0
+		Global.current_difficulty = min(Global.current_difficulty+1,Global.MAX_DIFFICULTY)
+	
 	Signals.battle_init.emit(MAX_MOB_SIZE)
 	Signals.pick_new_straws.emit()
 

@@ -2,7 +2,8 @@ extends Node2D
 
 
 @export var target: float = 50
-@export var speed: float = 3
+@export var speed: float = 4
+@export var speed_multiplier: float = 1.10
 @export var perfect_margin: float = 2
 @export var good_margin: float = 2
 @export var mediocre_margin: float = 2
@@ -31,6 +32,8 @@ var result = Global.STRAW_SCORE.MISS
 
 
 func _ready():
+	Signals.speed_up.connect(_on_speed_up);
+
 	match meter_type:
 		Global.ELEMENT.APPLE:
 			meter.texture_progress = TEXTURE_PROGRESS_APPLE
@@ -97,3 +100,8 @@ func reset_meter():
 	sweetspot.position.y = 12
 	sweetspot.set_margin_indicators(perfect_margin_px, good_margin_px, mediocre_margin_px)
 	sweetspot.visible = enabled
+
+func _on_speed_up():
+	print("SPEEDING UP!", str(speed))
+	speed *= speed_multiplier
+	Global.point_multiplier *= speed_multiplier

@@ -1,11 +1,19 @@
 extends Node
 
+const NAME_OF_THE_GAME = "FRUIT PUNCH"
+const MAX_DIFFICULTY = 4
 
 var hi_score = 0
 var score = 0
 var DEBUG = false
 var show_tutorial = true
-
+var quit_game_action = "quit_game_action"
+var current_difficulty = 1
+var all_buttons = [ELEMENT.PEAR, ELEMENT.APPLE, ELEMENT.ONION, ELEMENT.ORANGE]
+var enabled_buttons;
+var enabled_buttons_count = STRAWS.ONE
+var point_multiplier = 1.0
+var wave_count = 0
 
 enum ELEMENT {
 	PEAR,
@@ -65,16 +73,6 @@ var ElementActions = {
 	ELEMENT.ONION: "fire_action",
 	ELEMENT.ORANGE: "water_action"
 }
-
-var quit_game_action = "quit_game_action"
-
-const MAX_DIFFICULTY = 4
-var current_difficulty = 1
-var all_buttons = [ELEMENT.PEAR, ELEMENT.APPLE, ELEMENT.ONION, ELEMENT.ORANGE]
-
-var enabled_buttons;
-var enabled_buttons_count = STRAWS.ONE
-
 func select_random_straws():
 	if enabled_buttons_count == 0:
 		enabled_buttons = []

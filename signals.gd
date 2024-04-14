@@ -45,3 +45,4 @@ signal start_game
 signal create_vfx(vfx: Global.VFX, position: Vector2)
 
 signal wave_spawn
+signal speed_up
