@@ -54,7 +54,7 @@ func _on_battle_resolved():
 	if Global.current_difficulty > 3:
 		Signals.speed_up.emit()
 
-	if !Global.MAX_DIFFICULTY && wave_count >= progression[Global.current_difficulty-1]:
+	if Global.current_difficulty != Global.MAX_DIFFICULTY && wave_count >= progression[Global.current_difficulty-1]:
 		wave_count = 0
 		Global.current_difficulty = min(Global.current_difficulty+1,Global.MAX_DIFFICULTY)
 	
