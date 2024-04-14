@@ -27,6 +27,8 @@ func _physics_process(_delta):
 
 func _on_battle_process():
 	allow_move = true
+	if sprite.sprite_frames.has_animation('walk'):
+		sprite.play('walk')
 
 func _on_area_entered(area:Area2D):
 	if area is Enemy:
@@ -38,3 +40,4 @@ func _on_area_entered(area:Area2D):
 
 func stop():
 	allow_move = false
+	sprite.play('idle')

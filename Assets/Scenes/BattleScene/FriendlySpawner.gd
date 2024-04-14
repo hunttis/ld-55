@@ -3,8 +3,8 @@ extends Node
 @onready var rally_point = $RallyPoint
 
 var summon_type = {
-	Global.SUMMON.FRIENDLY1: preload("res://Assets/Scenes/Friendly/Berry1.tscn"),
-	Global.SUMMON.FRIENDLY2: preload("res://Assets/Scenes/Friendly/Berry2.tscn"),
+	Global.SUMMON.FRIENDLY1: preload("res://Assets/Scenes/Friendly/Blueberry.tscn"),
+	Global.SUMMON.FRIENDLY2: preload("res://Assets/Scenes/Friendly/Blackberry.tscn"),
 	Global.SUMMON.FRIENDLY3: preload("res://Assets/Scenes/Friendly/Berry3.tscn"),
 	Global.SUMMON.FRIENDLY4: preload("res://Assets/Scenes/Friendly/Berry4.tscn"),
 	Global.SUMMON.FRIENDLY5: preload("res://Assets/Scenes/Friendly/Strawberry.tscn"),
