@@ -8,6 +8,8 @@ extends Node2D
 @onready var mediocre_end: Sprite2D = $MediocreEnd;
 @onready var target: Sprite2D = $Target;
 
+func _ready():
+	Signals.debug_toggled.connect(_on_debug_toggled)
 
 func set_margin_indicators(perfect_margin: float, good_margin: float, mediocre_margin: float):
 	perfect_start.global_position.x = global_position.x + perfect_margin
@@ -17,10 +19,12 @@ func set_margin_indicators(perfect_margin: float, good_margin: float, mediocre_m
 	mediocre_start.global_position.x = global_position.x + mediocre_margin
 	mediocre_end.global_position.x = global_position.x - mediocre_margin
 	target.global_position.x = global_position.x 
-	if !Global.DEBUG:
-		perfect_start.visible = false
-		perfect_end.visible = false
-		good_start.visible = false
-		good_end.visible = false
-		mediocre_start.visible = false
-		mediocre_end.visible = false
+	_on_debug_toggled()
+
+func _on_debug_toggled():
+		perfect_start.visible = Global.DEBUG
+		perfect_end.visible = Global.DEBUG
+		good_start.visible = Global.DEBUG
+		good_end.visible = Global.DEBUG
+		mediocre_start.visible = Global.DEBUG
+		mediocre_end.visible = Global.DEBUG

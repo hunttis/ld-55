@@ -3,7 +3,7 @@ extends Node
 
 var hi_score = 0
 var score = 0
-const DEBUG = false
+var DEBUG = false
 var show_tutorial = true
 
 const NAME_OF_THE_GAME = "FRUIT PUNCH"
@@ -100,6 +100,9 @@ func _process(_delta):
 		_set_straw_count(STRAWS.THREE)
 	if Input.is_action_just_released("enable_straws_4"):
 		_set_straw_count(STRAWS.FOUR)
+	if Input.is_action_just_pressed("debug_toggle"):
+		DEBUG = !DEBUG
+		Signals.debug_toggled.emit()
 
 func _on_reset_summoner_pressed():
 	mana = {

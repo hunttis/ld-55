@@ -35,10 +35,12 @@ signal battle_end
 signal enemy_spawned
 signal enemy_destroyed
 
-signal disable_all_straws()
-signal pick_new_straws()
+signal disable_all_straws
+signal pick_new_straws
 
-signal start_game()
+signal debug_toggled
+
+signal start_game
 
 signal create_vfx(vfx: Global.VFX, position: Vector2)
 

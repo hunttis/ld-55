@@ -3,9 +3,9 @@ extends Node2D
 
 @export var target: float = 50
 @export var speed: float = 3
-@export var perfect_margin: float = 5
-@export var good_margin: float = 10
-@export var mediocre_margin: float = 10
+@export var perfect_margin: float = 4
+@export var good_margin: float = 7
+@export var mediocre_margin: float = 7
 @export var meter_type: Global.ELEMENT
 
 @onready var meter: TextureProgressBar = $ProgressBar
@@ -86,9 +86,9 @@ func reset_meter():
 	can_be_used = true
 	meter.value = 0
 	target = randf_range(30,70)
-	perfect_margin = randf_range(1,3)
-	good_margin = randf_range(2,10)
-	mediocre_margin  = randf_range(10,50-target/2-perfect_margin-good_margin)
+#	perfect_margin = randf_range(1,3)
+#	good_margin = randf_range(2,10)
+#	mediocre_margin  = randf_range(10,50-target/2-perfect_margin-good_margin)
 	perfect_margin_px = METER_WIDTH * (perfect_margin/100)
 	good_margin_px = METER_WIDTH * (good_margin/100) + perfect_margin_px
 	mediocre_margin_px = METER_WIDTH * (mediocre_margin/100) + good_margin_px
