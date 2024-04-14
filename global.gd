@@ -6,7 +6,7 @@ var score = 0
 const DEBUG = false
 var show_tutorial = true
 
-const NAME_OF_THE_GAME = "The Name of The Game"
+const NAME_OF_THE_GAME = "FRUIT PUNCH"
 
 enum ELEMENT {
 	PEAR,
