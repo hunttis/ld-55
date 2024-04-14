@@ -90,17 +90,7 @@ func _ready():
 	select_random_straws()
 
 func _process(_delta):
-	if Input.is_action_just_released("enable_straws_0"):
-		_set_straw_count(0)
-	if Input.is_action_just_released("enable_straws_1"):
-		_set_straw_count(STRAWS.ONE)
-	if Input.is_action_just_released("enable_straws_2"):
-		_set_straw_count(STRAWS.TWO)
-	if Input.is_action_just_released("enable_straws_3"):
-		_set_straw_count(STRAWS.THREE)
-	if Input.is_action_just_released("enable_straws_4"):
-		_set_straw_count(STRAWS.FOUR)
-	if Input.is_action_just_pressed("debug_toggle"):
+	if Input.is_action_just_pressed("debug_toggle") && false:
 		DEBUG = !DEBUG
 		Signals.debug_toggled.emit()
 
