@@ -8,7 +8,7 @@ var game_over_scene: PackedScene = load("res://Assets/Scenes/GameOver/GameOver.t
 
 func _ready():
 	var bus_idx = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_mute(bus_idx, true)
+	AudioServer.set_bus_mute(bus_idx, false)
 	print("main ready")
 	_show_main_menu()
 	Signals.sounds_toggled.connect(_on_sounds_toggled)

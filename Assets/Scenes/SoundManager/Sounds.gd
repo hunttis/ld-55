@@ -14,5 +14,6 @@ enum EFFECT {
 	GOOD,
 	MEDIOCRE,
 	MISS,
+	OPEN,
 	ENEMY_SPAWN,
 }

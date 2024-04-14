@@ -5,7 +5,8 @@ extends Control
 func _ready():
 	print("main_menu ready")
 	Signals.after_sounds_toggled.connect(_on_toggle_sounds)
-	sound_toggle.set_pressed_no_signal(false)
+	sound_toggle.set_pressed_no_signal(true)
+	Sounds.play_sound.emit(Sounds.EFFECT.OPEN)
 
 func _process(_delta):
 	if !get_viewport().gui_get_focus_owner():

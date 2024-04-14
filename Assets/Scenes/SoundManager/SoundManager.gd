@@ -10,6 +10,7 @@ extends Node
 @onready var perfect_effect =$Perfect
 @onready var good_effect =$Good
 @onready var mediocre_effect =$Mediocre
+@onready var open_effect =$OpenEffect
 @onready var miss_effect =$Miss
 
 @onready var enemy_spawn = $EnemySpawn
@@ -44,3 +45,5 @@ func _on_play_sound(effect: Sounds.EFFECT):
 			miss_effect.play()
 		Sounds.EFFECT.ENEMY_SPAWN:
 			enemy_spawn.play()
+		Sounds.EFFECT.OPEN:
+			open_effect.play()

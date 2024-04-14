@@ -198,6 +198,7 @@ max_polyphony = 8
 
 [node name="OpenEffect" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_p1lww")
+volume_db = 19.024
 
 [node name="EnemySpawn" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_jel28")
