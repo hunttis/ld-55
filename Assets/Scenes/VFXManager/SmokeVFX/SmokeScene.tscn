@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfptigih18rac"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/VFXManager/DestroyWhenDone.gd" id="1_dpi26"]
+[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="2_a62op"]
+
+[sub_resource type="Curve" id="Curve_vpd8f"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 10.4202), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ymmig"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_5b5su"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="SmokeScene" type="Node2D"]
+script = ExtResource("1_dpi26")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.9
+texture = ExtResource("2_a62op")
+spread = 180.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 205.13
+initial_velocity_max = 205.13
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+radial_accel_min = 50.0
+radial_accel_max = 50.0
+damping_min = 100.0
+damping_max = 100.0
+damping_curve = SubResource("Curve_vpd8f")
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_ymmig")
+color_ramp = SubResource("Gradient_5b5su")

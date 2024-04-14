@@ -1,6 +1,7 @@
 extends Node
 
 const CheerScene = preload("res://Assets/Scenes/VFXManager/CheerVFX/CheerScene.tscn")
+const SmokeScene = preload("res://Assets/Scenes/VFXManager/SmokeVFX/SmokeScene.tscn")
 
 func _ready():
 	Signals.create_vfx.connect(_on_create_vfx)
@@ -14,6 +15,11 @@ func _on_create_vfx(vfx: Global.VFX, position: Vector2):
 			cheer.cheer_type = vfx
 			get_parent().add_child(cheer)
 			cheer.position = position
+		Global.VFX.SMOKE:
+			print("Creating Smoke VFX")
+			var smoke = SmokeScene.instantiate()
+			get_parent().add_child(smoke)
+			smoke.position = position
 
 
 func _process(_delta):
