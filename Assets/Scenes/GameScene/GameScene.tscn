@@ -2205,6 +2205,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="TimerLabel" type="Label" parent="LevelManager"]
+visible = false
 offset_left = 636.0
 offset_top = 319.0
 offset_right = 846.0

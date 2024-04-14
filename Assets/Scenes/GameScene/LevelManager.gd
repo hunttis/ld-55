@@ -21,7 +21,8 @@ func _ready():
 	Signals.summoning_complete.connect(_on_summoning_complete)
 
 func _process(_delta):
-	timer_label.text = "%d" % level_timer.time_left
+	if not level_timer.is_stopped():
+		timer_label.text = "%d" % level_timer.time_left
 
 func _on_start_game():
 	Global.current_difficulty = 1
@@ -31,6 +32,7 @@ func _on_start_game():
 	Signals.battle_init.emit(3)
 	Signals.pick_new_straws.emit()
 	level_timer.start()
+	timer_label.visible = true
 
 func _get_hurt():
 	life_points -= 1
