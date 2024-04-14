@@ -37,7 +37,7 @@ func _on_summoning_complete(summoned):
 func delayed_summoning():
 	
 	print("hits ",Global.hits)
-	if(sum_array(Global.hits) == 0):
+	if(Global.sum_array(Global.hits) == 0):
 		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_FAIL)
 		# Signal for fup animation
 		# disable inputs for the animation duration
@@ -54,8 +54,4 @@ func _on_animation_finished():
 	Signals.send_to_battlefield.emit(summoned_unit)
 	animation.hide()
 	
-func sum_array(array):
-	var sum = 0.0
-	for element in array:
-		sum += element
-	return sum
+

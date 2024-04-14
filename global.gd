@@ -108,9 +108,15 @@ func _on_disable_all_straws():
 	_set_straw_count(0)
 
 func _on_pick_new_straws():
-	_set_straw_count(randi_range(1, current_difficulty))
+	_set_straw_count(current_difficulty)
 
 func _set_straw_count(count):
 	enabled_buttons_count = count
 	select_random_straws()
 	Signals.reset_all_taps.emit()
+	
+func sum_array(array):
+	var sum = 0.0
+	for element in array:
+		sum += element
+	return sum
