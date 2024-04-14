@@ -24,7 +24,7 @@ func _process(_delta):
 
 	if enemy_count == 0 && processing_battle:
 		processing_battle = false
-		Signals.battle_resolved.emit()
+		Signals.battle_end.emit()
 
 func _on_home_area_entered(area:Area2D):
 	if area is Enemy:
@@ -45,15 +45,10 @@ func _on_battle_reset(amount: int):
 	enemy_count = 0
 	start_battle = false
 	processing_battle = false
+	# TODO: Display wave information on the scene
 
 func _on_enemy_destroyed():
 	enemy_count -= 1
 
-func _on_timer_timeout():
-	Signals.battle_start.emit()
-
 func _on_resolve():
 	print('resolved')
-
-func _on_init_timer_timeout():
-	Signals.battle_init.emit(5)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/BattleScene.gd" id="1_11j5c"]
 [ext_resource type="PackedScene" uid="uid://ch0rbsmjcmm0q" path="res://Assets/Scenes/EnemySpawner/EnemySpawner.tscn" id="1_jjxwl"]
-[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="3_3er5p"]
+[ext_resource type="Texture2D" uid="uid://b27lc4iwp5jr1" path="res://Assets/Images/can.png" id="3_mwtv6"]
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/FriendlySpawner.gd" id="4_8lr4h"]
 
 [sub_resource type="Theme" id="Theme_57b63"]
@@ -47,30 +47,29 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="EnemySpawner" parent="." instance=ExtResource("1_jjxwl")]
-enemy_type = 0
 delay = 1.0
 
 [node name="RallyPoint" type="Node2D" parent="EnemySpawner"]
-position = Vector2(1188, 85)
+position = Vector2(1188, 100)
 
 [node name="Home" type="Area2D" parent="."]
+position = Vector2(44, 73)
 collision_layer = 2
 monitorable = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Home"]
-self_modulate = Color(0.196078, 0.305882, 0.913725, 1)
-position = Vector2(23, 57)
-scale = Vector2(1, 3.21875)
-texture = ExtResource("3_3er5p")
+scale = Vector2(0.113757, 0.1)
+texture = ExtResource("3_mwtv6")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
-position = Vector2(22.75, 57.75)
+position = Vector2(25, 8)
 shape = SubResource("RectangleShape2D_0j88u")
 
 [node name="FriendlySpawner" type="Node" parent="."]
 script = ExtResource("4_8lr4h")
 
 [node name="RallyPoint" type="Node2D" parent="FriendlySpawner"]
-position = Vector2(78, 85)
+position = Vector2(136, 100)
 
 [connection signal="area_entered" from="Home" to="." method="_on_home_area_entered"]

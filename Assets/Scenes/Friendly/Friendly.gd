@@ -9,10 +9,12 @@ const SPEED = 300.0
 @export var health: int = 1
 
 @export var direction = 1
+var current_health: int = 0
 var allow_move = false
 
 func _ready():
 	Signals.battle_process.connect(_on_battle_process)
+	current_health = health
 	sprite.play('idle')
 
 func _physics_process(_delta):
@@ -28,6 +30,11 @@ func _on_battle_process():
 
 func _on_area_entered(area:Area2D):
 	if area is Enemy:
-		Signals.enemy_destroyed.emit()
-		area.queue_free()
-		queue_free()
+		current_health -= area.do_damage()
+		area.take_damage(damage)
+
+		if current_health <= 0:
+			queue_free()
+
+func stop():
+	allow_move = false

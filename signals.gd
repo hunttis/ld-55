@@ -28,6 +28,7 @@ signal total_fup()
 
 signal battle_init(wave_size: int)
 signal battle_process
+signal battle_end
 signal enemy_spawned
 signal enemy_destroyed
 

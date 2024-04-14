@@ -14,7 +14,7 @@ var friendly_count = 0
 
 func _ready():
 	Signals.send_to_battlefield.connect(_on_summon)
-	Signals.battle_resolved.connect(_on_battle_end)
+	Signals.battle_end.connect(_on_battle_end)
 
 
 func _on_summon(summon: Global.SUMMON):
@@ -27,3 +27,14 @@ func _on_summon(summon: Global.SUMMON):
 
 func _on_battle_end():
 	friendly_count = 0
+	for friendly in rally_point.get_children():
+		friendly.stop()
+	
+
+	# TODO: Maybe some Victory notification
+	await get_tree().create_timer(1.0).timeout	
+
+	for friendly in rally_point.get_children():
+		friendly.queue_free()
+
+	Signals.battle_resolved.emit()
