@@ -7,9 +7,9 @@ var summoned_unit = 1
 var unit_animations = {
 	Global.SUMMON.FRIENDLY1: 'blueberry',
 	Global.SUMMON.FRIENDLY2: 'blackberry',
-	Global.SUMMON.FRIENDLY3: 'strawberry',
-	Global.SUMMON.FRIENDLY4:'strawberry',
-	Global.SUMMON.FRIENDLY5:'strawberry',
+	Global.SUMMON.FRIENDLY3: 'gooseberry',
+	Global.SUMMON.FRIENDLY4: 'cherry',
+	Global.SUMMON.FRIENDLY5: 'strawberry',
 }
 
 func _ready():
