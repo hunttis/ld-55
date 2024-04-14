@@ -32,6 +32,7 @@ func _on_battle_process():
 
 func _on_area_entered(area:Area2D):
 	if area is Enemy:
+		Signals.create_vfx.emit(Global.VFX.BATTLE_DAMAGE, global_position)
 		current_health -= area.do_damage()
 		area.take_damage(damage)
 		Sounds.play_sound.emit(Sounds.EFFECT.FIGHT)
