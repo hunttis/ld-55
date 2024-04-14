@@ -10,9 +10,8 @@
 script = ExtResource("1_v7ok1")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
-offset_top = 1.0
 offset_right = 300.0
-offset_bottom = 25.0
+offset_bottom = 24.0
 nine_patch_stretch = true
 stretch_margin_left = 8
 stretch_margin_top = 8
@@ -23,56 +22,46 @@ texture_over = ExtResource("3_moegm")
 
 [node name="HitAreaIndicator" type="Node2D" parent="."]
 self_modulate = Color(0.156863, 0.529412, 0, 1)
-position = Vector2(0, 16)
 script = ExtResource("5_xci0i")
 metadata/_edit_lock_ = true
 
 [node name="PerfectStart" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.0156863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
+scale = Vector2(0.1, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="PerfectEnd" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.0156863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
+scale = Vector2(0.1, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="GoodStart" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.956863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
+scale = Vector2(0.1, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="GoodEnd" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.956863, 0.717647, 0.0392157, 1)
-position = Vector2(0, -3)
-scale = Vector2(1, 0.35)
+scale = Vector2(0.1, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="MediocreStart" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.917647, 0, 0.211765, 1)
-position = Vector2(0, -3)
-scale = Vector2(0.5, 0.35)
+scale = Vector2(0.1, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="MediocreEnd" type="Sprite2D" parent="HitAreaIndicator"]
 modulate = Color(0.917647, 0, 0.211765, 1)
-position = Vector2(0, -3)
-scale = Vector2(0.5, 0.35)
+scale = Vector2(0.1, 1)
 texture = ExtResource("4_vcn4k")
 metadata/_edit_lock_ = true
 
 [node name="Target" type="Sprite2D" parent="HitAreaIndicator"]
-modulate = Color(0.937255, 0.368627, 0.788235, 1)
-position = Vector2(2.08165e-12, -2)
-scale = Vector2(1, 0.5)
 texture = ExtResource("4_vcn4k")
 
 [node name="DebugLabel" type="Label" parent="."]
