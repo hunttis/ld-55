@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Assets/Scenes/ElementMeter/ElementalMeter.gd" id="1_v7ok1"]
 [ext_resource type="Texture2D" uid="uid://c8t7lqvbikulp" path="res://Assets/Images/straw-under.png" id="2_ubcin"]
 [ext_resource type="Texture2D" uid="uid://ed8qtf6l4wt8" path="res://Assets/Images/straw-over.png" id="3_moegm"]
-[ext_resource type="Texture2D" uid="uid://c71pbq7bqkrx3" path="res://Assets/Images/margin_indicator.png" id="4_vcn4k"]
+[ext_resource type="Texture2D" uid="uid://dkk1n8j11frqp" path="res://Assets/Images/margin_indicator.png" id="4_vcn4k"]
 [ext_resource type="Script" path="res://Assets/Scenes/ElementMeter/HitAreaIndicator.gd" id="5_xci0i"]
 
 [node name="ElementalMeter" type="Node2D"]

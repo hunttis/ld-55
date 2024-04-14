@@ -11,26 +11,22 @@ script = ExtResource("1_jiqvc")
 
 [node name="OnionMeter" parent="." instance=ExtResource("1_sno7e")]
 z_index = -1
-position = Vector2(244, 342)
-scale = Vector2(0.9, 0.9)
+position = Vector2(248, 402)
 meter_type = 2
-
-[node name="PearMeter" parent="." instance=ExtResource("1_sno7e")]
-z_index = -1
-position = Vector2(1039, 339)
-scale = Vector2(-0.9, 0.9)
-
-[node name="AppleMeter" parent="." instance=ExtResource("1_sno7e")]
-z_index = -1
-position = Vector2(1026, 502)
-scale = Vector2(-0.9, 0.9)
-meter_type = 1
 
 [node name="OrangeMeter" parent="." instance=ExtResource("1_sno7e")]
 z_index = -1
-position = Vector2(249, 497)
-scale = Vector2(0.9, 0.9)
+position = Vector2(249, 538)
 meter_type = 3
+
+[node name="PearMeter" parent="." instance=ExtResource("1_sno7e")]
+z_index = -1
+position = Vector2(774, 409)
+
+[node name="AppleMeter" parent="." instance=ExtResource("1_sno7e")]
+z_index = -1
+position = Vector2(777, 530)
+meter_type = 1
 
 [node name="SummoningCan" parent="." instance=ExtResource("2_p7bah")]
 scale = Vector2(0.38, 0.38)
