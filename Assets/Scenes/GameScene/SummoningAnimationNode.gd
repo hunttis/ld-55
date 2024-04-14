@@ -12,7 +12,7 @@ var unit_animations = {
 	Global.SUMMON.FRIENDLY5: 'strawberry',
 }
 
-var summoned_creature
+var summoned_creature = null
 var summon_delay = 1
 var summoning = false
 
@@ -46,6 +46,7 @@ func delayed_summoning():
 		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_START)
 		animation.show()
 		summoned_unit = summoned_creature
+		summoned_creature = null
 		Signals.disable_all_straws.emit()
 		animation.play(unit_animations[summoned_unit])
 
