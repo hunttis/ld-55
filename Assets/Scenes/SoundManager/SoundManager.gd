@@ -12,6 +12,8 @@ extends Node
 @onready var mediocre_effect =$Mediocre
 @onready var miss_effect =$Miss
 
+@onready var enemy_spawn = $EnemySpawn
+
 func _ready():
 	Sounds.play_sound.connect(_on_play_sound)
 
@@ -40,3 +42,5 @@ func _on_play_sound(effect: Sounds.EFFECT):
 			mediocre_effect.play()
 		Sounds.EFFECT.MISS:
 			miss_effect.play()
+		Sounds.EFFECT.ENEMY_SPAWN:
+			enemy_spawn.play()

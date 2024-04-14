@@ -11,6 +11,7 @@ var current_health = 0
 var allow_move = false
 
 func _ready():
+	Sounds.play_sound.emit(Sounds.EFFECT.ENEMY_SPAWN)
 	Signals.battle_process.connect(_on_battle_process)
 	current_health = health
 
