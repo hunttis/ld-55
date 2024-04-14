@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dft2yuppu4lfk"]
+[gd_scene load_steps=11 format=3 uid="uid://dft2yuppu4lfk"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/VFXManager/SummoningVFX/SummoningScene.gd" id="1_ftpgb"]
 [ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="1_ucaub"]
-[ext_resource type="PackedScene" uid="uid://cowyyuu3qo7kw" path="res://Assets/Scenes/MeterManager/meter_manager.tscn" id="3_3ya1c"]
 [ext_resource type="PackedScene" uid="uid://bi4eqwywe0n0s" path="res://Assets/Scenes/VFXManager/LiquidVFX/LiquidVFX.tscn" id="4_fh1dr"]
 
 [sub_resource type="Curve" id="Curve_hxrrw"]
@@ -36,9 +35,6 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [node name="SummoningVfxScene" type="Node2D"]
 position = Vector2(651, 541)
 script = ExtResource("1_ftpgb")
-
-[node name="MeterManager" parent="." instance=ExtResource("3_3ya1c")]
-position = Vector2(-647, -599)
 
 [node name="PillarTarget" type="Node2D" parent="."]
 
