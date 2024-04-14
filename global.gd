@@ -28,7 +28,9 @@ enum VFX {
 	CHEER_BAD,
 	CHEER_MISS,
 	SMOKE,
-	CRASH
+	CRASH,
+	MUTE,
+	SOUNDS_ON
 }
 
 enum STRAWS {
