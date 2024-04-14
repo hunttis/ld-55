@@ -1,4 +1,4 @@
-[gd_scene load_steps=316 format=3 uid="uid://drtxpjqy55l5k"]
+[gd_scene load_steps=317 format=3 uid="uid://drtxpjqy55l5k"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/GameScene/GameScene.gd" id="1_1jr0o"]
 [ext_resource type="PackedScene" uid="uid://kr3rsjk1y0nj" path="res://Assets/Scenes/ButtonManager/ButtonManager.tscn" id="1_t2fp3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="8_angnd"]
 [ext_resource type="Texture2D" uid="uid://cgspsri3geai1" path="res://Assets/Images/SpriteSheets/cherry_idle.png" id="8_blvo8"]
 [ext_resource type="Texture2D" uid="uid://cgie2qtnmmx8r" path="res://Assets/Images/SpriteSheets/gooseberry_idle.png" id="9_o87h6"]
+[ext_resource type="PackedScene" uid="uid://bfmxdt5rahf3d" path="res://Assets/Scenes/Druid/Druid.tscn" id="15_cvy7l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76yxq"]
 atlas = ExtResource("6_h3f6a")
@@ -2219,6 +2220,12 @@ text = "0
 
 [node name="Scores" parent="." instance=ExtResource("8_angnd")]
 in_game = true
+
+[node name="Druid" parent="." instance=ExtResource("15_cvy7l")]
+position = Vector2(162, 249)
+
+[node name="Druid2" parent="." instance=ExtResource("15_cvy7l")]
+position = Vector2(1149, 254)
 
 [connection signal="animation_finished" from="SummoningAnimationNode/SummonAnimation" to="SummoningAnimationNode" method="_on_animation_finished"]
 [connection signal="timeout" from="LevelManager/LevelTimer" to="LevelManager" method="_on_level_timer_timeout"]
