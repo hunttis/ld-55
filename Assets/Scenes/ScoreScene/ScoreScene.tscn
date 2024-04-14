@@ -1,16 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcm2jnlyxogql"]
+[gd_scene load_steps=4 format=3 uid="uid://dcm2jnlyxogql"]
 
+[ext_resource type="Theme" path="res://Assets/theme.tres" id="1_eajhf"]
+[ext_resource type="Texture2D" uid="uid://b27lc4iwp5jr1" path="res://Assets/Images/can.png" id="1_nu7sp"]
 [ext_resource type="Script" path="res://Assets/Scenes/ScoreScene/ScoreScene.gd" id="1_pfky8"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Scores" type="RichTextLabel" parent="."]
-offset_left = 11.0
-offset_top = 667.0
-offset_right = 2011.0
-offset_bottom = 805.0
-text = "HIGH SCORE: 0
-SCORE: 0"
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(14, 638)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(95, 159)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_nu7sp")
+
+[node name="Scores" type="RichTextLabel" parent="Node2D"]
+offset_right = 2000.0
+offset_bottom = 138.0
+theme = ExtResource("1_eajhf")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 29
+text = "HIGH SCORE: 999M
+SCORE: 128K"
 fit_content = true
 scroll_active = false
 script = ExtResource("1_pfky8")

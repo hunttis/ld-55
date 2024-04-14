@@ -3,8 +3,6 @@ extends Control
 var wave_size: int = 0
 var enemy_count: int = 0
 
-var wave_count: int = 0
-
 # are we allowed to start battle if there are enough enemies
 var start_battle: bool = false
 
@@ -52,14 +50,14 @@ func _on_battle_process():
 	start_battle = true
 
 func _on_battle_reset(amount: int):
-	wave_count += 1
+	Global.wave_count += 1
 	wave_size = amount
 	enemy_count = 0
 	start_battle = false
 	processing_battle = false
 
 	# Show wave information
-	wave_label.text = 'Wave: ' + str(wave_count) + '. Enemies: ' + str(wave_size)
+	wave_label.text = 'Wave: ' + str(Global.wave_count) + '. Enemies: ' + str(wave_size)
 	victory_label.visible = false
 	wave_label.visible = true
 	timer.start()
