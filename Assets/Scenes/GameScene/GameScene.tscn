@@ -2206,10 +2206,10 @@ one_shot = true
 
 [node name="TimerLabel" type="Label" parent="LevelManager"]
 visible = false
-offset_left = 636.0
-offset_top = 319.0
-offset_right = 846.0
-offset_bottom = 358.0
+offset_left = 641.0
+offset_top = 336.0
+offset_right = 851.0
+offset_bottom = 375.0
 theme = ExtResource("1_vbl1w")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
