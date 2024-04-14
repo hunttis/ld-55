@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://qviibiybwawx"]
+[gd_scene load_steps=9 format=3 uid="uid://qviibiybwawx"]
 
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="1_6p0cw"]
 [ext_resource type="Script" path="res://Assets/Scenes/GameOver/GameOver.gd" id="1_73kjp"]
 [ext_resource type="Script" path="res://Assets/Scenes/GameOver/StartOver.gd" id="1_bgjl2"]
 [ext_resource type="Theme" path="res://Assets/theme.tres" id="3_7lw22"]
 [ext_resource type="Texture2D" uid="uid://c3icomyp8bbf0" path="res://Assets/Images/summoning-bg.jpg" id="5_14x7u"]
+[ext_resource type="Texture2D" uid="uid://t3lil0a0vr6r" path="res://Assets/Images/can-small.png" id="6_bgygv"]
+
+[sub_resource type="Curve" id="Curve_c1hhy"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_cmn5w"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -73,3 +82,23 @@ modulate = Color(0.447059, 0.447059, 0.447059, 1)
 z_index = -1
 texture = ExtResource("5_14x7u")
 centered = false
+
+[node name="CanShower" type="CPUParticles2D" parent="."]
+position = Vector2(654, -96)
+amount = 34
+lifetime = 5.0
+preprocess = 7.89
+speed_scale = 0.58
+randomness = 0.71
+fixed_fps = 60
+texture = ExtResource("6_bgygv")
+emission_shape = 3
+emission_rect_extents = Vector2(1400, 1)
+angle_min = -66.3
+angle_max = 142.1
+angle_curve = SubResource("Curve_c1hhy")
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_cmn5w")
+split_scale = true
+scale_curve_x = null
+scale_curve_y = null
