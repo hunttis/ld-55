@@ -21,10 +21,16 @@ position = Vector2(490, 423)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_smgfp")
 
+[node name="Tip" type="Node2D" parent="OnionStraw" groups=["onion_tip"]]
+position = Vector2(117.143, 152.857)
+
 [node name="OrangeStraw" type="Sprite2D" parent="."]
 position = Vector2(470, 737.95)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_smgfp")
+
+[node name="Tip" type="Node2D" parent="OrangeStraw" groups=["orange_tip"]]
+position = Vector2(120, 145.786)
 
 [node name="PearStraw" type="Sprite2D" parent="."]
 position = Vector2(812, 434)
@@ -32,8 +38,14 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_smgfp")
 flip_h = true
 
+[node name="Tip" type="Node2D" parent="PearStraw" groups=["pear_tip"]]
+position = Vector2(-121.429, 154.286)
+
 [node name="AppleStraw" type="Sprite2D" parent="."]
 position = Vector2(848, 714.95)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_smgfp")
 flip_h = true
+
+[node name="Tip" type="Node2D" parent="AppleStraw" groups=["apple_tip"]]
+position = Vector2(-121.429, 154.357)

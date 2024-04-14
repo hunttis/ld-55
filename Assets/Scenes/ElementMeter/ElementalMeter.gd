@@ -82,6 +82,26 @@ func _on_button_released(button_type):
 			Signals.create_vfx.emit(Global.VFX.CHEER_MISS, cheer_position)
 			print("MISS")
 			result = Global.STRAW_SCORE.MISS
+		
+		match button_type:
+			Global.ELEMENT.APPLE:
+				var apple_tip = get_tree().get_nodes_in_group("apple_tip")[0]
+				Signals.create_vfx.emit(Global.VFX.APPLE_JUICE, apple_tip.global_position)
+				print("Apple ", apple_tip)
+			Global.ELEMENT.ONION:
+				var onion_tip = get_tree().get_nodes_in_group("onion_tip")[0]
+				Signals.create_vfx.emit(Global.VFX.ONION_JUICE, onion_tip.global_position)
+				print("Onion")
+			Global.ELEMENT.PEAR:
+				var pear_tip = get_tree().get_nodes_in_group("pear_tip")[0]
+				Signals.create_vfx.emit(Global.VFX.PEAR_JUICE, pear_tip.global_position)
+				print("Pear")
+			Global.ELEMENT.ORANGE:
+				var orange_tip = get_tree().get_nodes_in_group("orange_tip")[0]
+				Signals.create_vfx.emit(Global.VFX.ORANGE_JUICE, orange_tip.global_position)
+				print("Orange")
+			
+		
 		Global.hits.append(result)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

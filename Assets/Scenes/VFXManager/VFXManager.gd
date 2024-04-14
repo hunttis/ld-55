@@ -48,17 +48,10 @@ func _on_create_vfx(vfx: Global.VFX, position: Vector2):
 			get_parent().add_child(summon)
 			summon.position = position
 		Global.VFX.APPLE_JUICE, Global.VFX.ONION_JUICE, Global.VFX.PEAR_JUICE, Global.VFX.ORANGE_JUICE:
-			var liquid_position = Vector2(0, 0)
-			
-			#match vfx:
-				#Global.VFX.APPLE_JUICE:
-				#Global.VFX.ONION_JUICE:
-				#Global.VFX.PEAR_JUICE:
-				#Global.VFX.ORANGE_JUICE:
-			
 			var liquid = LiquidScene.instantiate()
 			get_parent().add_child(liquid)
-			liquid.position = liquid_position
+			liquid.position = position
+			liquid.element = vfx
 		Global.VFX.BATTLE_DAMAGE:
 			print("Battle VFX")
 			var battle_fx = BattleFxScene.instantiate()
