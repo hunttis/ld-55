@@ -16,6 +16,7 @@ signal add_score(amount)
 
 signal game_over
 signal to_main_menu
+signal scores_changed
 
 signal battle_start
 signal battle_resolved

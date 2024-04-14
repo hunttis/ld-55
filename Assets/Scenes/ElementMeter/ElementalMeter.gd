@@ -46,12 +46,15 @@ func _on_button_released(button_type):
 		can_be_used = false
 		if difference < perfect_margin:
 			result = PERFECT
+			Signals.add_score.emit(100000)
 			print("PERFECT HIT")
 		elif difference < perfect_margin+good_margin:
 			result = GOOD
+			Signals.add_score.emit(50000)
 			print("GOOD HIT")
 		elif difference < perfect_margin+good_margin+mediocre_margin:
 			result = MEDIOCRE
+			Signals.add_score.emit(10000)
 			print("MEDIOCRE HIT")
 		else:
 			print("MISS")

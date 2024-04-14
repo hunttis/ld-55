@@ -4,11 +4,10 @@ const MAX_MOB_SIZE = 5
 
 var mob_size = 0
 var life_points = 10
-var score = 0
-var hi_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.score = 0
 	Signals.arrived_to_battlefield.connect(_on_arrived_to_battlefield)
 	Signals.total_fup.connect(_on_arrived_to_battlefield)
 	Signals.get_hurt.connect(_get_hurt)
@@ -22,10 +21,15 @@ func _get_hurt():
 	print("hurting "+str(life_points))
 	if life_points <= 0:
 		life_points = 10
+		if Global.score > Global.hi_score:
+			Global.hi_score = Global.score
+			Signals.scores_changed.emit()
 		Signals.game_over.emit()
 
 func _add_score(amount):
-	score += amount
+	print("ADDED TO SCORE ", amount)
+	Global.score += amount
+	Signals.scores_changed.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

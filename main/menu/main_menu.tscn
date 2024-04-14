@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw6fsf6vdmyf2"]
+[gd_scene load_steps=6 format=3 uid="uid://bw6fsf6vdmyf2"]
 
 [ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
 [ext_resource type="Script" path="res://main/menu/Play.gd" id="2_urv4f"]
 [ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
+[ext_resource type="Script" path="res://main/menu/Scores.gd" id="5_7kpgj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -55,3 +56,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 script = ExtResource("3_jlbm4")
+
+[node name="Scores" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1020.0
+offset_right = 3020.0
+offset_bottom = 138.0
+text = "HIGH SCORE: 0
+SCORE: 0"
+fit_content = true
+scroll_active = false
+script = ExtResource("5_7kpgj")

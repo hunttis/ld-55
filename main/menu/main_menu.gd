@@ -15,3 +15,5 @@ func _on_toggle_sounds():
 	var bus_idx = AudioServer.get_bus_index("Master")
 	var mute = AudioServer.is_bus_mute(bus_idx)
 	sound_toggle.set_pressed_no_signal(!mute)
+	
+
