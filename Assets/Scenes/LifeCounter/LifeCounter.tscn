@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlm143f43f2d0"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/LifeCounter/LifeCounter.gd" id="1_iydln"]
+[ext_resource type="PackedScene" uid="uid://utjbsbei2idy" path="res://Assets/Scenes/LifeCounter/LifeCounterCan.tscn" id="2_tyxls"]
+
+[node name="LifeCounter" type="Node2D"]
+script = ExtResource("1_iydln")
+
+[node name="LifeCounterCan" parent="." instance=ExtResource("2_tyxls")]
+
+[node name="LifeCounterCan2" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(27, 0)
+
+[node name="LifeCounterCan3" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(54, 0)
+
+[node name="LifeCounterCan4" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(81, 0)
+
+[node name="LifeCounterCan5" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(108, 0)
+
+[node name="LifeCounterCan6" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(135, 0)
+
+[node name="LifeCounterCan7" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(162, 0)
+
+[node name="LifeCounterCan8" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(189, 0)
+
+[node name="LifeCounterCan9" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(216, 0)
+
+[node name="LifeCounterCan10" parent="." instance=ExtResource("2_tyxls")]
+position = Vector2(243, 0)
