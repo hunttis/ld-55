@@ -42,7 +42,7 @@ func _on_battle_process():
 	start_battle = true
 
 func _on_battle_reset(amount: int):
-	Global.wave_count += 1
+	Global.total_wave_count += 1
 	wave_size = amount
 	enemy_count = 0
 	start_battle = false

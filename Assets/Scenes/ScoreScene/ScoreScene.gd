@@ -10,7 +10,7 @@ func _ready():
 	Signals.scores_changed.connect(_on_scores_changed)
 	menu_scores.text = " HIGH SCORE: %s\n SCORE: %s" % [to_text(Global.hi_score), to_text(Global.score)]
 	game_scores.text = "[center]%s[/center]" % to_text(Global.score)
-	game_round.text = "[center]%s[/center]" % Global.wave_count
+	game_round.text = "[center]%s[/center]" % Global.total_wave_count
 	if in_game:
 		menu.visible= false
 	else:
@@ -21,7 +21,7 @@ func _on_scores_changed():
 	game_scores.text = "[center]%s[/center]" % to_text(Global.score)
 
 func _process(_delta):
-	game_round.text = "[center]%s[/center]" % Global.wave_count
+	game_round.text = "[center]%s[/center]" % Global.total_wave_count
 
 func to_text(score:float):
 	print("score ",score)

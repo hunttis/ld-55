@@ -14,7 +14,7 @@ var all_buttons = [ELEMENT.PEAR, ELEMENT.APPLE, ELEMENT.ONION, ELEMENT.ORANGE]
 var enabled_buttons;
 var enabled_buttons_count = STRAWS.ONE
 var point_multiplier = 1.0
-var wave_count = 0
+var total_wave_count = 0
 
 enum ELEMENT {
 	PEAR,
