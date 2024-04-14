@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq5ywqsn8cjrh"]
+[gd_scene load_steps=9 format=3 uid="uid://dq5ywqsn8cjrh"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/BattleScene.gd" id="1_11j5c"]
 [ext_resource type="PackedScene" uid="uid://ch0rbsmjcmm0q" path="res://Assets/Scenes/EnemySpawner/EnemySpawner.tscn" id="1_jjxwl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/FriendlySpawner.gd" id="4_8lr4h"]
 [ext_resource type="Texture2D" uid="uid://t3lil0a0vr6r" path="res://Assets/Images/can-small.png" id="4_we7cd"]
 [ext_resource type="FontFile" uid="uid://15spnl5ahuij" path="res://Assets/Fonts/IrishGrover-Regular.ttf" id="5_xb2yg"]
+[ext_resource type="Texture2D" uid="uid://bxsxdky6ofe1" path="res://Assets/Images/scoreboard.png" id="7_uspbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j88u"]
 size = Vector2(33.25, 120)
@@ -79,6 +80,10 @@ horizontal_alignment = 1
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(640, 61)
+texture = ExtResource("7_uspbf")
 
 [connection signal="area_entered" from="Home" to="." method="_on_home_area_entered"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
