@@ -1,8 +1,8 @@
 extends Node2D
-@onready var pear = $PearButton
-@onready var apple = $AppleButton
-@onready var onion = $OnionButton
-@onready var orange = $OrangeButton
+@onready var pear =$Right/PearButton
+@onready var apple = $Right/AppleButton
+@onready var onion = $Left/OnionButton
+@onready var orange = $Left/OrangeButton
 
 
 

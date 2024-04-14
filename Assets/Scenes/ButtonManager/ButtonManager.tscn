@@ -1,26 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://kr3rsjk1y0nj"]
+[gd_scene load_steps=4 format=3 uid="uid://kr3rsjk1y0nj"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/ButtonManager/ButtonManager.gd" id="1_p43tg"]
 [ext_resource type="PackedScene" uid="uid://cdhw5isk3fc1j" path="res://Assets/Scenes/ElementalButton/ElementalButtonScene.tscn" id="1_vibg4"]
+[ext_resource type="Texture2D" uid="uid://cmtk88rmvtt2h" path="res://Assets/Images/pile.png" id="3_kbbnd"]
 
 [node name="ButtonManager" type="Node2D"]
 script = ExtResource("1_p43tg")
 
-[node name="AppleButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(1119, 460)
+[node name="Left" type="Node2D" parent="."]
+position = Vector2(15, 6)
+
+[node name="OrangeButton" parent="Left" instance=ExtResource("1_vibg4")]
+position = Vector2(198, 461)
+rotation = 3.14159
+scale = Vector2(0.9, -0.9)
+button_type = 3
+
+[node name="OnionButton" parent="Left" instance=ExtResource("1_vibg4")]
+position = Vector2(182, 284)
+rotation = 3.14159
+scale = Vector2(0.7, -0.7)
+button_type = 2
+
+[node name="Pile2" type="Sprite2D" parent="Left"]
+z_index = -1
+position = Vector2(189, 592)
+rotation = 3.14159
+scale = Vector2(0.95, -0.95)
+texture = ExtResource("3_kbbnd")
+
+[node name="Pile4" type="Sprite2D" parent="Left"]
+position = Vector2(218, 617)
+texture = ExtResource("3_kbbnd")
+
+[node name="Right" type="Node2D" parent="."]
+position = Vector2(-8, -2)
+
+[node name="Pile1" type="Sprite2D" parent="Right"]
+z_index = -1
+position = Vector2(1089, 585)
+scale = Vector2(0.91, 1)
+texture = ExtResource("3_kbbnd")
+
+[node name="AppleButton" parent="Right" instance=ExtResource("1_vibg4")]
+position = Vector2(1084, 465)
 scale = Vector2(0.89, 0.89)
 button_type = 1
 
-[node name="PearButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(1142, 275)
+[node name="PearButton" parent="Right" instance=ExtResource("1_vibg4")]
+position = Vector2(1087, 287)
 scale = Vector2(0.7, 0.7)
 
-[node name="OrangeButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(169, 465)
-scale = Vector2(-0.9, 0.9)
-button_type = 3
-
-[node name="OnionButton" parent="." instance=ExtResource("1_vibg4")]
-position = Vector2(149, 284)
-scale = Vector2(-0.7, 0.7)
-button_type = 2
+[node name="Pile3" type="Sprite2D" parent="Right"]
+position = Vector2(1068, 621)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("3_kbbnd")
