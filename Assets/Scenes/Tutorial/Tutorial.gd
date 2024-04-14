@@ -27,6 +27,7 @@ func _process(delta):
 
 func _progress_tutorial():
 	if tutorial_step == 4:
+		Global.show_tutorial = false
 		Signals.start_game.emit()
 		queue_free()
 		return

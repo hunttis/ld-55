@@ -51,6 +51,12 @@ theme_override_font_sizes/font_size = 32
 text = "Sounds"
 script = ExtResource("2_6bova")
 
+[node name="TutorialToggle" type="CheckButton" parent="MenuItems/ItemsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Show tutorial"
+script = ExtResource("2_6bova")
+
 [node name="Quit" type="Button" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32

@@ -1,4 +1,7 @@
 extends CheckButton
 
+func _ready():
+	button_pressed = Global.show_tutorial
+
 func _toggled(_toggled_on):
-	Signals.sounds_toggled.emit()
+	Global.show_tutorial = _toggled_on
