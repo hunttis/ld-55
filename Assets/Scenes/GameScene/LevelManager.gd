@@ -22,7 +22,7 @@ func _ready():
 
 func _process(_delta):
 	if not level_timer.is_stopped():
-		timer_label.text = "%d" % level_timer.time_left
+		timer_label.text = "%d" % ceil(level_timer.time_left)
 
 func _on_start_game():
 	Global.current_difficulty = 1
