@@ -18,6 +18,7 @@ func _ready():
 	Signals.add_score.connect(_add_score)
 	Signals.battle_resolved.connect(_on_battle_resolved)
 	Signals.start_game.connect(_on_start_game)
+	Signals.summoning_complete.connect(_on_summoning_complete)
 
 func _process(_delta):
 	timer_label.text = "%d" % level_timer.time_left
@@ -53,6 +54,7 @@ func _on_arrived_to_battlefield():
 		Signals.battle_start.emit()
 	else:
 		Signals.pick_new_straws.emit()
+		timer_label.visible = true
 		level_timer.start()
 		
 func _on_battle_resolved():
@@ -65,7 +67,12 @@ func _on_battle_resolved():
 	
 	Signals.battle_init.emit(Global.MAX_MOB_SIZE)
 	Signals.pick_new_straws.emit()
+	timer_label.visible = true
 	level_timer.start()
 
 func _on_level_timer_timeout():
 	Signals.release_buttons.emit()
+
+func _on_summoning_complete(_summon):
+	level_timer.stop()
+	timer_label.visible = false
