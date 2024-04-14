@@ -28,6 +28,7 @@ func _process(delta):
 		Signals.button_pressed.emit(button_type)
 
 	if Input.is_action_just_released(Global.ElementActions[button_type]):
+		enabled = false
 		button_release()
 
 	if is_pressed:

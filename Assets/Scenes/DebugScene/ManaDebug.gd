@@ -5,12 +5,7 @@ extends VBoxContainer
 @onready var fire_mana_label: Label = $FireMana
 @onready var earth_mana_label: Label = $EarthMana
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if (air_mana_label.text != "air_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.PEAR], 0.01))):
 		air_mana_label.text = "air_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.PEAR], 0.01))
 	if (water_mana_label.text != "water_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.ORANGE], 0.01))):

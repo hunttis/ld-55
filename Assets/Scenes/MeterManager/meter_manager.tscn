@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cowyyuu3qo7kw"]
+[gd_scene load_steps=5 format=3 uid="uid://cowyyuu3qo7kw"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/MeterManager/meter_manager.gd" id="1_jiqvc"]
 [ext_resource type="PackedScene" uid="uid://dvbbemiqssea1" path="res://Assets/Scenes/ElementMeter/ElementalMeter.tscn" id="1_sno7e"]
 [ext_resource type="PackedScene" uid="uid://ysxfxlp48t71" path="res://Assets/Scenes/SummoningCan.tscn" id="2_p7bah"]
 [ext_resource type="Texture2D" uid="uid://c5sinxfpklesh" path="res://Assets/Images/cap-frontside.png" id="4_fto1d"]
-[ext_resource type="Texture2D" uid="uid://kj8nycfy08yo" path="res://Assets/Images/timer-background.png" id="5_2dvk1"]
 
 [node name="MeterManager" type="Node2D"]
 position = Vector2(0, 1)
@@ -39,8 +38,3 @@ z_index = 100
 position = Vector2(649, 630)
 scale = Vector2(0.471, 0.471)
 texture = ExtResource("4_fto1d")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(651, 352)
-scale = Vector2(0.390625, 0.390625)
-texture = ExtResource("5_2dvk1")
