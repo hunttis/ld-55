@@ -9,13 +9,13 @@ position = Vector2(0, 1)
 script = ExtResource("1_jiqvc")
 
 [node name="FireMeter" parent="." instance=ExtResource("1_sno7e")]
-position = Vector2(243, 487)
-scale = Vector2(0.9, 0.9)
+position = Vector2(218, 486)
+scale = Vector2(1, 0.9)
 meter_type = 2
 
 [node name="AirMeter" parent="." instance=ExtResource("1_sno7e")]
-position = Vector2(1050, 484)
-scale = Vector2(-0.9, 0.9)
+position = Vector2(1073, 485)
+scale = Vector2(-1, 0.9)
 
 [node name="EarthMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(1073, 518)
