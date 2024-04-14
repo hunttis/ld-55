@@ -34,6 +34,7 @@ func _on_area_entered(area:Area2D):
 	if area is Enemy:
 		current_health -= area.do_damage()
 		area.take_damage(damage)
+		Sounds.play_sound.emit(Sounds.EFFECT.FIGHT)
 
 		if current_health <= 0:
 			queue_free()

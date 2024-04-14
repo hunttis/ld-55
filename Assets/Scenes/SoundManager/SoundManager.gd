@@ -5,6 +5,7 @@ extends Node
 @onready var summon_fail_effect = $SummonFailEffect
 @onready var dead_effect = $DeadEffect
 @onready var hurt_effect = $HurtEffect
+@onready var fight_effect = $FightEffect
 
 func _ready():
 	Sounds.play_sound.connect(_on_play_sound)
@@ -22,3 +23,5 @@ func _on_play_sound(effect: Sounds.EFFECT):
 			dead_effect.play()
 		Sounds.EFFECT.HURT:
 			hurt_effect.play()
+		Sounds.EFFECT.FIGHT:
+			fight_effect.play()

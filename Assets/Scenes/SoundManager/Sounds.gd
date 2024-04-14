@@ -8,4 +8,5 @@ enum EFFECT {
 	SUMMON_END,
 	DEAD,
 	HURT,
+	FIGHT,
 }
