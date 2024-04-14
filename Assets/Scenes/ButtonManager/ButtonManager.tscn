@@ -28,11 +28,13 @@ scale = Vector2(0.63, -0.63)
 button_type = 2
 
 [node name="OrangeHint" type="Sprite2D" parent="Left" groups=["orange_hint"]]
+z_index = 100
 position = Vector2(48, 456)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8uq6j")
 
 [node name="OnionHint" type="Sprite2D" parent="Left" groups=["onion_hint"]]
+z_index = 100
 position = Vector2(80, 308)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_4060m")
@@ -62,11 +64,13 @@ position = Vector2(1088.89, 395.556)
 scale = Vector2(0.63, 0.63)
 
 [node name="AppleHint" type="Sprite2D" parent="Right" groups=["apple_hint"]]
+z_index = 100
 position = Vector2(1160, 368)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_7dg2x")
 
 [node name="PearHint" type="Sprite2D" parent="Right" groups=["pear_hint"]]
+z_index = 100
 position = Vector2(1167.78, 512.222)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_2qlog")

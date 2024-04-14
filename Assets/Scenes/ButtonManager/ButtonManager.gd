@@ -4,13 +4,9 @@ extends Node2D
 @onready var onion = $Left/OnionButton
 @onready var orange = $Left/OrangeButton
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Signals.button_released_manager.connect(_on_button_released_manager)
 	Signals.reset_all_taps.connect(_on_reset_all_taps)
-
 
 func _on_button_released_manager():
 	var summoned = 0

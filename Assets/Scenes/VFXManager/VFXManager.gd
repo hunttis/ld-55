@@ -62,7 +62,7 @@ func _on_create_vfx(vfx: Global.VFX, position: Vector2):
 			print("Highlight VFX")
 			var highlight_fx = HighlightScene.instantiate()
 			get_parent().add_child(highlight_fx)
-			highlight_fx.position = position
+			highlight_fx.global_position = position
 			
 		
 func _process(_delta):
