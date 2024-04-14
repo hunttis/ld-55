@@ -35,6 +35,6 @@ scale = Vector2(0.38, 0.38)
 
 [node name="Cap-frontside" type="Sprite2D" parent="."]
 z_index = 100
-position = Vector2(649, 620)
+position = Vector2(649, 630)
 scale = Vector2(0.471, 0.471)
 texture = ExtResource("4_fto1d")
