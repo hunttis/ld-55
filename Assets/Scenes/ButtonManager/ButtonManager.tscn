@@ -36,7 +36,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_kbbnd")
 
 [node name="Right" type="Node2D" parent="."]
-position = Vector2(167, 30)
+position = Vector2(167, 17)
 scale = Vector2(0.9, 0.9)
 
 [node name="AppleButton" parent="Right" instance=ExtResource("1_vibg4")]

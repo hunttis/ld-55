@@ -16,7 +16,7 @@ meter_type = 2
 
 [node name="OrangeMeter" parent="." instance=ExtResource("1_sno7e")]
 z_index = -1
-position = Vector2(249, 538)
+position = Vector2(249, 523)
 meter_type = 3
 
 [node name="PearMeter" parent="." instance=ExtResource("1_sno7e")]
@@ -25,7 +25,7 @@ position = Vector2(774, 409)
 
 [node name="AppleMeter" parent="." instance=ExtResource("1_sno7e")]
 z_index = -1
-position = Vector2(777, 530)
+position = Vector2(777, 515)
 meter_type = 1
 
 [node name="SummoningCan" parent="." instance=ExtResource("2_p7bah")]

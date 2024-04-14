@@ -12,7 +12,7 @@ position = Vector2(650, 465)
 texture = ExtResource("1_h52ap")
 
 [node name="Cap" type="Sprite2D" parent="."]
-position = Vector2(655, 916)
+position = Vector2(655, 930)
 scale = Vector2(1.23917, 1.23917)
 texture = ExtResource("2_dsiu1")
 
@@ -22,7 +22,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_smgfp")
 
 [node name="OrangeStraw" type="Sprite2D" parent="."]
-position = Vector2(470, 777)
+position = Vector2(470, 737.95)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_smgfp")
 
@@ -33,7 +33,7 @@ texture = ExtResource("3_smgfp")
 flip_h = true
 
 [node name="AppleStraw" type="Sprite2D" parent="."]
-position = Vector2(848, 754)
+position = Vector2(848, 714.95)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_smgfp")
 flip_h = true
