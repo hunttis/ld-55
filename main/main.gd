@@ -28,11 +28,14 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_released("quit_game"):
 		Signals.game_over.emit()
+	if Input.is_action_just_released("mute_button"):
+		Signals.sounds_toggled.emit()
 
-func _on_sounds_toggled(toggled_on):
-	print("sounds toggled to %s" % toggled_on)
+func _on_sounds_toggled():
 	var bus_idx = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_mute(bus_idx, !toggled_on)
+	print("sounds toggled to %s" % AudioServer.is_bus_mute(bus_idx))
+	AudioServer.set_bus_mute(bus_idx, !AudioServer.is_bus_mute(bus_idx))
+	Signals.after_sounds_toggled.emit()
 
 func _show_main_menu():
 	_set_active_scene(main_menu)	

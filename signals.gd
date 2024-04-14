@@ -2,6 +2,7 @@ extends Node
 
 signal play_button_pressed
 signal sounds_toggled
+signal after_sounds_toggled
 
 signal reset_all_taps
 

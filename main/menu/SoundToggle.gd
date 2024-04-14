@@ -1,4 +1,4 @@
 extends CheckButton
 
-func _toggled(toggled_on):
-	Signals.sounds_toggled.emit(toggled_on)
+func _toggled(_toggled_on):
+	Signals.sounds_toggled.emit()
