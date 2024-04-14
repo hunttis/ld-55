@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
 [ext_resource type="Script" path="res://main/menu/Play.gd" id="2_urv4f"]
-[ext_resource type="Theme" uid="uid://bih60kwqdhvap" path="res://Assets/theme.tres" id="2_we3cq"]
+[ext_resource type="Theme" path="res://Assets/theme.tres" id="2_we3cq"]
 [ext_resource type="FontFile" uid="uid://15spnl5ahuij" path="res://Assets/Fonts/IrishGrover-Regular.ttf" id="3_8o5xo"]
 [ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="5_cv0il"]

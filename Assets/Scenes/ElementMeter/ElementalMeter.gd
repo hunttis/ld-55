@@ -3,9 +3,9 @@ extends Node2D
 
 @export var target: float = 50
 @export var speed: float = 3
-@export var perfect_margin: float = 4
-@export var good_margin: float = 7
-@export var mediocre_margin: float = 7
+@export var perfect_margin: float = 2
+@export var good_margin: float = 2
+@export var mediocre_margin: float = 2
 @export var meter_type: Global.ELEMENT
 
 @onready var meter: TextureProgressBar = $ProgressBar
