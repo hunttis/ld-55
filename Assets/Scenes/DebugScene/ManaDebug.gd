@@ -11,11 +11,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (air_mana_label.text != "air_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.AIR], 0.01))):
-		air_mana_label.text = "air_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.AIR], 0.01))
-	if (water_mana_label.text != "water_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.WATER], 0.01))):
-		water_mana_label.text = "water_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.WATER], 0.01))
-	if (fire_mana_label.text != "fire_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.FIRE], 0.01))):
-		fire_mana_label.text = "fire_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.FIRE], 0.01))
-	if (earth_mana_label.text != "earth_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.EARTH], 0.01))):
-		earth_mana_label.text = "earth_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.EARTH], 0.01))
+	if (air_mana_label.text != "air_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.PEAR], 0.01))):
+		air_mana_label.text = "air_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.PEAR], 0.01))
+	if (water_mana_label.text != "water_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.ORANGE], 0.01))):
+		water_mana_label.text = "water_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.ORANGE], 0.01))
+	if (fire_mana_label.text != "fire_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.ONION], 0.01))):
+		fire_mana_label.text = "fire_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.ONION], 0.01))
+	if (earth_mana_label.text != "earth_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.APPLE], 0.01))):
+		earth_mana_label.text = "earth_mana_label: " + str(snapped(Global.mana[Global.ELEMENT.APPLE], 0.01))

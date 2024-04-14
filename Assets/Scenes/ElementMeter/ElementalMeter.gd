@@ -31,13 +31,13 @@ var result = Global.STRAW_SCORE.MISS
 
 func _ready():
 	match meter_type:
-		Global.ELEMENT.EARTH:
+		Global.ELEMENT.APPLE:
 			meter.texture_progress = TEXTURE_PROGRESS_APPLE
-		Global.ELEMENT.FIRE:
+		Global.ELEMENT.ONION:
 			meter.texture_progress = TEXTURE_PROGRESS_ONION
-		Global.ELEMENT.WATER:
+		Global.ELEMENT.ORANGE:
 			meter.texture_progress = TEXTURE_PROGRESS_ORANGE
-		Global.ELEMENT.AIR:
+		Global.ELEMENT.PEAR:
 			meter.texture_progress = TEXTURE_PROGRESS_PEAR
 
 	enabled = Global.enabled_buttons.has(meter_type)
