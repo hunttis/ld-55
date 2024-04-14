@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw6fsf6vdmyf2"]
+[gd_scene load_steps=9 format=3 uid="uid://bw6fsf6vdmyf2"]
 
 [ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" path="res://Assets/theme.tres" id="2_we3cq"]
 [ext_resource type="FontFile" uid="uid://15spnl5ahuij" path="res://Assets/Fonts/IrishGrover-Regular.ttf" id="3_8o5xo"]
 [ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
+[ext_resource type="Script" path="res://main/menu/MenuTitle.gd" id="4_8twmg"]
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="5_cv0il"]
 
 [node name="MainMenu" type="Control"]
@@ -31,11 +32,16 @@ size_flags_vertical = 3
 [node name="MenuTitle" type="RichTextLabel" parent="MenuItems/TitleContainer"]
 layout_mode = 2
 theme = ExtResource("2_we3cq")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("3_8o5xo")
-theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/normal_font_size = 192
+bbcode_enabled = true
 text = "FRUIT PUNCH"
 fit_content = true
 autowrap_mode = 0
+visible_characters_behavior = 2
+script = ExtResource("4_8twmg")
 
 [node name="ItemsContainer" type="CenterContainer" parent="MenuItems"]
 layout_mode = 2
