@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://j2ghxvxtq438"]
+
+[ext_resource type="Texture2D" uid="uid://c8t7lqvbikulp" path="res://Assets/Images/straw-under.png" id="1_g0ncm"]
+[ext_resource type="Script" path="res://Assets/Scenes/VFXManager/DestroyWhenDone.gd" id="1_raidl"]
+
+[sub_resource type="Curve" id="Curve_7wxwf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.84375, 0.885294), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_o4wcq"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 0, 1, 1)
+
+[node name="BattleDamageScene" type="Node2D"]
+script = ExtResource("1_raidl")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 10
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 0.8
+texture = ExtResource("1_g0ncm")
+emission_shape = 1
+emission_sphere_radius = 16.0
+direction = Vector2(2.08165e-12, -1)
+gravity = Vector2(2.08165e-12, 300)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.25
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_7wxwf")
+color_initial_ramp = SubResource("Gradient_o4wcq")
