@@ -4,11 +4,7 @@ var main_menu_scene: PackedScene = load("res://main/menu/main_menu.tscn")
 var game_scene: PackedScene = load("res://Assets/Scenes/GameScene/GameScene.tscn")
 var game_over_scene: PackedScene = load("res://Assets/Scenes/GameOver/GameOver.tscn")
 
-
 @onready var current_scene: Node2D  = $CurrentScene
-
-
-	
 
 func _ready():
 	var bus_idx = AudioServer.get_bus_index("Master")

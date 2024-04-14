@@ -5,6 +5,7 @@ const SmokeScene = preload("res://Assets/Scenes/VFXManager/SmokeVFX/SmokeScene.t
 const CrashScene = preload("res://Assets/Scenes/VFXManager/CrashVFX/CrashScene.tscn")
 const MuteScene = preload("res://Assets/Scenes/VFXManager/SoundVFX/MuteScene.tscn")
 const SummonScene = preload("res://Assets/Scenes/VFXManager/SummoningVFX/SummoningScene.tscn")
+const LiquidScene = preload("res://Assets/Scenes/VFXManager/LiquidVFX/LiquidVFX.tscn")
 
 func _ready():
 	Signals.create_vfx.connect(_on_create_vfx)
@@ -45,7 +46,21 @@ func _on_create_vfx(vfx: Global.VFX, position: Vector2):
 			var summon = SummonScene.instantiate()
 			get_parent().add_child(summon)
 			summon.position = position
-
+		Global.VFX.APPLE_JUICE, Global.VFX.ONION_JUICE, Global.VFX.PEAR_JUICE, Global.VFX.ORANGE_JUICE:
+			var liquid_position = Vector2(0, 0)
+			
+			#match vfx:
+				#Global.VFX.APPLE_JUICE:
+				#Global.VFX.ONION_JUICE:
+				#Global.VFX.PEAR_JUICE:
+				#Global.VFX.ORANGE_JUICE:
+			
+			var liquid = LiquidScene.instantiate()
+			get_parent().add_child(liquid)
+			liquid.position = liquid_position
+			
+		
+		
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
 		var new_vfx: Global.VFX = Global.VFX.values()[(randi_range(0, Global.VFX.size() - 1))]

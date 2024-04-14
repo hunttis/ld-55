@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfptigih18rac"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/VFXManager/DestroyWhenDone.gd" id="1_dpi26"]
-[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="2_a62op"]
+[ext_resource type="Texture2D" uid="uid://cvhxhlfdtchmi" path="res://Assets/Images/cloud.png" id="2_c6gnh"]
 
 [sub_resource type="Curve" id="Curve_vpd8f"]
 max_value = 100.0
@@ -16,6 +16,7 @@ point_count = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="SmokeScene" type="Node2D"]
+position = Vector2(654, 412)
 script = ExtResource("1_dpi26")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -23,7 +24,7 @@ emitting = false
 amount = 20
 one_shot = true
 explosiveness = 0.9
-texture = ExtResource("2_a62op")
+texture = ExtResource("2_c6gnh")
 spread = 180.0
 gravity = Vector2(2.08165e-12, 2.08165e-12)
 initial_velocity_min = 205.13
