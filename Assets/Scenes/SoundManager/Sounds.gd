@@ -3,5 +3,7 @@ extends Node
 signal play_sound(effect: EFFECT)
 
 enum EFFECT {
-	SUMMON_SUCCESS
+	SUMMON_FAIL,
+	SUMMON_START,
+	SUMMON_END,
 }

@@ -11,5 +11,11 @@ stream_0/weight = 1.0
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_6tuf1")
 
-[node name="SummonEffect" type="AudioStreamPlayer2D" parent="."]
+[node name="SummonStartEffect" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_drrb0")
+
+[node name="SummonEndEffect" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_drrb0")
+
+[node name="SummonFailEffect" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_drrb0")

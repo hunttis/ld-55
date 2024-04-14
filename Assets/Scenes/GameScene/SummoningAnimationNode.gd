@@ -17,15 +17,18 @@ func _process(delta):
 func _on_summoning_complete(summoned):
 	print("hits ",Global.hits)
 	if(sum_array(Global.hits)/Global.hits.size()==3):
+		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_FAIL)
 		Signals.total_fup.emit()
 		Signals.reset_all_taps.emit()
 	else:
+		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_START)
 		animation.show()
 		summoned_unit = summoned
 		#Signals.disable_input.emit()
 		animation.play("default")
 
 func _on_animation_finished():
+	Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_END)
 	Signals.reset_all_taps.emit()
 	Signals.send_to_battlefield.emit(summoned_unit)
 	animation.hide()
