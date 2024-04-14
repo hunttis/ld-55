@@ -58,19 +58,24 @@ func _on_button_released(button_type):
 	if button_type == meter_type:
 		var difference = abs(target - meter.value)
 		can_be_used = false
+		var cheer_position = sweetspot.global_position
 		if difference < perfect_margin:
 			result = Global.STRAW_SCORE.PERFECT
 			Signals.add_score.emit(100000)
+			Signals.create_vfx.emit(Global.VFX.CHEER_PERFECT, cheer_position)
 			print("PERFECT HIT")
 		elif difference < perfect_margin+good_margin:
 			result = Global.STRAW_SCORE.GOOD
 			Signals.add_score.emit(50000)
+			Signals.create_vfx.emit(Global.VFX.CHEER_GOOD, cheer_position)
 			print("GOOD HIT")
 		elif difference < perfect_margin+good_margin+mediocre_margin:
 			result = Global.STRAW_SCORE.MEDIOCRE
 			Signals.add_score.emit(10000)
+			Signals.create_vfx.emit(Global.VFX.CHEER_BAD, cheer_position)
 			print("MEDIOCRE HIT")
 		else:
+			Signals.create_vfx.emit(Global.VFX.CHEER_MISS, cheer_position)
 			print("MISS")
 			result = Global.STRAW_SCORE.MISS
 		Global.hits.append(result)
