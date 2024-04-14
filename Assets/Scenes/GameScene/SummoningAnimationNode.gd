@@ -4,6 +4,14 @@ extends Node2D
 
 var summoned_unit = 1
 
+var unit_animations = {
+	Global.SUMMON.FRIENDLY1: 'blueberry',
+	Global.SUMMON.FRIENDLY2: 'blackberry',
+	Global.SUMMON.FRIENDLY3: 'strawberry',
+	Global.SUMMON.FRIENDLY4:'strawberry',
+	Global.SUMMON.FRIENDLY5:'strawberry',
+}
+
 func _ready():
 	Signals.summoning_complete.connect(_on_summoning_complete)
 	animation.hide()
@@ -21,7 +29,7 @@ func _on_summoning_complete(summoned):
 		animation.show()
 		summoned_unit = summoned
 		Signals.disable_all_straws.emit()
-		animation.play("default")
+		animation.play(unit_animations[summoned_unit])
 
 func _on_animation_finished():
 	Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_END)
