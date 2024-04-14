@@ -11,7 +11,7 @@ var show_tutorial = true
 var quit_game_action = "quit_game_action"
 var current_difficulty = 1
 var all_buttons = [ELEMENT.PEAR, ELEMENT.APPLE, ELEMENT.ONION, ELEMENT.ORANGE]
-var enabled_buttons;
+var enabled_buttons: Array
 var enabled_buttons_count = STRAWS.ONE
 var point_multiplier = 1.0
 var wave_count = 0
@@ -46,7 +46,8 @@ enum VFX {
 	ONION_JUICE,
 	PEAR_JUICE,
 	ORANGE_JUICE,
-	BATTLE_DAMAGE
+	BATTLE_DAMAGE,
+	HIGHLIGHT
 }
 
 enum STRAWS {
@@ -117,6 +118,20 @@ func _on_disable_all_straws():
 
 func _on_pick_new_straws():
 	_set_straw_count(current_difficulty)
+	
+	print("ENABLED BUTTONS: ", enabled_buttons)
+	if enabled_buttons.has(ELEMENT.APPLE):
+		var apple_hint = get_tree().get_first_node_in_group("apple_hint")
+		Signals.create_vfx.emit(Global.VFX.HIGHLIGHT, apple_hint.global_position)
+	if enabled_buttons.has(ELEMENT.ONION):
+		var onion_hint = get_tree().get_first_node_in_group("onion_hint")
+		Signals.create_vfx.emit(Global.VFX.HIGHLIGHT, onion_hint.global_position)
+	if enabled_buttons.has(ELEMENT.PEAR):
+		var pear_hint = get_tree().get_first_node_in_group("pear_hint")
+		Signals.create_vfx.emit(Global.VFX.HIGHLIGHT, pear_hint.global_position)
+	if enabled_buttons.has(ELEMENT.ORANGE):
+		var orange_hint = get_tree().get_first_node_in_group("orange_hint")
+		Signals.create_vfx.emit(Global.VFX.HIGHLIGHT, orange_hint.global_position)
 
 func _set_straw_count(count):
 	enabled_buttons_count = count
