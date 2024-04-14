@@ -1,6 +1,6 @@
 extends Node
 
-const CheerScene = preload("res://Assets/Scenes/CheerScene/CheerScene.tscn")
+const CheerScene = preload("res://Assets/Scenes/VFXManager/CheerVFX/CheerScene.tscn")
 
 func _ready():
 	Signals.create_vfx.connect(_on_create_vfx)
