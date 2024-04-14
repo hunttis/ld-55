@@ -58,11 +58,11 @@ var ElementActions = {
 var quit_game_action = "quit_game_action"
 
 const MAX_DIFFICULTY = 4
-var current_difficulty = 4
+var current_difficulty = 1
 var all_buttons = [ELEMENT.AIR, ELEMENT.EARTH, ELEMENT.FIRE, ELEMENT.WATER]
 
 var enabled_buttons;
-var enabled_buttons_count = STRAWS.THREE
+var enabled_buttons_count = STRAWS.ONE
 
 func select_random_straws():
 	if enabled_buttons_count == 0:

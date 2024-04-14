@@ -6,6 +6,7 @@ signal after_sounds_toggled
 
 signal reset_all_taps
 
+signal button_released_manager(button_type)
 signal button_released(button_type)
 signal button_pressed(button_type)
 

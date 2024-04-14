@@ -29,7 +29,7 @@ func _process(delta):
 		released = true
 		sprite.play("default")
 		Signals.button_released.emit(button_type)
-		Signals.button_released.emit()
+		Signals.button_released_manager.emit()
 
 	if is_pressed:
 		Global.mana[button_type] += delta

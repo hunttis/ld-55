@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dq5ywqsn8cjrh" path="res://Assets/Scenes/BattleScene/BattleScene.tscn" id="3_ti6fx"]
 [ext_resource type="Script" path="res://Assets/Scenes/GameScene/SummoningAnimationNode.gd" id="5_24p2s"]
 [ext_resource type="Texture2D" uid="uid://b1jo5snur3dhn" path="res://Assets/Images/SpriteSheets/blackberry_idle.png" id="6_h3f6a"]
-[ext_resource type="Texture2D" uid="uid://duxh43cnqkvq1" path="res://Assets/Images/SpriteSheets/strawberry.png" id="6_y6r4l"]
+[ext_resource type="Texture2D" uid="uid://duxh43cnqkvq1" path="res://Assets/Images/SpriteSheets/strawberry_idle.png" id="6_y6r4l"]
 [ext_resource type="Script" path="res://Assets/Scenes/GameScene/LevelManager.gd" id="7_625ks"]
 [ext_resource type="Texture2D" uid="uid://bjesbmxhba4mv" path="res://Assets/Images/SpriteSheets/blueberry_idle.png" id="7_rug6i"]
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="8_angnd"]
