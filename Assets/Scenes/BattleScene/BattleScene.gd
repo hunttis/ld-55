@@ -3,10 +3,17 @@ extends Control
 var wave_size: int = 0
 var enemy_count: int = 0
 
+var wave_count: int = 0
+
 # are we allowed to start battle if there are enough enemies
 var start_battle: bool = false
+
 # are we processing the battle
 var processing_battle: bool = false
+
+@onready var victory_label: Label = $MessageContainer/MarginContainer/VictoryLabel
+@onready var wave_label: Label = $MessageContainer/MarginContainer/WaveLabel
+@onready var timer: Timer = $MessageTimer
 
 func _ready():
 	Signals.battle_init.connect(_on_battle_reset)
@@ -19,11 +26,14 @@ func _ready():
 func _process(_delta):
 	if enemy_count == wave_size && start_battle:
 		Signals.battle_process.emit()
-		start_battle = false
 		processing_battle = true
 
 	if enemy_count == 0 && processing_battle:
 		processing_battle = false
+
+		victory_label.text = "Battle ended. On to next wave"
+		victory_label.visible = true
+		timer.start()
 		Signals.battle_end.emit()
 
 func _on_home_area_entered(area:Area2D):
@@ -42,14 +52,25 @@ func _on_battle_process():
 	start_battle = true
 
 func _on_battle_reset(amount: int):
+	wave_count += 1
 	wave_size = amount
 	enemy_count = 0
 	start_battle = false
 	processing_battle = false
-	# TODO: Display wave information on the scene
+
+	# Show wave information
+	wave_label.text = 'Wave: ' + str(wave_count) + '. Enemies: ' + str(wave_size)
+	victory_label.visible = false
+	wave_label.visible = true
+	timer.start()
 
 func _on_enemy_destroyed():
 	enemy_count -= 1
 
 func _on_resolve():
 	print('resolved')
+
+
+func _on_message_timer_timeout():
+	wave_label.visible = false
+	victory_label.visible = false

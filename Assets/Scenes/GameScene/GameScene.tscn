@@ -2192,9 +2192,7 @@ script = ExtResource("5_24p2s")
 
 [node name="SummonAnimation" type="AnimatedSprite2D" parent="SummoningAnimationNode"]
 sprite_frames = SubResource("SpriteFrames_ld7et")
-animation = &"cherry"
-frame = 59
-frame_progress = 1.0
+animation = &"blueberry"
 metadata/_edit_lock_ = true
 
 [node name="LevelManager" type="Node" parent="."]
