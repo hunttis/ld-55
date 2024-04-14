@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://di3ojqn7etpre"]
+[gd_scene load_steps=17 format=3 uid="uid://di3ojqn7etpre"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/SoundManager/SoundManager.gd" id="1_6tuf1"]
 [ext_resource type="AudioStream" uid="uid://bq11fx3gyo2tl" path="res://Assets/Sounds/pop03.wav" id="2_1qnj2"]
 [ext_resource type="AudioStream" uid="uid://cemcshb6rucia" path="res://Assets/Sounds/summon_end.wav" id="3_1w1wp"]
 [ext_resource type="AudioStream" uid="uid://ddng6ema836xp" path="res://Assets/Sounds/smack01.wav" id="4_8fpjn"]
+[ext_resource type="AudioStream" uid="uid://cp1cfq2lu84oq" path="res://Assets/Sounds/hurt01.wav" id="5_7s6fn"]
+[ext_resource type="AudioStream" uid="uid://ca87mgqppjiqo" path="res://Assets/Sounds/hurt03.wav" id="6_1ifho"]
+[ext_resource type="AudioStream" uid="uid://cae1coo6uaetq" path="res://Assets/Sounds/hut02.wav" id="7_gjysl"]
+[ext_resource type="AudioStream" uid="uid://1rnuidnkicem" path="res://Assets/Sounds/hurt04.ogg" id="8_h34yv"]
+[ext_resource type="AudioStream" uid="uid://jwbo5s4nm5uk" path="res://Assets/Sounds/hurt5.wav" id="9_orjai"]
+[ext_resource type="AudioStream" uid="uid://drxwkswpihk0w" path="res://Assets/Sounds/dead01.wav" id="10_x2880"]
+[ext_resource type="AudioStream" uid="uid://ccraepums5s66" path="res://Assets/Sounds/dead02.wav" id="11_0ad7m"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sfcsd"]
 streams_count = 1
@@ -20,6 +27,26 @@ streams_count = 1
 stream_0/stream = ExtResource("4_8fpjn")
 stream_0/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ybxee"]
+streams_count = 5
+stream_0/stream = ExtResource("5_7s6fn")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_1ifho")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_gjysl")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("8_h34yv")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("9_orjai")
+stream_4/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8ebxc"]
+streams_count = 2
+stream_0/stream = ExtResource("10_x2880")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("11_0ad7m")
+stream_1/weight = 1.0
+
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_6tuf1")
 
@@ -31,3 +58,10 @@ stream = SubResource("AudioStreamRandomizer_7xd2m")
 
 [node name="SummonFailEffect" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_k837k")
+
+[node name="HurtEffect" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ybxee")
+max_polyphony = 10
+
+[node name="DeadEffect" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_8ebxc")
