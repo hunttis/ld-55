@@ -15,8 +15,12 @@ func _process(_delta):
 				modulate = Color.YELLOW
 			Global.VFX.ONION_JUICE:
 				modulate = Color.WHITE
+				for particles in get_children():
+					particles.lifetime = 2
 			Global.VFX.PEAR_JUICE:
 				modulate = Color.GREEN
+				for particles in get_children():
+					particles.lifetime = 2
 			Global.VFX.ORANGE_JUICE:
 				modulate = Color.ORANGE
 
