@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi4eqwywe0n0s"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/VFXManager/DestroyWhenDone.gd" id="1_2enfr"]
+
+[sub_resource type="Curve" id="Curve_gb103"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.661344), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="LiquidVfx" type="Node2D"]
+position = Vector2(44, 23)
+script = ExtResource("1_2enfr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 40
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector2(2.08165e-12, 400)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_gb103")
+color = Color(0, 0.784314, 0.854902, 1)

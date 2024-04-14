@@ -6,6 +6,7 @@ signal after_sounds_toggled
 
 signal reset_all_taps
 
+signal button_released_manager(button_type)
 signal button_released(button_type)
 signal button_pressed(button_type)
 
@@ -23,6 +24,7 @@ signal battle_resolved
 signal spawn_start
 
 signal summoning_complete(summon: Global.SUMMON)
+signal summoning_animation_complete
 signal send_to_battlefield(summon: Global.SUMMON)
 signal arrived_to_battlefield()
 signal total_fup()

@@ -2,3 +2,5 @@
 .godot/
 .DS_Store
 .vscode/settings.json
+export_presets.cfg
+export/

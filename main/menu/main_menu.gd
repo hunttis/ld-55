@@ -7,7 +7,7 @@ func _ready():
 	$MenuItems/TitleContainer/MenuTitle.text = Global.NAME_OF_THE_GAME
 	Signals.after_sounds_toggled.connect(_on_toggle_sounds)
 
-func _process(delta):
+func _process(_delta):
 	if !get_viewport().gui_get_focus_owner():
 		$MenuItems/ItemsContainer/VBoxContainer/Play.grab_focus()
 

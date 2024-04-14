@@ -31,6 +31,7 @@ func _on_home_area_entered(area:Area2D):
 		Signals.create_vfx.emit(Global.VFX.CRASH, area.global_position)
 		enemy_count -= 1
 		area.queue_free()
+		Sounds.play_sound.emit(Sounds.EFFECT.HURT)
 		Signals.get_hurt.emit()
 
 func _on_enemy_spawn():

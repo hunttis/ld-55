@@ -28,7 +28,10 @@ enum VFX {
 	CHEER_BAD,
 	CHEER_MISS,
 	SMOKE,
-	CRASH
+	CRASH,
+	MUTE,
+	SOUNDS_ON,
+	SUMMON
 }
 
 enum STRAWS {
@@ -38,7 +41,12 @@ enum STRAWS {
 	FOUR = 4
 }
 var hits = []
-
+enum STRAW_SCORE{
+	MISS,
+	MEDIOCRE,
+	GOOD,
+	PERFECT,
+}
 var mana = {
 	ELEMENT.AIR: 0,
 	ELEMENT.EARTH: 0,
@@ -56,11 +64,11 @@ var ElementActions = {
 var quit_game_action = "quit_game_action"
 
 const MAX_DIFFICULTY = 4
-var current_difficulty = 4
+var current_difficulty = 1
 var all_buttons = [ELEMENT.AIR, ELEMENT.EARTH, ELEMENT.FIRE, ELEMENT.WATER]
 
 var enabled_buttons;
-var enabled_buttons_count = STRAWS.THREE
+var enabled_buttons_count = STRAWS.ONE
 
 func select_random_straws():
 	if enabled_buttons_count == 0:
@@ -100,9 +108,15 @@ func _on_disable_all_straws():
 	_set_straw_count(0)
 
 func _on_pick_new_straws():
-	_set_straw_count(randi_range(1, current_difficulty))
+	_set_straw_count(current_difficulty)
 
 func _set_straw_count(count):
 	enabled_buttons_count = count
 	select_random_straws()
 	Signals.reset_all_taps.emit()
+	
+func sum_array(array):
+	var sum = 0.0
+	for element in array:
+		sum += element
+	return sum

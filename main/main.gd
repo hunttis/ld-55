@@ -32,6 +32,11 @@ func _on_sounds_toggled():
 	AudioServer.set_bus_mute(bus_idx, !AudioServer.is_bus_mute(bus_idx))
 	Signals.after_sounds_toggled.emit()
 
+	if AudioServer.is_bus_mute(bus_idx):
+		Signals.create_vfx.emit(Global.VFX.MUTE, Vector2(1200, 64))
+	else:
+		Signals.create_vfx.emit(Global.VFX.SOUNDS_ON, Vector2(1200, 64))
+
 func _show_main_menu():
 	var main_menu = main_menu_scene.instantiate()
 	_set_active_scene(main_menu)	

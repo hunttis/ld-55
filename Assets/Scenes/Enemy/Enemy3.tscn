@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dm2myrlmnc85n"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Enemy/Enemy.gd" id="1_03xxq"]
-[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="2_ks3w4"]
+[ext_resource type="Texture2D" uid="uid://gckare1ldgff" path="res://Assets/Images/enemy-blorb.png" id="2_yymsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy6eh"]
 size = Vector2(32, 32)
@@ -13,8 +13,8 @@ health = 3
 damage = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.52549, 0.14902, 0.0196078, 1)
-texture = ExtResource("2_ks3w4")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_yymsf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yy6eh")
