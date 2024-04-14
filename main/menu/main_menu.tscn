@@ -41,7 +41,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/normal_font_size = 192
 bbcode_enabled = true
-text = "[color=cyan]F[/color][color=white]R[/color][color=yellow]U[/color][color=pink]I[/color][color=red]T[/color] [color=red]P[/color][color=pink]U[/color][color=yellow]N[/color][color=cyan]C[/color][color=white]H[/color]"
+text = "[color=white]F[/color][color=cyan]R[/color][color=yellow]U[/color][color=pink]I[/color][color=red]T[/color] [color=red]P[/color][color=pink]U[/color][color=yellow]N[/color][color=cyan]C[/color][color=white]H[/color]"
 fit_content = true
 autowrap_mode = 0
 visible_characters_behavior = 2
