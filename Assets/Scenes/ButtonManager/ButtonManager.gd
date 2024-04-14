@@ -9,7 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Signals.button_released_manager.connect(_on_button_released_manager)
-	
+	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,3 +34,9 @@ func _on_button_released_manager():
 	if (released_buttons >= Global.enabled_buttons_count):
 		print("all buttons released")
 		Signals.summoning_complete.emit(summoned)
+
+func _on_reset_all_taps():
+	air.reset_button()
+	earth.reset_button()
+	fire.reset_button()
+	water.reset_button()

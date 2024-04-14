@@ -9,14 +9,19 @@ var wave_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.current_difficulty = 1
-	Global.score = 0
 	Signals.arrived_to_battlefield.connect(_on_arrived_to_battlefield)
 	Signals.total_fup.connect(_on_arrived_to_battlefield)
 	Signals.get_hurt.connect(_get_hurt)
 	Signals.add_score.connect(_add_score)
 	Signals.battle_resolved.connect(_on_battle_resolved)
+	Signals.start_game.connect(_on_start_game)
+
+func _on_start_game():
+	Global.current_difficulty = 1
+	Global.score = 0
+	Signals.scores_changed.emit()
 	Signals.battle_init.emit(5)
+	Signals.pick_new_straws.emit()
 
 func _get_hurt():
 	life_points -= 1

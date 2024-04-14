@@ -38,6 +38,8 @@ signal enemy_destroyed
 signal disable_all_straws()
 signal pick_new_straws()
 
+signal start_game()
+
 signal create_vfx(vfx: Global.VFX, position: Vector2)
 
 signal wave_spawn

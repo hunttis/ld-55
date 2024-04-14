@@ -11,7 +11,6 @@ var released = false
 func _ready():
 	enabled = Global.enabled_buttons.has(button_type)
 	sprite.play("default")
-	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -34,7 +33,7 @@ func _process(delta):
 	if is_pressed:
 		Global.mana[button_type] += delta
 		
-func _on_reset_all_taps():
+func reset_button():
 	released = false
 	enabled = Global.enabled_buttons.has(button_type)
 	sprite.play("default")
