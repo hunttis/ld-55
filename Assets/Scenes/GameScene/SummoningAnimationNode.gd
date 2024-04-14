@@ -4,15 +4,9 @@ extends Node2D
 
 var summoned_unit = 1
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Signals.summoning_complete.connect(_on_summoning_complete)
 	animation.hide()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 func _on_summoning_complete(summoned):
 	Signals.create_vfx.emit(Global.VFX.SMOKE, Vector2(1280.0/2, 720.0/2 + 32))
