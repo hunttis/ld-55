@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd7qybmgnp0da"]
+
+[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="1_8no6j"]
+[ext_resource type="Script" path="res://Assets/Scenes/VFXManager/DestroyWhenDone.gd" id="1_xr2b7"]
+
+[sub_resource type="Curve" id="Curve_tcyyy"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.446429, 26.2605), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_0jd18"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="CrashVFX" type="Node2D"]
+script = ExtResource("1_xr2b7")
+
+[node name="CrashVFX" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.9
+texture = ExtResource("1_8no6j")
+direction = Vector2(1, -1)
+gravity = Vector2(2.08165e-12, 300)
+initial_velocity_min = 300.0
+initial_velocity_max = 1000.0
+damping_min = 50.0
+damping_max = 50.0
+damping_curve = SubResource("Curve_tcyyy")
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_curve = SubResource("Curve_0jd18")

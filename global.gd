@@ -19,13 +19,13 @@ enum SUMMON {
 }
 
 
-
 enum VFX {
 	CHEER_PERFECT,
 	CHEER_GOOD,
 	CHEER_BAD,
 	CHEER_MISS,
-	SMOKE
+	SMOKE,
+	CRASH
 }
 
 enum STRAWS {

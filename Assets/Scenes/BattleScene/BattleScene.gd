@@ -28,6 +28,7 @@ func _process(_delta):
 
 func _on_home_area_entered(area:Area2D):
 	if area is Enemy:
+		Signals.create_vfx.emit(Global.VFX.CRASH, area.global_position)
 		enemy_count -= 1
 		area.queue_free()
 		Signals.get_hurt.emit()
