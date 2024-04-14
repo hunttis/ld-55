@@ -1,7 +1,5 @@
 extends Button
 
-func _on_ready():
-	Sounds.play_sound.emit(Sounds.EFFECT.DEAD)
 		
 func _pressed():
 	Signals.to_main_menu.emit()
