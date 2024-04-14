@@ -107,6 +107,5 @@ func reset_meter():
 	sweetspot.visible = enabled
 
 func _on_speed_up():
-	print("SPEEDING UP!", str(speed))
 	speed *= speed_multiplier
 	Global.point_multiplier *= speed_multiplier

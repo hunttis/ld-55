@@ -1,12 +1,11 @@
 extends Node
 
-const MAX_MOB_SIZE = 5
 var mob_size = 0
 var life_points = 10
 
 var wave_count = 0
-# 2 first difficulty waves, 2 second difficulty waves, 3 third difficulty waves
-var progression = [1,2,3]
+# 1 first difficulty wave, 2 second difficulty waves, 3 third difficulty waves
+var progression = [1,2,2]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,13 +19,13 @@ func _ready():
 func _on_start_game():
 	Global.current_difficulty = 1
 	Global.score = 0
+	Global.wave_count = 0
 	Signals.scores_changed.emit()
-	Signals.battle_init.emit(5)
+	Signals.battle_init.emit(3)
 	Signals.pick_new_straws.emit()
 
 func _get_hurt():
 	life_points -= 1
-	print("hurting "+str(life_points))
 	if life_points <= 0:
 		life_points = 10
 		if Global.score > Global.hi_score:
@@ -35,14 +34,12 @@ func _get_hurt():
 		Signals.game_over.emit()
 
 func _add_score(amount):
-	print("ADDED TO SCORE ", amount)
 	Global.score += amount
 	Signals.scores_changed.emit()
 
 func _on_arrived_to_battlefield():
 	mob_size +=1
-	print("ADDING MOB SIZE ", mob_size)
-	if mob_size>=MAX_MOB_SIZE:
+	if mob_size >= Global.MAX_MOB_SIZE:
 		mob_size=0
 		wave_count +=1
 		print("send mob ",wave_count)
@@ -58,7 +55,7 @@ func _on_battle_resolved():
 		wave_count = 0
 		Global.current_difficulty = min(Global.current_difficulty+1,Global.MAX_DIFFICULTY)
 	
-	Signals.battle_init.emit(MAX_MOB_SIZE)
+	Signals.battle_init.emit(Global.MAX_MOB_SIZE)
 	Signals.pick_new_straws.emit()
 
 	

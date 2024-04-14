@@ -2,6 +2,7 @@ extends Node
 
 const NAME_OF_THE_GAME = "FRUIT PUNCH"
 const MAX_DIFFICULTY = 4
+const MAX_MOB_SIZE = 3
 
 var hi_score = 1700000
 var score = 0
