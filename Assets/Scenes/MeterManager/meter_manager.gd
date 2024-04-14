@@ -1,8 +1,8 @@
 extends Node2D
-@onready var fire = $FireMeter
-@onready var air = $AirMeter
-@onready var earth = $EarthMeter
-@onready var water = $WaterMeter
+@onready var fire = $OnionMeter
+@onready var air = $PearMeter
+@onready var earth = $AppleMeter
+@onready var water = $OrangeMeter
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
