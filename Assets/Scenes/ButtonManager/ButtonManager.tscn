@@ -9,14 +9,14 @@ script = ExtResource("1_p43tg")
 [node name="PearButton" parent="." instance=ExtResource("1_vibg4")]
 position = Vector2(1099, 342)
 
-[node name="EarthButton" parent="." instance=ExtResource("1_vibg4")]
+[node name="AppleButton" parent="." instance=ExtResource("1_vibg4")]
 position = Vector2(1101, 556)
 button_type = 1
 
-[node name="FireButton" parent="." instance=ExtResource("1_vibg4")]
+[node name="OnionButton" parent="." instance=ExtResource("1_vibg4")]
 position = Vector2(192, 329)
 button_type = 2
 
-[node name="WaterButton" parent="." instance=ExtResource("1_vibg4")]
+[node name="OrangeButton" parent="." instance=ExtResource("1_vibg4")]
 position = Vector2(191, 564)
 button_type = 3

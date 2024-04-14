@@ -12,7 +12,6 @@ var released = false
 func _ready():
 	enabled = Global.enabled_buttons.has(button_type)
 	juice_box.set_frame_and_progress(button_type, 0)
-	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

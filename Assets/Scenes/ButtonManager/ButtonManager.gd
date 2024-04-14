@@ -1,8 +1,8 @@
 extends Node2D
-@onready var air = $AirButton
-@onready var earth = $EarthButton
-@onready var fire = $FireButton
-@onready var water = $WaterButton
+@onready var pear = $PearButton
+@onready var apple = $AppleButton
+@onready var onion = $OnionButton
+@onready var orange = $OrangeButton
 
 
 
@@ -30,13 +30,13 @@ func _on_button_released_manager():
 	else:
 		summoned = Global.SUMMON.FRIENDLY1
 
-	var released_buttons = [air.released, earth.released, fire.released, water.released].count(true)
+	var released_buttons = [pear.released, apple.released, onion.released, orange.released].count(true)
 	if (released_buttons >= Global.enabled_buttons_count):
 		print("all buttons released")
 		Signals.summoning_complete.emit(summoned)
 
 func _on_reset_all_taps():
-	air.reset_button()
-	earth.reset_button()
-	fire.reset_button()
-	water.reset_button()
+	pear.reset_button()
+	apple.reset_button()
+	onion.reset_button()
+	orange.reset_button()
