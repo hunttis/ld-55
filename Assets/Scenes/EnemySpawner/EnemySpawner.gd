@@ -23,10 +23,11 @@ var enemy_scenes = {
 }
 
 func _ready():
-	Signals.battle_init.connect(_on_wave_reset)
+	Signals.battle_init.connect(_on_wave_spawn)
 	timer.wait_time = delay
 
 func _on_timer_timeout():
+	timer.wait_time = 1.0
 	if enemy_count < wave_size:
 		var enemy_scene = enemy_scenes[Global.current_difficulty-1]
 		var enemy_instance = enemy_scene.instantiate()	
@@ -37,7 +38,8 @@ func _on_timer_timeout():
 	else:
 		timer.stop()
 
-func _on_wave_reset(amount: int):
+func _on_wave_spawn(amount: int):
 	wave_size = amount
 	enemy_count = 0
+	timer.wait_time = 2.0
 	timer.start()

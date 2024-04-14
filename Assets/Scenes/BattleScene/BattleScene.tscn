@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq5ywqsn8cjrh"]
+[gd_scene load_steps=9 format=3 uid="uid://dq5ywqsn8cjrh"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/BattleScene.gd" id="1_11j5c"]
 [ext_resource type="PackedScene" uid="uid://ch0rbsmjcmm0q" path="res://Assets/Scenes/EnemySpawner/EnemySpawner.tscn" id="1_jjxwl"]
 [ext_resource type="Texture2D" uid="uid://b27lc4iwp5jr1" path="res://Assets/Images/can.png" id="3_mwtv6"]
 [ext_resource type="Script" path="res://Assets/Scenes/BattleScene/FriendlySpawner.gd" id="4_8lr4h"]
+[ext_resource type="FontFile" uid="uid://15spnl5ahuij" path="res://Assets/Fonts/IrishGrover-Regular.ttf" id="5_xb2yg"]
 
 [sub_resource type="Theme" id="Theme_57b63"]
 
@@ -35,25 +36,14 @@ size_flags_vertical = 3
 theme = SubResource("Theme_57b63")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ptpxx")
 
-[node name="PlaceholderLabel" type="RichTextLabel" parent="Panel"]
-visible = false
-clip_contents = false
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 50
-text = ". . . Battlefield . . ."
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
 [node name="EnemySpawner" parent="." instance=ExtResource("1_jjxwl")]
 delay = 1.0
 
 [node name="RallyPoint" type="Node2D" parent="EnemySpawner"]
-position = Vector2(1188, 100)
+position = Vector2(1040, 100)
 
 [node name="Home" type="Area2D" parent="."]
-position = Vector2(44, 73)
+position = Vector2(46, 75)
 collision_layer = 2
 monitorable = false
 
@@ -72,4 +62,35 @@ script = ExtResource("4_8lr4h")
 [node name="RallyPoint" type="Node2D" parent="FriendlySpawner"]
 position = Vector2(136, 100)
 
+[node name="MessageContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1280, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MessageContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="WaveLabel" type="Label" parent="MessageContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xb2yg")
+theme_override_font_sizes/font_size = 24
+text = "Wave: 0. Enemies: 5"
+horizontal_alignment = 1
+
+[node name="VictoryLabel" type="Label" parent="MessageContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xb2yg")
+theme_override_font_sizes/font_size = 24
+text = "Victory! On to the next wave!"
+horizontal_alignment = 1
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="Home" to="." method="_on_home_area_entered"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
