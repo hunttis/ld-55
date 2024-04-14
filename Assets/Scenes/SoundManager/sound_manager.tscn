@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://di3ojqn7etpre"]
+[gd_scene load_steps=39 format=3 uid="uid://di3ojqn7etpre"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/SoundManager/SoundManager.gd" id="1_6tuf1"]
 [ext_resource type="AudioStream" uid="uid://bqtlkqqjtu7x5" path="res://Assets/Sounds/converted/trimmed/pop03.wav" id="2_1qnj2"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://01adkk750qn0" path="res://Assets/Sounds/summonend03.wav" id="5_7ixnc"]
 [ext_resource type="AudioStream" uid="uid://bd8efegcep7ju" path="res://Assets/Sounds/converted/trimmed/hurt01.wav" id="5_7s6fn"]
 [ext_resource type="AudioStream" uid="uid://du1wdm35l4ddh" path="res://Assets/Sounds/converted/trimmed/hurt03.wav" id="6_1ifho"]
+[ext_resource type="AudioStream" uid="uid://c6ecjt7ratc6m" path="res://Assets/Sounds/converted/trimmed/wav/summond_end04.wav" id="6_w02td"]
+[ext_resource type="AudioStream" uid="uid://dkkv8qlmrilbk" path="res://Assets/Sounds/converted/trimmed/wav/summond_end05.wav" id="7_b6u4k"]
 [ext_resource type="AudioStream" uid="uid://n3sdkihs42wl" path="res://Assets/Sounds/converted/trimmed/hut02.wav" id="7_gjysl"]
 [ext_resource type="AudioStream" uid="uid://cmhv0g6hvdssa" path="res://Assets/Sounds/converted/trimmed/hurt04.wav" id="8_fvk6r"]
 [ext_resource type="AudioStream" uid="uid://crcjyx3p12kd7" path="res://Assets/Sounds/converted/trimmed/hurt5.wav" id="9_orjai"]
@@ -20,8 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://b2ptextxtn7tj" path="res://Assets/Sounds/converted/trimmed/pop02.wav" id="12_eemf7"]
 [ext_resource type="AudioStream" uid="uid://b16kaiqxcvd6r" path="res://Assets/Sounds/miss.wav" id="13_8uxlu"]
 [ext_resource type="AudioStream" uid="uid://chtkn5w6ntiye" path="res://Assets/Sounds/converted/trimmed/wav/good01.wav" id="13_mpujl"]
-[ext_resource type="AudioStream" uid="uid://dt3wj2e0ucwn8" path="res://Assets/Sounds/menu_music.mp3" id="13_u1pdi"]
-[ext_resource type="AudioStream" uid="uid://blxh2h24h0rrq" path="res://Assets/Sounds/game_music.mp3" id="14_fm7rv"]
+[ext_resource type="AudioStream" uid="uid://uk4082r5xulm" path="res://Assets/Sounds/menu_music.mp3" id="13_u1pdi"]
+[ext_resource type="AudioStream" uid="uid://cpkw38wbbbl37" path="res://Assets/Sounds/game_music.mp3" id="14_fm7rv"]
 [ext_resource type="AudioStream" uid="uid://cxuewnfphnqtr" path="res://Assets/Sounds/converted/trimmed/wav/bad01.wav" id="15_mtocy"]
 [ext_resource type="Script" path="res://Assets/Scenes/SoundManager/GameMusic.gd" id="15_p073c"]
 [ext_resource type="AudioStream" uid="uid://binspeqxbmidd" path="res://Assets/Sounds/converted/trimmed/wav/miss01.wav" id="17_1w2gx"]
@@ -32,13 +34,17 @@ stream_0/stream = ExtResource("2_1qnj2")
 stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7xd2m"]
-streams_count = 3
+streams_count = 5
 stream_0/stream = ExtResource("3_debdy")
 stream_0/weight = 1.0
 stream_1/stream = ExtResource("4_muq46")
 stream_1/weight = 1.0
 stream_2/stream = ExtResource("5_7ixnc")
 stream_2/weight = 1.0
+stream_3/stream = ExtResource("6_w02td")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("7_b6u4k")
+stream_4/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_k837k"]
 streams_count = 1
