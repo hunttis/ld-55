@@ -21,6 +21,13 @@ enum SOUNDS {
 	SUMMON_SUCCESS
 }
 
+enum VFX {
+	CHEER_PERFECT,
+	CHEER_GOOD,
+	CHEER_BAD,
+	CHEER_MISS
+}
+
 enum STRAWS {
 	ONE = 1,
 	TWO = 2,

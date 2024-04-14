@@ -33,3 +33,4 @@ signal enemy_destroyed
 signal enable_straws(count: Global.STRAWS)
 
 signal play_sound(sound: Global.SOUNDS)
+signal create_vfx(vfx: Global.VFX, position: Vector2)
