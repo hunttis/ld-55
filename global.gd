@@ -30,7 +30,8 @@ enum VFX {
 	SMOKE,
 	CRASH,
 	MUTE,
-	SOUNDS_ON
+	SOUNDS_ON,
+	SUMMON
 }
 
 enum STRAWS {

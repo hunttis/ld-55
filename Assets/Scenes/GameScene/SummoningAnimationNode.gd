@@ -12,12 +12,30 @@ var unit_animations = {
 	Global.SUMMON.FRIENDLY5: 'strawberry',
 }
 
+var summoned_creature
+var summon_delay = 1
+var summoning = false
+
 func _ready():
 	Signals.summoning_complete.connect(_on_summoning_complete)
 	animation.hide()
-	
+
+func _process(delta):
+	if summoning:
+		summon_delay -= delta
+		if summon_delay <= 0:
+			summoning = false
+			summon_delay = 1
+			delayed_summoning()
+
 func _on_summoning_complete(summoned):
-	Signals.create_vfx.emit(Global.VFX.SMOKE, Vector2(1280.0/2, 720.0/2 + 32))
+	summoning = true
+	summoned_creature = summoned
+	print("Summoning animation should happen")
+	Signals.create_vfx.emit(Global.VFX.SUMMON, Vector2(1280.0/2, 720.0/7*6))
+	
+func delayed_summoning():
+	
 	print("hits ",Global.hits)
 	if(sum_array(Global.hits) == 0):
 		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_FAIL)
@@ -27,7 +45,7 @@ func _on_summoning_complete(summoned):
 	else:
 		Sounds.play_sound.emit(Sounds.EFFECT.SUMMON_START)
 		animation.show()
-		summoned_unit = summoned
+		summoned_unit = summoned_creature
 		Signals.disable_all_straws.emit()
 		animation.play(unit_animations[summoned_unit])
 

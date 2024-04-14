@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://dft2yuppu4lfk"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/VFXManager/SummoningVFX/SummoningScene.gd" id="1_ftpgb"]
+[ext_resource type="Texture2D" uid="uid://dmnccsbs6783f" path="res://Assets/Images/enemy.png" id="1_ucaub"]
+
+[sub_resource type="Curve" id="Curve_hxrrw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.816964, 0.901681), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_iemde"]
+offsets = PackedFloat32Array(0, 0.695238, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.947619, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_disk8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.841518, 0.814286), -0.815687, -0.815687, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_4oocb"]
+offsets = PackedFloat32Array(0, 0.735714, 1)
+colors = PackedColorArray(0.67069, 0.67069, 0.670689, 1, 1, 1, 1, 0.97619, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_6ugri"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 10.4202), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_mlkwj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_m6k7k"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="SummoningVfxScene" type="Node2D"]
+position = Vector2(651, 541)
+script = ExtResource("1_ftpgb")
+
+[node name="PillarTarget" type="Node2D" parent="."]
+
+[node name="PillarParticles" type="CPUParticles2D" parent="PillarTarget"]
+rotation = -0.0187952
+amount = 30
+texture = ExtResource("1_ucaub")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 2.08165e-12)
+direction = Vector2(2.08165e-12, -1)
+spread = 0.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_max = 10.0
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_curve = SubResource("Curve_hxrrw")
+color_ramp = SubResource("Gradient_iemde")
+
+[node name="CloudParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_ucaub")
+emission_shape = 1
+emission_sphere_radius = 19.05
+direction = Vector2(2.08165e-12, -1)
+spread = 90.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+scale_amount_curve = SubResource("Curve_disk8")
+color_ramp = SubResource("Gradient_4oocb")
+color_initial_ramp = SubResource("Gradient_4oocb")
+
+[node name="SmokeParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-1, -243)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.9
+texture = ExtResource("1_ucaub")
+spread = 180.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 205.13
+initial_velocity_max = 205.13
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+radial_accel_min = 50.0
+radial_accel_max = 50.0
+damping_min = 100.0
+damping_max = 100.0
+damping_curve = SubResource("Curve_6ugri")
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_mlkwj")
+color_ramp = SubResource("Gradient_m6k7k")

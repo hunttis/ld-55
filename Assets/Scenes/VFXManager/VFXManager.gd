@@ -4,6 +4,7 @@ const CheerScene = preload("res://Assets/Scenes/VFXManager/CheerVFX/CheerScene.t
 const SmokeScene = preload("res://Assets/Scenes/VFXManager/SmokeVFX/SmokeScene.tscn")
 const CrashScene = preload("res://Assets/Scenes/VFXManager/CrashVFX/CrashScene.tscn")
 const MuteScene = preload("res://Assets/Scenes/VFXManager/SoundVFX/MuteScene.tscn")
+const SummonScene = preload("res://Assets/Scenes/VFXManager/SummoningVFX/SummoningScene.tscn")
 
 func _ready():
 	Signals.create_vfx.connect(_on_create_vfx)
@@ -39,6 +40,11 @@ func _on_create_vfx(vfx: Global.VFX, position: Vector2):
 			mute_fx.sounds_on = true
 			get_parent().add_child(mute_fx)
 			mute_fx.position = position
+		Global.VFX.SUMMON:
+			print("Creating Summon VFX")
+			var summon = SummonScene.instantiate()
+			get_parent().add_child(summon)
+			summon.position = position
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
