@@ -14,6 +14,7 @@ func _ready():
 	enabled = Global.enabled_buttons.has(button_type)
 	juice_box.set_frame_and_progress(button_type, 0)
 	_on_debug_toggled()
+	Signals.release_buttons.connect(_on_button_released)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,11 +28,7 @@ func _process(delta):
 		Signals.button_pressed.emit(button_type)
 
 	if Input.is_action_just_released(Global.ElementActions[button_type]):
-		is_pressed = false
-		released = true
-		sprite.play("default")
-		Signals.button_released.emit(button_type)
-		Signals.button_released_manager.emit()
+		button_release()
 
 	if is_pressed:
 		Global.mana[button_type] += delta
@@ -44,3 +41,14 @@ func reset_button():
 func _on_debug_toggled():
 	debug_label.visible = !debug_label.visible
 	sprite.visible = Global.DEBUG;
+
+func button_release():
+		is_pressed = false
+		released = true
+		sprite.play("default")
+		Signals.button_released.emit(button_type)
+		Signals.button_released_manager.emit()
+
+func _on_button_released():
+	if enabled:
+		button_release()

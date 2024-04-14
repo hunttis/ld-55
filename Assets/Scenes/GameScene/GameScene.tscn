@@ -2200,7 +2200,20 @@ metadata/_edit_lock_ = true
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("7_625ks")
 
+[node name="LevelTimer" type="Timer" parent="LevelManager"]
+wait_time = 10.0
+one_shot = true
+
+[node name="TimerLabel" type="Label" parent="LevelManager"]
+offset_left = 799.0
+offset_top = 185.0
+offset_right = 904.0
+offset_bottom = 208.0
+theme = ExtResource("1_vbl1w")
+text = "Summon Time
+"
+
 [node name="Scores" parent="." instance=ExtResource("8_angnd")]
-in_game = true
 
 [connection signal="animation_finished" from="SummoningAnimationNode/SummonAnimation" to="SummoningAnimationNode" method="_on_animation_finished"]
+[connection signal="timeout" from="LevelManager/LevelTimer" to="LevelManager" method="_on_level_timer_timeout"]

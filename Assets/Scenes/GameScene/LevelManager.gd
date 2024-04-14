@@ -7,6 +7,9 @@ var wave_count = 0
 # 1 first difficulty wave, 2 second difficulty waves, 3 third difficulty waves
 var progression = [1,2,2]
 
+@onready var level_timer: Timer = $LevelTimer
+@onready var timer_label: Label = $TimerLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Signals.arrived_to_battlefield.connect(_on_arrived_to_battlefield)
@@ -16,6 +19,9 @@ func _ready():
 	Signals.battle_resolved.connect(_on_battle_resolved)
 	Signals.start_game.connect(_on_start_game)
 
+func _process(_delta):
+	timer_label.text = "%d" % level_timer.time_left
+
 func _on_start_game():
 	Global.current_difficulty = 1
 	Global.score = 0
@@ -23,6 +29,7 @@ func _on_start_game():
 	Signals.scores_changed.emit()
 	Signals.battle_init.emit(3)
 	Signals.pick_new_straws.emit()
+	level_timer.start()
 
 func _get_hurt():
 	life_points -= 1
@@ -46,6 +53,7 @@ func _on_arrived_to_battlefield():
 		Signals.battle_start.emit()
 	else:
 		Signals.pick_new_straws.emit()
+		level_timer.start()
 		
 func _on_battle_resolved():
 	if Global.current_difficulty > 3:
@@ -57,5 +65,7 @@ func _on_battle_resolved():
 	
 	Signals.battle_init.emit(Global.MAX_MOB_SIZE)
 	Signals.pick_new_straws.emit()
+	level_timer.start()
 
-	
+func _on_level_timer_timeout():
+	Signals.release_buttons.emit()
