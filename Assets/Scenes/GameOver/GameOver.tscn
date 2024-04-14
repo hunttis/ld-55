@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://qviibiybwawx"]
+[gd_scene load_steps=6 format=3 uid="uid://qviibiybwawx"]
 
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="1_6p0cw"]
 [ext_resource type="Script" path="res://Assets/Scenes/GameOver/GameOver.gd" id="1_73kjp"]
 [ext_resource type="Script" path="res://Assets/Scenes/GameOver/StartOver.gd" id="1_bgjl2"]
+[ext_resource type="Theme" path="res://Assets/theme.tres" id="3_7lw22"]
+[ext_resource type="Texture2D" uid="uid://c3icomyp8bbf0" path="res://Assets/Images/summoning-bg.jpg" id="5_14x7u"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -32,6 +34,10 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+theme = ExtResource("3_7lw22")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
 theme_override_font_sizes/normal_font_size = 60
 text = "Oh noes!"
 fit_content = true
@@ -42,8 +48,12 @@ autowrap_mode = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
+theme = ExtResource("3_7lw22")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
 theme_override_font_sizes/normal_font_size = 60
-text = "Game over
+text = "Game Over
 
 "
 fit_content = true
@@ -53,6 +63,13 @@ autowrap_mode = 0
 [node name="StartOverButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("3_7lw22")
 theme_override_font_sizes/font_size = 32
 text = "Start over"
 script = ExtResource("1_bgjl2")
+
+[node name="Summoning-bg" type="Sprite2D" parent="."]
+modulate = Color(0.447059, 0.447059, 0.447059, 1)
+z_index = -1
+texture = ExtResource("5_14x7u")
+centered = false
