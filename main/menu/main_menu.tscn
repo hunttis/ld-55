@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw6fsf6vdmyf2"]
+[gd_scene load_steps=10 format=3 uid="uid://bw6fsf6vdmyf2"]
 
 [ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3icomyp8bbf0" path="res://Assets/Images/summoning-bg.jpg" id="3_mg8n3"]
 [ext_resource type="Script" path="res://main/menu/MenuTitle.gd" id="4_8twmg"]
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="5_cv0il"]
+[ext_resource type="Script" path="res://main/menu/SoundToggle2.gd" id="6_bcewb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -64,7 +65,7 @@ script = ExtResource("2_urv4f")
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Sounds"
-script = ExtResource("2_6bova")
+script = ExtResource("6_bcewb")
 
 [node name="TutorialToggle" type="CheckButton" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
