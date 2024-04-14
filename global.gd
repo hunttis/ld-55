@@ -40,7 +40,12 @@ enum STRAWS {
 	FOUR = 4
 }
 var hits = []
-
+enum STRAW_SCORE{
+	MISS,
+	MEDIOCRE,
+	GOOD,
+	PERFECT,
+}
 var mana = {
 	ELEMENT.AIR: 0,
 	ELEMENT.EARTH: 0,

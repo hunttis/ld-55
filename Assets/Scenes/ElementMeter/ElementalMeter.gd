@@ -20,14 +20,9 @@ var perfect_margin_px: float
 var good_margin_px: float
 var mediocre_margin_px: float
 var can_be_used: bool = true
-var result = MISS
+var result = Global.STRAW_SCORE.MISS
 
-enum {
-	PERFECT,
-	GOOD,
-	MEDIOCRE,
-	MISS
-}
+
 
 func _ready():
 	enabled = Global.enabled_buttons.has(meter_type)
@@ -45,20 +40,20 @@ func _on_button_released(button_type):
 		var difference = abs(target - meter.value)
 		can_be_used = false
 		if difference < perfect_margin:
-			result = PERFECT
+			result = Global.STRAW_SCORE.PERFECT
 			Signals.add_score.emit(100000)
 			print("PERFECT HIT")
 		elif difference < perfect_margin+good_margin:
-			result = GOOD
+			result = Global.STRAW_SCORE.GOOD
 			Signals.add_score.emit(50000)
 			print("GOOD HIT")
 		elif difference < perfect_margin+good_margin+mediocre_margin:
-			result = MEDIOCRE
+			result = Global.STRAW_SCORE.MEDIOCRE
 			Signals.add_score.emit(10000)
 			print("MEDIOCRE HIT")
 		else:
 			print("MISS")
-			result = MISS
+			result = Global.STRAW_SCORE.MISS
 		Global.hits.append(result)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -70,7 +65,7 @@ func _process(_delta):
 		meter.value = Global.mana[meter_type]*10*speed
 	
 func reset_meter():
-	result = MISS
+	result = Global.STRAW_SCORE.MISS
 	enabled = Global.enabled_buttons.has(meter_type)
 
 	can_be_used = true
