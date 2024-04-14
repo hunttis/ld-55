@@ -9,6 +9,7 @@
 position = Vector2(0, 1)
 script = ExtResource("1_jiqvc")
 
+<<<<<<< HEAD
 [node name="OnionMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(243, 487)
 scale = Vector2(0.9, 0.9)
@@ -25,6 +26,23 @@ meter_type = 1
 
 [node name="OrangeMeter" parent="." instance=ExtResource("1_sno7e")]
 position = Vector2(218, 518)
+=======
+[node name="FireMeter" parent="." instance=ExtResource("1_sno7e")]
+position = Vector2(256, 326)
+meter_type = 2
+
+[node name="AirMeter" parent="." instance=ExtResource("1_sno7e")]
+position = Vector2(1033, 319)
+scale = Vector2(-1, 1)
+
+[node name="EarthMeter" parent="." instance=ExtResource("1_sno7e")]
+position = Vector2(982, 518)
+scale = Vector2(-1, 1)
+meter_type = 1
+
+[node name="WaterMeter" parent="." instance=ExtResource("1_sno7e")]
+position = Vector2(312, 531)
+>>>>>>> af7eabe (images)
 meter_type = 3
 
 [node name="SummoningCan" parent="." instance=ExtResource("2_p7bah")]
