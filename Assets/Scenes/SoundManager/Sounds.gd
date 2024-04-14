@@ -9,4 +9,5 @@ enum EFFECT {
 	DEAD,
 	HURT,
 	FIGHT,
+	SLAP
 }
