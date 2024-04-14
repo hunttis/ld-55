@@ -8,10 +8,6 @@ extends Node2D
 func _ready():
 	Signals.reset_all_taps.connect(_on_reset_all_taps)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 func _on_reset_all_taps():
 	fire.reset_meter()
