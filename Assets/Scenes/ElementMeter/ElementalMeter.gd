@@ -13,6 +13,7 @@ extends Node2D
 @onready var debug_label = $DebugLabel
 
 const METER_WIDTH = 300
+const METER_HEIGHT = 24
 
 const TEXTURE_PROGRESS_APPLE = preload("res://Assets/Images/straw-progress-apple.png")
 const TEXTURE_PROGRESS_ONION = preload("res://Assets/Images/straw-progress-onion.png")
@@ -93,5 +94,6 @@ func reset_meter():
 	good_margin_px = METER_WIDTH * (good_margin/100) + perfect_margin_px
 	mediocre_margin_px = METER_WIDTH * (mediocre_margin/100) + good_margin_px
 	sweetspot.position.x = METER_WIDTH * (target/100);
+	sweetspot.position.y = 12
 	sweetspot.set_margin_indicators(perfect_margin_px, good_margin_px, mediocre_margin_px)
 	sweetspot.visible = enabled
