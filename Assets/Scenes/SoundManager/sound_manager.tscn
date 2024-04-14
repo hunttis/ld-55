@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://di3ojqn7etpre"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/SoundManager/SoundManager.gd" id="1_6tuf1"]
-[ext_resource type="AudioStream" uid="uid://cdj87vpdjvw7h" path="res://Assets/Sounds/pop03.wav" id="2_1qnj2"]
-[ext_resource type="AudioStream" uid="uid://cnyfl61lsim4n" path="res://Assets/Sounds/summon_end.wav" id="3_1w1wp"]
-[ext_resource type="AudioStream" uid="uid://dwgwpqtxulpp6" path="res://Assets/Sounds/smack01.wav" id="4_8fpjn"]
+[ext_resource type="AudioStream" uid="uid://bq11fx3gyo2tl" path="res://Assets/Sounds/pop03.wav" id="2_1qnj2"]
+[ext_resource type="AudioStream" uid="uid://cemcshb6rucia" path="res://Assets/Sounds/summon_end.wav" id="3_1w1wp"]
+[ext_resource type="AudioStream" uid="uid://ddng6ema836xp" path="res://Assets/Sounds/smack01.wav" id="4_8fpjn"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sfcsd"]
 streams_count = 1
