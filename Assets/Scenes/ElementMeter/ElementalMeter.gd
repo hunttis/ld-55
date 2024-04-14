@@ -80,7 +80,7 @@ func reset_meter():
 	target = randf_range(30,70)
 	perfect_margin = randf_range(1,3)
 	good_margin = randf_range(2,10)
-	mediocre_margin  = min(randf_range(10,100),50-target/2-perfect_margin-good_margin,10)
+	mediocre_margin  = randf_range(10,50-target/2-perfect_margin-good_margin)
 	print(meter_type, " ", target, " ",perfect_margin, " ", good_margin, " ", mediocre_margin)
 	perfect_margin_px = METER_WIDTH * (perfect_margin/100)
 	good_margin_px = METER_WIDTH * (good_margin/100) + perfect_margin_px
