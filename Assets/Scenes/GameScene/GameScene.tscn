@@ -2201,5 +2201,6 @@ metadata/_edit_lock_ = true
 script = ExtResource("7_625ks")
 
 [node name="Scores" parent="." instance=ExtResource("8_angnd")]
+in_game = true
 
 [connection signal="animation_finished" from="SummoningAnimationNode/SummonAnimation" to="SummoningAnimationNode" method="_on_animation_finished"]

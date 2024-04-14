@@ -5,24 +5,42 @@
 [ext_resource type="Script" path="res://Assets/Scenes/ScoreScene/ScoreScene.gd" id="1_pfky8"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_pfky8")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Menu" type="Node2D" parent="."]
 position = Vector2(14, 638)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Menu"]
 position = Vector2(95, 159)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_nu7sp")
 
-[node name="Scores" type="RichTextLabel" parent="Node2D"]
+[node name="Scores" type="RichTextLabel" parent="Menu"]
 offset_right = 2000.0
 offset_bottom = 138.0
 theme = ExtResource("1_eajhf")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
 theme_override_font_sizes/normal_font_size = 29
-text = "HIGH SCORE: 999M
-SCORE: 128K"
+text = " HIGH SCORE: 999M
+ SCORE: 128K"
 fit_content = true
 scroll_active = false
-script = ExtResource("1_pfky8")
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="Scores" type="RichTextLabel" parent="Game"]
+offset_left = 1078.0
+offset_top = 12.0
+offset_right = 3078.0
+offset_bottom = 150.0
+theme = ExtResource("1_eajhf")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/normal_font_size = 29
+text = " SCORE: 128K"
+fit_content = true
+scroll_active = false

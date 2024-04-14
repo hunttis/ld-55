@@ -3,7 +3,7 @@ extends Node
 const NAME_OF_THE_GAME = "FRUIT PUNCH"
 const MAX_DIFFICULTY = 4
 
-var hi_score = 0
+var hi_score = 1700000
 var score = 0
 var DEBUG = false
 var show_tutorial = true
