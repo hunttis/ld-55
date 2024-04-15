@@ -48,3 +48,4 @@ signal wave_spawn
 signal speed_up
 
 signal release_buttons
+signal set_difficulty

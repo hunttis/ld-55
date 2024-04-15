@@ -29,7 +29,7 @@ func _ready():
 func _on_timer_timeout():
 	timer.wait_time = 1.0
 	if enemy_count < wave_size:
-		var enemy_scene = enemy_scenes[Global.current_difficulty-1]
+		var enemy_scene = enemy_scenes[Difficulty.current_difficulty-1]
 		var enemy_instance = enemy_scene.instantiate()	
 		rally_point.add_child(enemy_instance)
 		enemy_instance.position.x = enemy_instance.position.x + enemy_count * (16 + 32)

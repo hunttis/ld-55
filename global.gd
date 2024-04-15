@@ -1,7 +1,6 @@
 extends Node
 
 const NAME_OF_THE_GAME = "FRUIT PUNCH"
-const MAX_DIFFICULTY = 4
 const MAX_MOB_SIZE = 3
 
 var hi_score = 1700000
@@ -9,7 +8,6 @@ var score = 0
 var DEBUG = false
 var show_tutorial = true
 var quit_game_action = "quit_game_action"
-var current_difficulty = 1
 var all_buttons = [ELEMENT.PEAR, ELEMENT.APPLE, ELEMENT.ONION, ELEMENT.ORANGE]
 var enabled_buttons: Array
 var enabled_buttons_count = STRAWS.ONE
@@ -107,7 +105,7 @@ func _on_disable_all_straws():
 	_set_straw_count(0)
 
 func _on_pick_new_straws():
-	_set_straw_count(current_difficulty)
+	_set_straw_count(Difficulty.current_difficulty)
 	_highlight_enabled_buttons()
 	
 func _highlight_enabled_buttons():

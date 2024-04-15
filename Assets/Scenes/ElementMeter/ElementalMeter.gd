@@ -2,8 +2,6 @@ extends Node2D
 
 
 @export var target: float = 50
-@export var speed: float = 4
-@export var speed_multiplier: float = 1.10
 @export var perfect_margin: float = 2
 @export var good_margin: float = 2
 @export var mediocre_margin: float = 2
@@ -110,7 +108,7 @@ func _process(_delta):
 		return
 	debug_label.text = str(can_be_used)
 	if can_be_used:
-		meter.value = Global.mana[meter_type]*10*speed
+		meter.value = Global.mana[meter_type]*10*Difficulty.meter_speed
 	
 func reset_meter():
 	result = Global.STRAW_SCORE.MISS
@@ -131,5 +129,5 @@ func reset_meter():
 	sweetspot.visible = enabled
 
 func _on_speed_up():
-	speed *= speed_multiplier
-	Global.point_multiplier *= speed_multiplier
+	Difficulty.meter_speed *= Difficulty.meter_speed_multiplier
+	Global.point_multiplier *= Difficulty.meter_speed_multiplier

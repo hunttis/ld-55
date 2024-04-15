@@ -7,8 +7,6 @@ var wave_count = 0
 # 1 first difficulty wave, 2 second difficulty waves, 3 third difficulty waves
 var progression = [1,2,2]
 
-@export var start_speed_up_at_round = 5
-
 @onready var level_timer: Timer = $LevelTimer
 @onready var timer_label: Label = $TimerLabel
 
@@ -27,7 +25,6 @@ func _process(_delta):
 		timer_label.text = "%d" % ceil(level_timer.time_left)
 
 func _on_start_game():
-	Global.current_difficulty = 1
 	Global.score = 0
 	Global.total_wave_count = 0
 	Signals.scores_changed.emit()
@@ -62,12 +59,12 @@ func _on_arrived_to_battlefield():
 		level_timer.start()
 		
 func _on_battle_resolved():
-	if Global.total_wave_count > start_speed_up_at_round:
+	if Global.total_wave_count > Difficulty.speed_up_start_round:
 		Signals.speed_up.emit()
 
-	if Global.current_difficulty != Global.MAX_DIFFICULTY && wave_count >= progression[Global.current_difficulty-1]:
+	if Difficulty.current_difficulty != Difficulty.MAX_DIFFICULTY && wave_count >= progression[Difficulty.current_difficulty-1]:
 		wave_count = 0
-		Global.current_difficulty = min(Global.current_difficulty+1,Global.MAX_DIFFICULTY)
+		Difficulty.current_difficulty = min(Difficulty.current_difficulty+1,Difficulty.MAX_DIFFICULTY)
 	
 	Signals.battle_init.emit(Global.MAX_MOB_SIZE)
 	Signals.pick_new_straws.emit()

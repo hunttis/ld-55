@@ -13,38 +13,31 @@ func _ready():
 	Signals.create_vfx.connect(_on_create_vfx)
 
 func _on_create_vfx(vfx: Global.VFX, position: Vector2):
-	print("Signal received for: ", Global.VFX.keys()[vfx], " at position: ", position)
 	match vfx:
 		Global.VFX.CHEER_PERFECT, Global.VFX.CHEER_GOOD, Global.VFX.CHEER_BAD, Global.VFX.CHEER_MISS:
-			print("Creating Cheer VFX")
 			var cheer = CheerScene.instantiate()
 			cheer.cheer_type = vfx
 			get_parent().add_child(cheer)
 			cheer.position = position
 		Global.VFX.SMOKE:
-			print("Creating Smoke VFX")
 			var smoke = SmokeScene.instantiate()
 			get_parent().add_child(smoke)
 			smoke.position = position
 		Global.VFX.CRASH:
-			print("Creating Crash VFX")
 			var crash = CrashScene.instantiate()
 			get_parent().add_child(crash)
 			crash.position = position
 		Global.VFX.MUTE:
-			print("Muting VFX")
 			var mute_fx = MuteScene.instantiate()
 			mute_fx.sounds_on = false
 			get_parent().add_child(mute_fx)
 			mute_fx.position = position
 		Global.VFX.SOUNDS_ON:
-			print("Muting VFX")
 			var mute_fx = MuteScene.instantiate()
 			mute_fx.sounds_on = true
 			get_parent().add_child(mute_fx)
 			mute_fx.position = position
 		Global.VFX.SUMMON:
-			print("Creating Summon VFX")
 			var summon = SummonScene.instantiate()
 			get_parent().add_child(summon)
 			summon.position = position
@@ -54,12 +47,10 @@ func _on_create_vfx(vfx: Global.VFX, position: Vector2):
 			liquid.position = position
 			liquid.element = vfx
 		Global.VFX.BATTLE_DAMAGE:
-			print("Battle VFX")
 			var battle_fx = BattleFxScene.instantiate()
 			get_parent().add_child(battle_fx)
 			battle_fx.position = position
 		Global.VFX.HIGHLIGHT:
-			print("Highlight VFX")
 			var highlight_fx = HighlightScene.instantiate()
 			get_parent().add_child(highlight_fx)
 			highlight_fx.global_position = position

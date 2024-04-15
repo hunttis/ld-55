@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://br2b108g1juek"]
+[gd_scene load_steps=5 format=3 uid="uid://br2b108g1juek"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_upcml"]
 [ext_resource type="PackedScene" uid="uid://di3ojqn7etpre" path="res://Assets/Scenes/SoundManager/sound_manager.tscn" id="2_la6c4"]
 [ext_resource type="PackedScene" uid="uid://dhsdkbvlfwrq8" path="res://Assets/Scenes/VFXManager/VFXManager.tscn" id="3_fgggt"]
+[ext_resource type="Script" path="res://Assets/Scenes/GameScene/DebugDifficulty.gd" id="4_r1it8"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_upcml")
@@ -12,3 +13,7 @@ script = ExtResource("1_upcml")
 [node name="SoundManager" parent="." instance=ExtResource("2_la6c4")]
 
 [node name="VfxManager" parent="." instance=ExtResource("3_fgggt")]
+
+[node name="DebugDifficulty" type="Node" parent="."]
+script = ExtResource("4_r1it8")
+preset_difficulty = 2
