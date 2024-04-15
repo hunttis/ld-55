@@ -41,7 +41,7 @@ var pretty_hard = {
 	title = "Pretty Hard",
 	current_difficulty = 4,
 	progression = [],
-	speed_up_start_round = 12,
+	speed_up_start_round = 7,
 	meter_speed = 12,
 	meter_speed_multiplier = 1.05,
     summon_time = 2.5
@@ -51,9 +51,9 @@ var unfair = {
 	title = "Actually Hard",
 	current_difficulty = 4,
 	progression = [],
-	speed_up_start_round = 1,
+	speed_up_start_round = 7,
 	meter_speed = 4,
-	meter_speed_multiplier = 1,
+	meter_speed_multiplier = 0.95,
     summon_time = 3.5
 }
 
