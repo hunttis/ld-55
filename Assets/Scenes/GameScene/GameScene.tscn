@@ -2202,7 +2202,7 @@ metadata/_edit_lock_ = true
 script = ExtResource("7_625ks")
 
 [node name="LevelTimer" type="Timer" parent="LevelManager"]
-wait_time = 6.0
+wait_time = 10.0
 one_shot = true
 
 [node name="TimerLabel" type="Label" parent="LevelManager"]

@@ -28,10 +28,9 @@ func _on_start_game():
 	Global.score = 0
 	Global.total_wave_count = 0
 	Signals.scores_changed.emit()
-	Signals.battle_init.emit(3)
+	Signals.battle_init.emit(Global.MAX_MOB_SIZE)
 	Signals.pick_new_straws.emit()
-	level_timer.start()
-	timer_label.visible = true
+	start_timer()
 
 func _get_hurt():
 	life_points -= 1
@@ -55,8 +54,7 @@ func _on_arrived_to_battlefield():
 		Signals.battle_start.emit()
 	else:
 		Signals.pick_new_straws.emit()
-		timer_label.visible = true
-		level_timer.start()
+		start_timer()
 		
 func _on_battle_resolved():
 	if Global.total_wave_count > Difficulty.speed_up_start_round:
@@ -68,8 +66,7 @@ func _on_battle_resolved():
 	
 	Signals.battle_init.emit(Global.MAX_MOB_SIZE)
 	Signals.pick_new_straws.emit()
-	timer_label.visible = true
-	level_timer.start()
+	start_timer()
 
 func _on_level_timer_timeout():
 	Signals.release_buttons.emit()
@@ -77,3 +74,8 @@ func _on_level_timer_timeout():
 func _on_summoning_complete(_summon):
 	level_timer.stop()
 	timer_label.visible = false
+
+func start_timer():
+	level_timer.wait_time = Difficulty.summon_time
+	timer_label.visible = true
+	level_timer.start()

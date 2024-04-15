@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bw6fsf6vdmyf2"]
+[gd_scene load_steps=11 format=3 uid="uid://bw6fsf6vdmyf2"]
 
 [ext_resource type="Script" path="res://main/menu/main_menu.gd" id="1_qm4hq"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhl776dsww6ka" path="res://Assets/Images/cover.jpg" id="3_ek8ys"]
 [ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
 [ext_resource type="Script" path="res://main/menu/MenuTitle.gd" id="4_8twmg"]
+[ext_resource type="Texture2D" uid="uid://cidnurdt3oxv6" path="res://Assets/Images/menu-bg.png" id="4_75p13"]
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="5_cv0il"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle2.gd" id="6_bcewb"]
 
@@ -20,6 +21,12 @@ script = ExtResource("1_qm4hq")
 
 [node name="Summoning-bg" type="Sprite2D" parent="."]
 texture = ExtResource("3_ek8ys")
+centered = false
+
+[node name="Menu-bg" type="Sprite2D" parent="."]
+position = Vector2(446, 252)
+scale = Vector2(1.10888, 1.10888)
+texture = ExtResource("4_75p13")
 centered = false
 
 [node name="MenuItems" type="VBoxContainer" parent="."]
@@ -62,6 +69,10 @@ theme_override_font_sizes/font_size = 32
 text = "Play"
 script = ExtResource("2_urv4f")
 
+[node name="Separator2" type="VBoxContainer" parent="MenuItems/ItemsContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 20)
+layout_mode = 2
+
 [node name="DifficultyLabel" type="Label" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -78,6 +89,10 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 selected = 0
 allow_reselect = true
+
+[node name="Separator" type="VBoxContainer" parent="MenuItems/ItemsContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 20)
+layout_mode = 2
 
 [node name="SettingsLabel" type="Label" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
@@ -110,5 +125,9 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 script = ExtResource("3_jlbm4")
+
+[node name="Separator3" type="VBoxContainer" parent="MenuItems"]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
 
 [node name="Scores" parent="." instance=ExtResource("5_cv0il")]
