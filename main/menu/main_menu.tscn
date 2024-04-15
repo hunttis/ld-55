@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://main/menu/SoundToggle.gd" id="2_6bova"]
 [ext_resource type="Script" path="res://main/menu/Play.gd" id="2_urv4f"]
 [ext_resource type="Theme" path="res://Assets/theme.tres" id="2_we3cq"]
+[ext_resource type="Texture2D" uid="uid://bhl776dsww6ka" path="res://Assets/Images/cover.jpg" id="3_ek8ys"]
 [ext_resource type="Script" path="res://main/menu/Quit.gd" id="3_jlbm4"]
-[ext_resource type="Texture2D" uid="uid://c3icomyp8bbf0" path="res://Assets/Images/summoning-bg.jpg" id="3_mg8n3"]
 [ext_resource type="Script" path="res://main/menu/MenuTitle.gd" id="4_8twmg"]
 [ext_resource type="PackedScene" uid="uid://dcm2jnlyxogql" path="res://Assets/Scenes/ScoreScene/ScoreScene.tscn" id="5_cv0il"]
 [ext_resource type="Script" path="res://main/menu/SoundToggle2.gd" id="6_bcewb"]
@@ -19,8 +19,7 @@ theme = ExtResource("2_we3cq")
 script = ExtResource("1_qm4hq")
 
 [node name="Summoning-bg" type="Sprite2D" parent="."]
-modulate = Color(0.447059, 0.447059, 0.447059, 1)
-texture = ExtResource("3_mg8n3")
+texture = ExtResource("3_ek8ys")
 centered = false
 
 [node name="MenuItems" type="VBoxContainer" parent="."]
@@ -57,24 +56,57 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "Play"
 script = ExtResource("2_urv4f")
 
+[node name="DifficultyLabel" type="Label" parent="MenuItems/ItemsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Difficulty"
+horizontal_alignment = 1
+
+[node name="DifficultyOption" type="OptionButton" parent="MenuItems/ItemsContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_we3cq")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+selected = 0
+allow_reselect = true
+
+[node name="SettingsLabel" type="Label" parent="MenuItems/ItemsContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+horizontal_alignment = 1
+
 [node name="SoundToggle" type="CheckButton" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "Sounds"
 script = ExtResource("6_bcewb")
 
 [node name="TutorialToggle" type="CheckButton" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "Show tutorial"
 script = ExtResource("2_6bova")
 
 [node name="Quit" type="Button" parent="MenuItems/ItemsContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 script = ExtResource("3_jlbm4")
